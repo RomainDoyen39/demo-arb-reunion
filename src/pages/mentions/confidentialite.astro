@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import LegalPage from '../../components/LegalPage.astro';
+---
+
+<Base title="Politique de confidentialité — ARB Réunion">
+  <Header />
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+    <LegalPage
+      crumb="Politique de confidentialité"
+      kicker="Données personnelles"
+      heading="Politique de confidentialité"
+      lede="Ce que l’agence collecte lorsque vous écrivez, téléchargez un document ou consultez le portail."
+      current="confidentialite"
+    >
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Responsable de traitement</h2>
+        <p class="text-on-surface-variant leading-relaxed">Agence régionale de la biodiversité de La Réunion, 10 rue Pierre Marinier, 97438 Sainte-Marie. Le délégué à la protection des données est Marc Lavaux. Vous pouvez le joindre à dpo@arb-reunion.fr ou par courrier au siège, à l’attention du DPO.</p>
+      </article>
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Formulaire de contact</h2>
+        <p class="text-on-surface-variant leading-relaxed">Le formulaire recueille votre nom, votre prénom, votre organisme, votre téléphone, votre adresse électronique, l’antenne souhaitée et le texte de la demande. Une pièce jointe peut être ajoutée si vous transmettez un plan ou une note de cadrage.</p>
+        <p class="text-on-surface-variant leading-relaxed mt-3">Ces informations servent uniquement à orienter la demande vers l’antenne compétente et à y répondre. Elles sont conservées trois ans à compter du dernier échange, puis archivées deux ans au siège avant suppression. Elles ne sont ni vendues ni transmises à un démarchage commercial.</p>
+      </article>
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Comptes et lettres d’information</h2>
+        <p class="text-on-surface-variant leading-relaxed">L’inscription à la lettre « Focus éditions » enregistre l’adresse électronique et les thèmes cochés. Vous pouvez vous désinscrire depuis chaque envoi. Les comptes contributeurs Borbonica, réservés aux structures signataires de la charte SINP, conservent l’identité professionnelle et le journal des dépôts pendant la durée de la convention.</p>
+      </article>
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Mesure d’audience</h2>
+        <p class="text-on-surface-variant leading-relaxed">Une mesure d’audience anonymisée compte les pages vues, sans croiser l’adresse IP avec un compte. Aucun traceur publicitaire n’est déposé. Le refus de la mesure d’audience ne bloque pas la consultation des documents.</p>
+      </article>
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Vos droits</h2>
+        <p class="text-on-surface-variant leading-relaxed">Vous pouvez demander l’accès, la rectification ou l’effacement de vos données, limiter un traitement ou vous opposer à un contact de relance. La demande se fait auprès de dpo@arb-reunion.fr. Une réponse est apportée dans un délai d’un mois. Vous pouvez aussi saisir la CNIL si l’échange avec l’agence ne vous convient pas.</p>
+      </article>
+    </LegalPage>
+  </main>
+  <Footer />
+</Base>

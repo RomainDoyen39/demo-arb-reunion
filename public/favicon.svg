@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="ARB Réunion, prototype">
+  <circle cx="16" cy="16" r="16" fill="#114e4a"/>
+  <path d="M16 24c-5-3-6.6-6.8-6.6-10.6 2.9.7 5 2.1 6.6 4.4 1.6-2.3 3.7-3.7 6.6-4.4 0 3.8-1.6 7.6-6.6 10.6z" fill="#d7efe9"/>
+  <path d="M16 24V9" stroke="#e7d7b6" stroke-width="1.3" stroke-linecap="round"/>
+</svg>

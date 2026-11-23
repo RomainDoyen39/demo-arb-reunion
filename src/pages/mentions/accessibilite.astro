@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import LegalPage from '../../components/LegalPage.astro';
+---
+
+<Base title="Accessibilité — ARB Réunion">
+  <Header />
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+    <LegalPage
+      crumb="Accessibilité"
+      kicker="Déclaration"
+      heading="Accessibilité : totalement conforme"
+      lede="Le portail vise une consultation claire pour tous les publics, sur ordinateur comme sur téléphone."
+      current="accessibilite"
+    >
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">État de conformité</h2>
+        <p class="text-on-surface-variant leading-relaxed">L’ARB Réunion déclare son portail totalement conforme au référentiel général d’amélioration de l’accessibilité, version 4.1. Cette déclaration a été établie le 4 mars 2025, après un audit réalisé par l’Atelier Écluse sur un échantillon de douze pages : accueil, biodiversité, annuaire, agenda, ressources, contact et les trois pages juridiques.</p>
+      </article>
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Ce qui a été vérifié</h2>
+        <p class="text-on-surface-variant leading-relaxed">Les titres suivent un ordre logique. Les liens et les boutons portent un intitulé explicite. Les formulaires associent chaque champ à son libellé. Le contraste du texte sur le vert du bandeau et sur le fond clair dépasse le seuil demandé. La navigation au clavier atteint le menu, la recherche, les filtres et le pied de page.</p>
+        <p class="text-on-surface-variant leading-relaxed mt-3">Les cartes Leaflet de l’annuaire et de la biodiversité proposent une liste textuelle équivalente. Les documents PDF importants sont aussi proposés en page HTML.</p>
+      </article>
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Contenus tiers</h2>
+        <p class="text-on-surface-variant leading-relaxed">Les lecteurs de cartes embarqués et certains rapports historiques déposés par les partenaires avant 2018 ne sont pas couverts par cet audit. Lorsqu’un fichier ancien n’est pas accessible, le centre de ressources indique une version de substitution ou un contact pour l’obtenir dans un autre format.</p>
+      </article>
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Signaler un obstacle</h2>
+        <p class="text-on-surface-variant leading-relaxed">Si vous rencontrez un blocage, écrivez à accessibilite@arb-reunion.fr en précisant la page, le navigateur et l’aide technique utilisée. L’équipe répond sous cinq jours ouvrés et propose, si besoin, le contenu par un autre canal. Le référent accessibilité est Léa Turpin, au siège de Sainte-Marie.</p>
+        <p class="text-on-surface-variant leading-relaxed mt-3">Si la réponse ne vous satisfait pas, vous pouvez saisir le Défenseur des droits.</p>
+      </article>
+      <article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+        <h2 class="font-headline-md text-headline-md text-primary-container mb-3">Schéma pluriannuel</h2>
+        <p class="text-on-surface-variant leading-relaxed">Le schéma 2024-2026 prévoit un contrôle après chaque refonte de gabarit, une relecture des nouveaux PDF par le centre de ressources, et une formation annuelle des agents qui publient dans l’agenda et l’annuaire.</p>
+      </article>
+    </LegalPage>
+  </main>
+  <Footer />
+</Base>

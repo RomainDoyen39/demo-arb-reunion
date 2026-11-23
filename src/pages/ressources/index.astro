@@ -1,0 +1,1002 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Base title="Centre de ressources — ARB Réunion">
+  <Header current="ressources" />
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- =========================================================================
+       1. HERO & MOTEUR DOCUMENTAIRE
+       ========================================================================= -->
+<section class="page-hero relative w-full pt-6 pb-28 md:pb-36 overflow-hidden">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+<!-- Fil d'Ariane -->
+<nav aria-label="Fil d'Ariane" class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md mb-8">
+<a class="hover:text-primary-container transition-colors flex items-center gap-1" data-path="accueil" href="/">
+<span class="material-symbols-outlined text-[16px]">home</span>
+          Accueil
+        </a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary-container transition-colors" data-path="ressources" href="/ressources">Ressources &amp; Savoirs</a>
+<span class="text-outline-variant">/</span>
+<span aria-current="page" class="text-primary font-semibold">Centre de ressources &amp; Publications</span>
+</nav>
+<!-- Surtitre & Titre & Pitch -->
+<div class="max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm uppercase tracking-wider mb-4 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          MÉDIATHÈQUE SCIENTIFIQUE &amp; TECHNIQUE PÉI
+        </div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight font-extrabold mb-6 leading-tight">
+          Centre de ressources &amp; Publications scientifiques
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed mb-10">
+          Explorez, consultez et téléchargez plus de <strong>1 200 rapports scientifiques</strong>, guides techniques, synthèses d'observation, atlas naturalistes et jeux de données validés par le <strong class="text-on-surface">Conseil Scientifique Régional du Patrimoine Naturel (CSRPN)</strong> et le réseau d'experts de l'île de La Réunion.
+        </p>
+</div>
+<!-- Moteur de Recherche Avancé -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-[0_20px_50px_rgba(17,78,74,0.06)] p-6 md:p-8 mb-12">
+<form class="flex flex-col gap-6" id="ressources-search">
+<!-- Barre de saisie plein texte -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-primary-container text-[24px]">search</span>
+<input class="w-full pl-14 pr-32 py-4 rounded-full bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-4 focus:ring-secondary-container/50 focus:outline-none transition-all placeholder:text-on-surface-variant/50" id="search-input" placeholder="Rechercher un rapport, un auteur, une espèce, un taxon (ex: Pétrel de Barau, ravines, trame noire, EEE)..." type="search">
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
+<button class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 text-xs text-on-surface-variant hover:text-primary transition-colors bg-surface-container rounded-full" id="search-clear" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+                Effacer
+              </button>
+</div>
+</div>
+<!-- Filtres multi-critères & Bouton CTA -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+<!-- Type de document -->
+<div class="md:col-span-4 relative">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 ml-2" for="filter-type">Type de document</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[20px] pointer-events-none">auto_stories</span>
+<select class="w-full pl-11 pr-10 py-3 rounded-full bg-surface-container-low text-on-surface font-label-lg text-label-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="filter-type">
+<option value="all">Tous les types de documents</option>
+<option value="rapport">Rapports scientifiques</option>
+<option value="guide">Guides méthodologiques</option>
+<option value="atlas">Atlas &amp; Cartes thématiques</option>
+<option value="droit">Textes &amp; Avis juridiques CSRPN</option>
+<option value="espece">Fiches d'espèces &amp; protocoles</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary text-[20px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Thématique -->
+<div class="md:col-span-5 relative">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 ml-2" for="filter-theme">Thématique prioritaire</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[20px] pointer-events-none">filter_vintage</span>
+<select class="w-full pl-11 pr-10 py-3 rounded-full bg-surface-container-low text-on-surface font-label-lg text-label-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="filter-theme">
+<option value="all">Toutes les thématiques</option>
+<option value="marine">Milieux marins &amp; récifs coralliens</option>
+<option value="foret">Forêts indigènes &amp; flore des Hauts</option>
+<option value="invasives">Espèces Exotiques Envahissantes (EEE)</option>
+<option value="trames">Trames Verte, Bleue, Noire &amp; Aménagement</option>
+<option value="especes-menacees">Faune endémique &amp; plans de sauvegarde</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary text-[20px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Bouton d'action -->
+<div class="md:col-span-3 flex flex-col justify-end pt-5 md:pt-0">
+<button class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg hover:bg-primary shadow-[0_4px_16px_rgba(17,78,74,0.18)] hover:shadow-lg transition-all active:scale-[0.99]" type="submit">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+<span>Filtrer les ressources</span>
+</button>
+</div>
+</div>
+<!-- Tags rapides suggérés -->
+<div class="flex items-center flex-wrap gap-2 pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="font-medium text-secondary">Mots-clés fréquents :</span>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-secondary-container text-on-surface transition-colors" data-query="Pétrel de Barau" type="button">Pétrel de Barau</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-secondary-container text-on-surface transition-colors" data-query="récif" type="button">Récifs coralliens</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-secondary-container text-on-surface transition-colors" data-query="Trame Noire" type="button">Pollution lumineuse</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-secondary-container text-on-surface transition-colors" data-query="envahissantes" type="button">Plantes envahissantes</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-secondary-container text-on-surface transition-colors" data-query="semi-sèche" type="button">Forêt semi-sèche</button>
+</div>
+</form>
+</div>
+<!-- Compteurs Statistiques Clés -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<div class="p-6 rounded-lg bg-surface-container-low flex flex-col justify-center">
+<div class="flex items-center gap-2 text-primary font-headline-lg text-headline-lg font-bold tracking-tight">
+<span>1 240+</span>
+</div>
+<span class="font-label-md text-label-md text-secondary mt-1 font-medium">Documents répertoriés</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mt-0.5">Mis à jour chaque semaine</span>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-low flex flex-col justify-center">
+<div class="flex items-center gap-2 text-primary-container font-headline-lg text-headline-lg font-bold tracking-tight">
+<span>100%</span>
+<span class="material-symbols-outlined text-[24px] text-primary">lock_open_right</span>
+</div>
+<span class="font-label-md text-label-md text-secondary mt-1 font-medium">Accès libre (Open Access)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mt-0.5">Licences Etalab 2.0 &amp; CC</span>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-low flex flex-col justify-center">
+<div class="flex items-center gap-2 text-primary font-headline-lg text-headline-lg font-bold tracking-tight">
+<span>45</span>
+</div>
+<span class="font-label-md text-label-md text-secondary mt-1 font-medium">Partenaires contributeurs</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mt-0.5">Laboratoires, ONG, DEAL, ONF</span>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-low flex flex-col justify-center">
+<div class="flex items-center gap-2 text-tertiary-container font-headline-lg text-headline-lg font-bold tracking-tight">
+<span>18 500</span>
+</div>
+<span class="font-label-md text-label-md text-secondary mt-1 font-medium">Téléchargements en 2024</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mt-0.5">Rayonnement océan Indien</span>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+<svg class="block h-12 w-full fill-current text-surface-container md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+</svg>
+</div>
+</section>
+<!-- =========================================================================
+       2. PUBLICATIONS SCIENTIFIQUES MAJEURES À LA UNE (FOCUS ÉDITIONS RÉCENTES)
+       ========================================================================= -->
+<section class="relative -mt-px w-full overflow-hidden bg-surface-container pt-12 pb-24 md:pt-20 md:pb-32">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<!-- En-tête de section avec texture éditoriale -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+<div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-tertiary-container mb-2 font-bold">
+<span class="w-2.5 h-0.5 bg-tertiary-container"></span>
+            FOCUS ÉDITIONS RÉCENTES
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Publications scientifiques majeures
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Travaux institutionnels de référence co-édités par l'ARB Réunion, le Conseil Scientifique Régional et les instituts de recherche.
+        </p>
+</div>
+<div id="featured-docs">
+<!-- Grande mise en avant d'un document maître (Bento Featured) -->
+<div data-doc data-featured data-type="rapport" data-theme="foret marine especes-menacees" data-date="2024-11-01" data-downloads="2400" data-title="Bilan décennal de l'État de la Biodiversité Réunionnaise" data-org="ARB Réunion" data-cite="ARB Réunion, DEAL Réunion, CBNM Mascarin et CSRPN (2024). Bilan décennal de la Biodiversité Réunionnaise. DOI: 10.3406/arbr.2024.01" class="w-full bg-surface-container-lowest rounded-xl shadow-[0_16px_40px_rgba(17,78,74,0.07)] p-8 md:p-12 mb-10 overflow-hidden relative">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Image de couverture stylisée -->
+<div class="lg:col-span-4 relative group">
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden shadow-2xl bg-primary-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Élégante couverture de rapport scientifique institutionnel intitulé Bilan Décennal de la Biodiversité Réunionnaise 2015-2025 avec des illustrations botaniques de fougères endémiques, vues aériennes des cirques verdoyants de La Réunion, cartographies d'habitats et typographie dorée soignée sur fond vert lagon profond." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs_EnMxwj9PzJfmSwXSdBW_zq2nhOuNjl672QXhX15uTu5jvUnd8Gy1BloegWS8yXEsxv54gpfoPuYUleUcGJWEXo-zHa_mGRpYYW0eM6esvRsyMeR5D6Mt1PlT-FB0d-GFrGQbx3CNtuDMaNgSyF0hMpidjOW6sWz6nydfiDvMtf3WZ60l9fmMDA86MmEMRRLw-nlUUu1SLvYS2Y056QuAGuP5pmXLaONu_CueZPZ">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-6 text-inverse-on-surface">
+<span class="px-2.5 py-1 rounded bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider self-start mb-2 font-bold">
+                  Document Maître
+                </span>
+<span class="font-headline-sm text-headline-sm font-semibold leading-tight text-white">
+                  Édition officielle 2024
+                </span>
+</div>
+</div>
+<!-- Effet de papier superposé arrière -->
+<div class="absolute -right-3 -bottom-3 w-full h-full rounded-lg bg-secondary-container/40 -z-10 transform rotate-1 hidden sm:block"></div>
+</div>
+<!-- Contenu et métadonnées du document maître -->
+<div class="lg:col-span-8 flex flex-col">
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+                Rapport de référence régionale
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Parution Novembre 2024</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• DOI: 10.3406/arbr.2024.01</span>
+</div>
+<h3 class="font-display-lg-mobile md:font-headline-lg md:text-headline-lg text-primary font-bold tracking-tight mb-4">
+              Bilan décennal de l'État de la Biodiversité Réunionnaise (2015-2025)
+            </h3>
+<div class="flex items-center gap-3 text-secondary font-label-md text-label-md mb-6">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+                ARB Réunion / DEAL Réunion / CBNM Mascarin / CSRPN
+              </span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+              Fruit de cinq années de collecte de données standardisées, ce bilan constitue la synthèse la plus exhaustive jamais réalisée sur l'état de conservation des 10 000 espèces recensées à La Réunion. Il analyse l'évolution des pressions anthropiques, l'efficacité des aires protégées dans les cirques et les récifs, ainsi que les perspectives d'adaptation face aux dérèglements climatiques insulaires.
+            </p>
+<!-- Spécifications techniques -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-lg bg-surface-container-low mb-8">
+<div>
+<span class="block font-label-sm text-label-sm text-secondary">Volume</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">142 pages</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary">Format &amp; Poids</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">PDF (24.3 Mo)</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary">Données brutes</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Incluses (GeoJSON)</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary">Licence</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">CC-BY 4.0</span>
+</div>
+</div>
+<!-- Boutons de téléchargement et d'action -->
+<div class="flex flex-wrap items-center gap-4">
+<a class="js-download inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-lg text-label-lg shadow-[0_4px_16px_rgba(17,78,74,0.2)] transition-all" href="#catalogue">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Télécharger le rapport intégral (PDF - 24 Mo)</span>
+</a>
+<a class="js-download inline-flex items-center gap-2 px-5 py-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-primary-fixed transition-colors font-label-lg text-label-lg" href="#catalogue">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Feuilleter la synthèse (12p)</span>
+</a>
+<button class="js-cite inline-flex items-center gap-1.5 px-4 py-3 rounded-full text-secondary hover:text-primary hover:bg-surface-container transition-colors font-label-md text-label-md" title="Copier la citation académique" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+<span>Citer ce document</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Deux autres parutions majeures (Grille 2 colonnes) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Carte Parution 1 : Atlas Trame Noire -->
+<article data-doc data-featured data-type="atlas" data-theme="trames" data-date="2024-10-01" data-downloads="1600" data-title="Atlas cartographique de la Trame Noire" data-org="ARB Réunion & SEOR" data-cite="ARB Réunion et SEOR (2024). Atlas cartographique de la Trame Noire et corridors nocturnes de La Réunion." class="bg-surface-container-lowest rounded-xl shadow-[0_10px_30px_rgba(17,78,74,0.04)] p-6 md:p-8 flex flex-col justify-between group">
+<div>
+<div class="relative w-full h-52 rounded-lg overflow-hidden mb-6 bg-surface-dim">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Carte satellite nocturne de La Réunion montrant l'obscurité préservée des pitons et cirques contrastant avec la lumière urbaine du littoral, mise en valeur cartographique des couloirs de vol des oiseaux marins pétrels protégés." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzRx7ssy_Ty50Y_OZeHcOzqxWCHJuoOyen3m5E-xLKJz6MKb6oINECEc_J6A6FJmgGVkI3qhM2y_bu1VjrMuL_h-i85A2_ufpHShnDtppw03SPYifWLQE0fEPmuI_DdDLk-5ToR2rAzjtxhRZXGiojWx9ZTgjS2Mx9kFtDP8eTiabxqMiCVr4h2m6-kkCo8d2m-b77U-89xrATFHDQ27RRzrli9gPYiA5DsFzYbIM_">
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary-container text-inverse-on-surface font-label-sm text-label-sm font-semibold">
+                Atlas &amp; Cartographie
+              </span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-2">
+<span>ARB Réunion &amp; SEOR</span>
+<span>•</span>
+<span>Octobre 2024</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold mb-3 leading-snug">
+              Atlas cartographique de la Trame Noire et corridors nocturnes de La Réunion
+            </h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 leading-relaxed">
+              Cartographie haute résolution de la pollution lumineuse sur l'île et modélisation des couloirs d'envol des jeunes Pétrels de Barau et Pétrels noirs de Bourbon. Ce recueil fournit les préconisations techniques destinées aux 24 communes pour la rénovation de leur éclairage public.
+            </p>
+</div>
+<div class="pt-4 border-t-0 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+              88 pages • PDF 16 Mo
+            </span>
+<a class="js-download inline-flex items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:translate-x-1 transition-transform" href="#catalogue">
+              Télécharger
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Carte Parution 2 : Guide Biosécurité EEE -->
+<article data-doc data-featured data-type="guide" data-theme="invasives" data-date="2024-09-01" data-downloads="1100" data-title="Guide pratique de lutte et biosécurité contre les Espèces Exotiques Envahissantes végétales" data-org="GEIR / CIRAD / Parc National" data-cite="GEIR, CIRAD et Parc national de La Réunion (2024). Guide pratique de lutte et biosécurité contre les Espèces Exotiques Envahissantes végétales." class="bg-surface-container-lowest rounded-xl shadow-[0_10px_30px_rgba(17,78,74,0.04)] p-6 md:p-8 flex flex-col justify-between group">
+<div>
+<div class="relative w-full h-52 rounded-lg overflow-hidden mb-6 bg-surface-dim">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Forestier et botaniste inspectant de près un sous-bois dense dans les hauts de La Réunion avec des goyaviers et fougères arborescentes, matériel de biosécurité sur le terrain pour préserver la forêt primitive des espèces exotiques envahissantes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQqYJ4A-tOcDmf5Tn2xGdsZysCXkIJ_ZJX2-625feCQd1RSGjE54KRspwyeQ25N5ZWTVJu_8Tgm5dKywE2apMvxOydgGH1bHTi5wHgVSfTQG7flvidgtIsojmPyV-IkzgJGFIRrvhw_U4vQktRqqFbEXY30Tg0vQwoGTWUVqZLtcS9Z3jAhHRW_GjpKrWezXuxaOOgz8iXwSkBPkxKykeZSAezRNZW8o5UcbBgLjiq">
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm font-semibold">
+                Guide Méthodologique
+              </span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-2">
+<span>GEIR / CIRAD / Parc National</span>
+<span>•</span>
+<span>Septembre 2024</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold mb-3 leading-snug">
+              Guide pratique de lutte et biosécurité contre les Espèces Exotiques Envahissantes végétales
+            </h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 leading-relaxed">
+              Protocoles de désinfection des engins de chantier, méthodes manuelles d'arrachage et stratégies de revégétalisation après chantiers d'éradication du Goyavier de Chine, du Raisin marron et de la Liane papillon dans les forêts de moyenne et haute altitude.
+            </p>
+</div>
+<div class="pt-4 border-t-0 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+              64 pages • PDF 8.5 Mo
+            </span>
+<a class="js-download inline-flex items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:translate-x-1 transition-transform" href="#catalogue">
+              Télécharger
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary text-center py-6" id="featured-empty" hidden>Aucune publication majeure ne correspond à ces critères.</p>
+</div>
+<div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+</svg>
+</div>
+</section>
+<!-- =========================================================================
+       3. EXPLORATEUR DOCUMENTAIRE PAR COLLECTIONS THÉMATIQUES
+       ========================================================================= -->
+<section class="relative -mt-px w-full overflow-hidden bg-surface pt-12 pb-24 md:pt-20 md:pb-32" id="catalogue">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold block mb-2">
+            CATALOGUE &amp; ARCHIVES PÉI
+          </span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">
+            Explorer les collections documentaires
+          </h2>
+</div>
+<!-- Trier par -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Trier par :</span>
+<div class="relative">
+<select class="px-4 py-2 pr-9 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-container" id="doc-sort">
+<option value="recent">Date d'ajout (plus récents)</option>
+<option value="downloads">Plus téléchargés</option>
+<option value="alpha">Titre alphabétique (A-Z)</option>
+<option value="org">Organisme émetteur</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Onglets thématiques interactifs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar" id="doc-collections">
+<button class="px-5 py-2.5 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg whitespace-nowrap shadow-sm hover:opacity-95 transition-all" data-collection="" type="button">
+          Tous les documents <span data-count>(12)</span>
+        </button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="faune" type="button">
+          Faune &amp; Flore péi <span data-count>(5)</span>
+        </button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="recifs" type="button">
+          Récifs &amp; Milieux marins <span data-count>(3)</span>
+        </button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="trames" type="button">
+          Trame Verte, Bleue &amp; Noire <span data-count>(3)</span>
+        </button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="droit" type="button">
+          Réglementation &amp; CSRPN <span data-count>(2)</span>
+        </button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="sciences" type="button">
+          Sciences participatives <span data-count>(2)</span>
+        </button>
+</div>
+<!-- Grille de 6 fiches ressources téléchargeables -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="doc-grid">
+<!-- Fiche 1 : Chiroptères Hauts de l'Ouest -->
+<div data-doc data-type="espece" data-theme="foret" data-collection="faune" data-date="2024-07-12" data-downloads="312" data-title="Protocole d'inventaire acoustique des chiroptères endémiques des Hauts de l'Ouest" data-org="GCEIP" data-cite="GCEIP et Muséum d'Histoire Naturelle (2024). Protocole d'inventaire acoustique des chiroptères endémiques des Hauts de l'Ouest." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                Protocole scientifique
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">
+              Protocole d'inventaire acoustique des chiroptères endémiques des Hauts de l'Ouest
+            </h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span>GCEIP / Muséum d'Histoire Naturelle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+              Méthodologie standardisée d'écoute ultrasonore en canopée pour le suivi du Petit Rhinolophe et du Scotophile de Bourbon. Paramétrages des enregistreurs SM4BAT et clés d'identification acoustique.
+            </p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">description</span>
+                PDF 4.2 Mo
+              </span>
+<span>312 téléchargements</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Télécharger
+              </a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer BibTeX / APA" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Fiche 2 : Index de la Flore Mascarine -->
+<div data-doc data-type="atlas" data-theme="foret" data-collection="faune" data-date="2024-09-15" data-downloads="1420" data-title="Référentiel des espèces végétales indigènes et exotiques (Index Flore Mascarine)" data-org="CBNM Mascarin" data-cite="CBNM Mascarin (2024). Index Flore Mascarine. Référentiel des espèces végétales indigènes et exotiques." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                Base taxonomique &amp; Index
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Sept. 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">
+              Référentiel des espèces végétales indigènes et exotiques (Index Flore Mascarine)
+            </h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">nature</span>
+<span>CBNM Mascarin</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+              Tableau complet officiel validé contenant les 1 740 taxons indigènes et les 2 100 taxons introduits. Statuts d'indigénat, niveau de menace UICN régional et correspondances TAXREF v17.
+            </p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">table_view</span>
+                Excel &amp; CSV (12 Mo)
+              </span>
+<span>1 420 téléchargements</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Télécharger
+              </a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer BibTeX / APA" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Fiche 3 : Récif de l'Hermitage 2024 -->
+<div data-doc data-type="rapport" data-theme="marine" data-collection="recifs" data-date="2024-06-20" data-downloads="654" data-title="Suivi de l'état de santé du récif frangeant de l'Hermitage" data-org="Réserve Naturelle Marine" data-cite="Réserve naturelle marine de La Réunion (2024). Suivi de l'état de santé du récif frangeant de l'Hermitage. Campagne 2024." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                Rapport de suivi marin
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Juin 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">
+              Suivi de l'état de santé du récif frangeant de l'Hermitage - Campagne 2024
+            </h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">water</span>
+<span>Réserve Naturelle Marine (RNMR)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+              Mesures d'albédo corallien, comptage des populations de poissons herbivores (Acanthuridae) et impact des épisodes de blanchissement thermique estivaux. Cartographie bathymétrique actualisée.
+            </p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                PDF 9.8 Mo
+              </span>
+<span>654 téléchargements</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Télécharger
+              </a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer BibTeX / APA" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Fiche 4 : Ripisylves et ravines -->
+<div data-doc data-type="guide" data-theme="trames" data-collection="trames" data-date="2024-05-08" data-downloads="880" data-title="Guide d'aménagement des ripisylves et berges de ravines en climat tropical" data-org="ARB Réunion" data-cite="ARB Réunion et Office de l'Eau Réunion (2024). Guide d'aménagement des ripisylves et berges de ravines en climat tropical." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                Guide technique de génie végétal
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Mai 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">
+              Guide d'aménagement des ripisylves et berges de ravines en climat tropical
+            </h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">waves</span>
+<span>ARB Réunion / Office de l'Eau Réunion</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+              Solutions fondées sur la nature pour la stabilisation des berges sujettes aux crues cycloniques torrentielles. Fiches essences adaptées (Benjoin, Mahot, Bois de pomme) et techniques de fascines vivantes.
+            </p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                PDF 14.1 Mo
+              </span>
+<span>880 téléchargements</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Télécharger
+              </a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer BibTeX / APA" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Fiche 5 : Semences certifiées Végétal Péi -->
+<div data-doc data-type="espece" data-theme="foret" data-collection="faune" data-date="2024-04-18" data-downloads="523" data-title="Catalogue illustré des semences indigènes certifiées Végétal Péi" data-org="Végétal Péi" data-cite="Collectif Marque Végétal Péi et ARB Réunion (2024). Catalogue illustré des semences indigènes certifiées Végétal Péi." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                Catalogue professionnel
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Avril 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">
+              Catalogue illustré des semences indigènes certifiées « Végétal Péi »
+            </h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span>Collectif Marque Végétal Péi / ARB</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+              Répertoire à l'usage des pépiniéristes, paysagistes et gestionnaires d'espaces verts. 75 espèces d'arbres et arbustes de forêt littorale et semi-sèche avec critères de traçabilité génétique locale.
+            </p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                PDF 7.3 Mo
+              </span>
+<span>523 téléchargements</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Télécharger
+              </a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer BibTeX / APA" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Fiche 6 : Échouage Pétrels de Barau 2024 -->
+<div data-doc data-type="rapport" data-theme="especes-menacees" data-collection="faune" data-date="2024-02-22" data-downloads="740" data-title="Synthèse des alertes d'échouage des jeunes pétrels de Barau" data-org="SEOR" data-cite="SEOR et DEAL Réunion (2024). Synthèse des alertes d'échouage des jeunes pétrels de Barau. Bilan 2024." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+                Bilan d'action annuel
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Fév. 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">
+              Synthèse des alertes d'échouage des jeunes pétrels de Barau - Bilan 2024
+            </h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">pest_control_rodent</span>
+<span>SEOR / DEAL Réunion</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">
+              Statistiques des sauvetages pendant les « Nuits sans Lumière ». 890 jeunes pétrels pris en charge, taux de réenvol après baguage, et bilan spatial des points noirs de mortalité sur les voiries littorales.
+            </p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+                PDF 3.6 Mo
+              </span>
+<span>740 téléchargements</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Télécharger
+              </a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer BibTeX / APA" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+</button>
+</div>
+</div>
+</div>
+<div data-doc data-type="droit" data-theme="trames" data-collection="droit" data-date="2024-03-11" data-downloads="210" data-title="Avis du CSRPN sur l'aménagement du littoral ouest" data-org="CSRPN" data-cite="CSRPN Réunion (2024). Avis sur l'aménagement du littoral ouest et la trame littorale." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Avis juridique CSRPN</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Mars 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">Avis du CSRPN sur l'aménagement du littoral ouest</h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3"><span class="material-symbols-outlined text-[16px]">gavel</span><span>CSRPN / DEAL Réunion</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">Recommandations sur la continuité de la trame littorale, le recul des constructions et la préservation des stations de végétation semi-sèche encore présentes entre Saint-Leu et Saint-Paul.</p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">description</span>PDF 1.8 Mo</span><span>210 téléchargements</span></div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue"><span class="material-symbols-outlined text-[18px]">download</span>Télécharger</a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer" type="button"><span class="material-symbols-outlined text-[18px]">format_quote</span></button>
+</div>
+</div>
+</div>
+<div data-doc data-type="espece" data-theme="marine" data-collection="sciences" data-date="2024-01-20" data-downloads="430" data-title="Protocole Reef Check des sentinelles du lagon" data-org="RNMR" data-cite="Réserve naturelle marine de La Réunion (2024). Protocole Reef Check des sentinelles du lagon." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Sciences participatives</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Janv. 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">Protocole Reef Check des sentinelles du lagon</h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3"><span class="material-symbols-outlined text-[16px]">scuba_diving</span><span>Réserve Naturelle Marine</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">Fiche de saisie pour les plongeurs bénévoles : recouvrement corallien, poissons herbivores et signes de blanchissement sur les stations de l'Hermitage et de Saint-Leu.</p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>PDF 2.4 Mo</span><span>430 téléchargements</span></div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue"><span class="material-symbols-outlined text-[18px]">download</span>Télécharger</a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer" type="button"><span class="material-symbols-outlined text-[18px]">format_quote</span></button>
+</div>
+</div>
+</div>
+<div data-doc data-type="atlas" data-theme="foret" data-collection="faune" data-date="2023-11-04" data-downloads="990" data-title="Atlas des reliques de forêt semi-sèche" data-org="CBNM Mascarin" data-cite="CBNM Mascarin (2023). Atlas des reliques de forêt semi-sèche de La Réunion." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">Atlas &amp; cartographie</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Nov. 2023</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">Atlas des reliques de forêt semi-sèche</h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3"><span class="material-symbols-outlined text-[16px]">forest</span><span>CBNM Mascarin</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">Cartes des derniers lambeaux de forêt semi-sèche, de la côte sous le vent aux remparts de Cilaos, avec les essences prioritaires pour la restauration.</p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">map</span>PDF 18 Mo</span><span>990 téléchargements</span></div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue"><span class="material-symbols-outlined text-[18px]">download</span>Télécharger</a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer" type="button"><span class="material-symbols-outlined text-[18px]">format_quote</span></button>
+</div>
+</div>
+</div>
+<div data-doc data-type="droit" data-theme="especes-menacees" data-collection="droit" data-date="2023-09-14" data-downloads="180" data-title="Note juridique sur les espèces protégées et les dérogations" data-org="DEAL Réunion" data-cite="DEAL Réunion et CSRPN (2023). Note juridique sur les espèces protégées et les dérogations." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Texte &amp; avis</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Sept. 2023</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">Note juridique sur les espèces protégées et les dérogations</h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3"><span class="material-symbols-outlined text-[16px]">balance</span><span>DEAL Réunion</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">Mode d'emploi des demandes de dérogation pour les études d'impact, avec les espèces à enjeu fort et les pièces attendues par le CSRPN.</p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">description</span>PDF 0.9 Mo</span><span>180 téléchargements</span></div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue"><span class="material-symbols-outlined text-[18px]">download</span>Télécharger</a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer" type="button"><span class="material-symbols-outlined text-[18px]">format_quote</span></button>
+</div>
+</div>
+</div>
+<div data-doc data-type="rapport" data-theme="marine" data-collection="sciences" data-date="2024-08-02" data-downloads="610" data-title="Bilan des sentinelles du lagon" data-org="RNMR" data-cite="Réserve naturelle marine de La Réunion (2024). Bilan des sentinelles du lagon." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Rapport de suivi</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Août 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">Bilan des sentinelles du lagon</h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3"><span class="material-symbols-outlined text-[16px]">groups</span><span>Réserve Naturelle Marine</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">Synthèse des observations citoyennes de l'été : blanchissement, enchevêtrements et fréquentation des platiers coralliens de l'ouest.</p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>PDF 5.1 Mo</span><span>610 téléchargements</span></div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue"><span class="material-symbols-outlined text-[18px]">download</span>Télécharger</a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer" type="button"><span class="material-symbols-outlined text-[18px]">format_quote</span></button>
+</div>
+</div>
+</div>
+<div data-doc data-type="atlas" data-theme="trames" data-collection="trames" data-date="2023-12-09" data-downloads="505" data-title="Cartographie de la trame bleue des ravines" data-org="Office de l'Eau" data-cite="Office de l'Eau Réunion et ARB Réunion (2023). Cartographie de la trame bleue des ravines." class="bg-surface-container-low rounded-lg p-6 flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">Atlas &amp; cartographie</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Déc. 2023</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2 group-hover:text-primary-container transition-colors">Cartographie de la trame bleue des ravines</h3>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm mb-3"><span class="material-symbols-outlined text-[16px]">waves</span><span>Office de l'Eau Réunion</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-6">Continuités aquatiques des ravines, obstacles aux déplacements de la faune et priorités de restauration des ripisylves après les crues cycloniques.</p>
+</div>
+<div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm py-2 mb-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">map</span>PDF 11 Mo</span><span>505 téléchargements</span></div>
+<div class="flex items-center gap-2">
+<a class="js-download flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors" href="#catalogue"><span class="material-symbols-outlined text-[18px]">download</span>Télécharger</a>
+<button class="js-cite w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary hover:bg-secondary-container transition-colors" title="Citer" type="button"><span class="material-symbols-outlined text-[18px]">format_quote</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="mb-12 text-center font-body-md text-body-md text-secondary" id="doc-empty" hidden>Aucun document ne correspond à ces critères.</p>
+<!-- Pagination & Sélecteur de volume -->
+<div class="mx-auto flex w-fit max-w-full flex-col items-center justify-center gap-4 rounded-full bg-surface-container-low px-6 py-3 sm:flex-row sm:gap-8">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span id="doc-range">Affichage de <strong>1 à 6</strong> sur <strong>12</strong> documents</span>
+</div>
+<nav class="flex items-center gap-1.5" id="doc-pager" aria-label="Pagination des documents"></nav>
+<div class="flex items-center gap-2">
+<label class="font-label-sm text-label-sm text-secondary" for="per-page">Par page :</label>
+<select class="px-3 py-1 rounded bg-surface text-on-surface font-label-sm text-label-sm focus:outline-none" id="per-page">
+<option>6</option>
+<option>12</option>
+<option>24</option>
+<option>48</option>
+</select>
+</div>
+</div>
+<div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+<svg class="block h-12 w-full fill-current text-surface-container-high md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+</svg>
+</div>
+</section>
+<!-- =========================================================================
+       4. DONNÉES OUVERTES, API & PLATEFORMES PARTENAIRES (OPEN DATA & SIG)
+       ========================================================================= -->
+<section class="relative -mt-px w-full overflow-hidden bg-surface-container-high pt-12 pb-24 md:pt-20 md:pb-32">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<div class="max-w-3xl mb-12">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider mb-3">
+<span class="material-symbols-outlined text-[16px]">data_object</span>
+          INTEROPÉRABILITÉ &amp; OPEN DATA
+        </div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight mb-4">
+          Données ouvertes, API &amp; SIG naturalistes
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Accédez directement aux plateformes de données brutes interconnectées avec le <strong>Système d'Information sur la Nature et les Paysages (SINP Réunion)</strong> pour vos modélisations, études d'impact et travaux de recherche académique.
+        </p>
+</div>
+<!-- Grille des 3 plateformes partenaires -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<!-- Plateforme 1 : Borbonica -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col justify-between relative group hover:shadow-lg transition-shadow">
+<div>
+<div class="w-14 h-14 rounded-xl bg-secondary-container flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">map</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+                SINP Régional
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Flux WMS / WFS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+              Portail SIG Borbonica
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Le carrefour public de la donnée naturaliste à La Réunion. Plus de 1,5 million d'observations géoréférencées consultables à l'échelle de la parcelle, atlas communal et requêtes spatialisées ouvertes.
+            </p>
+</div>
+<div>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg font-bold hover:text-primary-container group-hover:translate-x-1 transition-all" href="https://www.borbonica.re" rel="noopener noreferrer" target="_blank">
+<span>Accéder à Borbonica</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Plateforme 2 : GBIF France / International -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col justify-between relative group hover:shadow-lg transition-shadow">
+<div>
+<div class="w-14 h-14 rounded-xl bg-secondary-container flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">public</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                Niveau Mondial
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">API REST Darwin Core</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+              GBIF France &amp; Global
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Interconnexion globale du nœud Océan Indien Occidental avec le Global Biodiversity Information Facility. Jeux de données téléchargeables pour la biogéographie insulaire et la phylogénie.
+            </p>
+</div>
+<div>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg font-bold hover:text-primary-container group-hover:translate-x-1 transition-all" href="https://www.gbif.org" rel="noopener noreferrer" target="_blank">
+<span>Consulter sur GBIF</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Plateforme 3 : Sandre & Eaufrance -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col justify-between relative group hover:shadow-lg transition-shadow">
+<div>
+<div class="w-14 h-14 rounded-xl bg-secondary-container flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">water_drop</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed-dim text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+                Milieux Aquatiques
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Données hydrobiologiques</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+              Sandre &amp; Eaufrance Réunion
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Indicateurs physico-chimiques et écologiques des cours d'eau péi (ravines pérennes, nappes souterraines basaltiques) et suivi de la DCE (Directive Cadre sur l'Eau).
+            </p>
+</div>
+<div>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg font-bold hover:text-primary-container group-hover:translate-x-1 transition-all" href="https://www.eaufrance.fr" rel="noopener noreferrer" target="_blank">
+<span>Explorer Eaufrance</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Encadré Licences & Réutilisation Responsable -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold mb-1">
+            Cadre éthique, réutilisation et licences ouvertes
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Les documents et jeux de données diffusés par l'ARB Réunion sont sous <strong>Licence Ouverte Etalab 2.0</strong> et <strong>Creative Commons CC-BY 4.0</strong>, sauf mention spécifique sur les espèces hautement menacées (sensibilité de localisation des stations de reproduction selon le protocole CSRPN).
+          </p>
+</div>
+<div class="shrink-0">
+<a class="px-5 py-2.5 rounded-full bg-surface-container hover:bg-secondary-container text-on-surface font-label-md text-label-md transition-colors" href="#">
+            Consulter les conditions d'usage
+          </a>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+<svg class="block h-12 w-full fill-current text-primary md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+</svg>
+</div>
+</section>
+<!-- =========================================================================
+       5. VOUS ÊTES CHERCHEUR OU STRUCTURE PÉI ? (DÉPÔT & CONTRIBUTION)
+       ========================================================================= -->
+<section class="relative -mt-px w-full overflow-hidden bg-primary pt-16 pb-28 text-inverse-on-surface md:pt-24 md:pb-36">
+<!-- Cercles de rayonnement lagon d'arrière-plan -->
+<div class="absolute -right-20 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary-container/40 blur-3xl pointer-events-none"></div>
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-8 flex flex-col">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-secondary-container font-label-sm text-label-sm uppercase tracking-wider mb-4 self-start">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+            APPEL AUX CHERCHEURS, BUREAUX D'ÉTUDES &amp; ASSOCIATIONS
+          </span>
+<h2 class="font-headline-lg text-headline-lg font-bold tracking-tight text-white mb-6 leading-snug">
+            Contribuez à la mémoire scientifique de La Réunion : Déposez vos travaux dans le centre ARB
+          </h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-8 max-w-2xl leading-relaxed">
+            Vous avez mené une thèse universitaire, une étude d'impact écologique, un inventaire d'espèces ou un programme de conservation soutenu par des fonds publics ? Déposez vos rapports et jeux de données brutes pour garantir leur archivage pérenne, leur référencement DOI et leur valorisation auprès des décideurs du territoire.
+          </p>
+<div class="flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-secondary-container text-on-secondary-fixed font-label-lg text-label-lg font-bold hover:bg-primary-fixed shadow-lg transition-all active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined text-[22px]">publish</span>
+<span>Soumettre une publication scientifique</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-primary-container/80 text-inverse-on-surface hover:bg-primary-container font-label-lg text-label-lg transition-colors border-0" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span>Consulter la charte de dépôt CSRPN</span>
+</a>
+</div>
+</div>
+<!-- Encadré procédure d'évaluation -->
+<div class="lg:col-span-4 bg-primary-container/70 rounded-xl p-8 backdrop-blur-sm">
+<span class="font-label-lg text-label-lg text-secondary-container uppercase tracking-wider font-bold block mb-4">
+            Processus de validation
+          </span>
+<ul class="flex flex-col gap-4 text-on-primary-container font-body-sm text-body-sm">
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-primary text-secondary-container flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
+<div><strong>Soumission en ligne :</strong> Dépôt du manuscrit PDF, métadonnées TAXREF et fichiers sources.</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-primary text-secondary-container flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
+<div><strong>Vérification de sensibilité :</strong> Contrôle des localisations d'espèces à fort enjeu de braconnage.</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-primary text-secondary-container flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</div>
+<div><strong>Indexation et DOI :</strong> Intégration dans le catalogue ARB et moissonnage SINP / Borbonica sous 15 jours.</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+</svg>
+</div>
+</section>
+<!-- =========================================================================
+       6. FAQ DU CENTRE DE RESSOURCES (ACCORDÉONS ACCESSIBLES)
+       ========================================================================= -->
+<section class="relative -mt-px w-full bg-surface py-12 md:py-20">
+<div class="w-full max-w-[960px] mx-auto px-gutter-mobile md:px-gutter">
+<div class="text-center mb-12">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold block mb-2">
+          AIDE &amp; BONNES PRATIQUES
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight mb-4">
+          Foire aux questions scientifiques
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+          Tout savoir sur l'utilisation, la réutilisation légale et la citation des documents répertoriés par l'Agence.
+        </p>
+</div>
+<!-- Accordéons FAQ -->
+<div class="flex flex-col gap-4" id="faq-accordion">
+<!-- Question 1 -->
+<details class="group bg-surface-container-low rounded-lg p-6 [&amp;_summary::-webkit-details-marker]:hidden cursor-pointer" open="">
+<summary class="flex items-center justify-between font-headline-sm text-headline-sm text-primary font-bold list-none">
+<span>Sous quels formats puis-je télécharger les jeux de données brutes ?</span>
+<span class="material-symbols-outlined text-[24px] text-secondary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+            La plupart des inventaires et synthèses quantitatives sont téléchargeables sous forme de fichiers tabulaires ouverts (.CSV, .GeoJSON ou classeurs .XLSX documentés). Les géodonnées spatiales associées (périmètres d'études, corridors) sont également exportables en couches SIG Shapefile ou requêtables directement via les flux WFS Borbonica.
+          </p>
+</details>
+<!-- Question 2 -->
+<details class="group bg-surface-container-low rounded-lg p-6 [&amp;_summary::-webkit-details-marker]:hidden cursor-pointer">
+<summary class="flex items-center justify-between font-headline-sm text-headline-sm text-primary font-bold list-none">
+<span>Puis-je réutiliser ces rapports dans le cadre d'un dossier commercial ou d'urbanisme ?</span>
+<span class="material-symbols-outlined text-[24px] text-secondary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+            Oui, la grande majorité des publications est mise à disposition sous licence ouverte Etalab 2.0 ou CC-BY. Vous êtes libres d'exploiter, citer et intégrer ces données dans vos études d'impact environnemental, dossiers d'autorisation environnementale ou documents d'urbanisme (PLU, SCoT), à condition expresse de citer formellement les auteurs, la date et la source ARB Réunion / CSRPN.
+          </p>
+</details>
+<!-- Question 3 -->
+<details class="group bg-surface-container-low rounded-lg p-6 [&amp;_summary::-webkit-details-marker]:hidden cursor-pointer">
+<summary class="flex items-center justify-between font-headline-sm text-headline-sm text-primary font-bold list-none">
+<span>Comment obtenir des données brutes masquées pour les espèces sensibles ?</span>
+<span class="material-symbols-outlined text-[24px] text-secondary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+            Certaines espèces vulnérables au pillage (orchidées endémiques rares, stations de nidification de rapaces ou de pétrels) font l'objet d'un floutage communal standard. Pour accéder aux coordonnées GPS précises dans le cadre exclusif d'une mission de recherche ou d'une étude d'impact réglementaire, une demande d'accès dérogatoire doit être adressée à la DEAL et au CSRPN via notre guichet d'agrément.
+          </p>
+</details>
+<!-- Question 4 -->
+<details class="group bg-surface-container-low rounded-lg p-6 [&amp;_summary::-webkit-details-marker]:hidden cursor-pointer">
+<summary class="flex items-center justify-between font-headline-sm text-headline-sm text-primary font-bold list-none">
+<span>Comment faire référencer notre propre organisme parmi les partenaires contributeurs ?</span>
+<span class="material-symbols-outlined text-[24px] text-secondary group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+            Toute structure morale (association de protection de la nature, bureau d'études spécialisé, laboratoire universitaire, collectivité) intervenant à La Réunion peut signer la charte partenariale du SINP Réunion. Contactez l'équipe Observatoire &amp; Données de l'ARB pour obtenir un compte contributeur qualifié.
+          </p>
+</details>
+</div>
+<!-- Support direct -->
+<div class="text-center mt-12">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">
+          Vous n'avez pas trouvé la référence recherchée ou vous avez besoin d'une archive historique antérieure à 2010 ?
+        </p>
+<a class="inline-flex items-center gap-1.5 text-primary-container font-label-lg text-label-lg font-bold hover:underline underline-offset-4" data-path="contact" href="/contact">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Contacter les documentalistes scientifiques de l'ARB</span>
+</a>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       7. RACCORD VISUEL FINAL AVEC LA VAGUE DU FOOTER SHELL
+       ========================================================================= -->
+<!-- Note : Le footer du shell possède déjà son SVG d'entrée avec fill-surface, 
+       donc la section précédente se terminant sur bg-surface s'emboîte au pixel près sans rupture. -->
+</div>
+</main>
+  <Footer />
+</Base>
+
+<script>
+  import '../../scripts/ressources.js';
+</script>

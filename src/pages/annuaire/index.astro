@@ -1,0 +1,978 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Base title="Annuaire des acteurs — ARB Réunion">
+  <Header current="annuaire" />
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION -->
+<section class="page-hero relative overflow-hidden pt-8 pb-24 lg:pt-14 lg:pb-32">
+<div class="max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+<!-- Breadcrumb & Sur-titre -->
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/60 text-primary-container font-label-sm text-label-sm uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+          RÉSEAU PROFESSIONNEL &amp; TERRITORIAL PÉI
+        </span>
+</div>
+<!-- Titre & Châpo -->
+<div class="max-w-4xl">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight mb-space-md">
+          Annuaire des Acteurs de la Biodiversité à La Réunion
+        </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-3xl leading-relaxed">
+          Cartographiez, identifiez et collaborez avec plus de 240 structures engagées dans la préservation, la restauration et la valorisation des écosystèmes terrestres, marins et d'eau douce de l'île.
+        </p>
+</div>
+<!-- Main Search Console -->
+<div class="mt-space-lg bg-surface-container-lowest rounded-lg p-space-sm md:p-space-md shadow-xl border-none">
+<form class="grid grid-cols-1 lg:grid-cols-12 gap-space-sm items-center" id="annuaire-search">
+<!-- Text Input with Autocomplete mock -->
+<div class="lg:col-span-5 relative">
+<label class="block font-label-sm text-label-sm text-secondary mb-1">Mot-clé, organisme ou compétence</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[22px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container/40 transition-all placeholder:text-outline" id="search-input" placeholder="Ex : Kélonia, CBNM, génie végétal, Saint-Paul..." type="text">
+</div>
+  </div>
+<!-- Select: Typologie d'acteur -->
+<div class="lg:col-span-3">
+<label class="block font-label-sm text-label-sm text-secondary mb-1">Typologie d'acteur</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px]">account_balance</span>
+<select class="w-full pl-9 pr-8 py-2.5 rounded-full bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container/40 transition-all appearance-none cursor-pointer" id="filter-type">
+<option value="">Toutes les typologies</option>
+<option value="public">Collectivités &amp; Établissements publics</option>
+<option value="gest">Gestionnaires d'espaces naturels &amp; Parcs</option>
+<option value="recherche">Laboratoires &amp; Recherche scientifique</option>
+<option value="asso">Associations &amp; ONG péi</option>
+<option value="bureau">Bureaux d'études &amp; Génie écologique</option>
+<option value="pepiniere">Pépinières agréées Végétal Péi</option>
+        </select>
+<span class="material-symbols-outlined absolute right-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Select: Micro-région -->
+<div class="lg:col-span-2">
+<label class="block font-label-sm text-label-sm text-secondary mb-1">Micro-région</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px]">explore</span>
+<select class="w-full pl-9 pr-8 py-2.5 rounded-full bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container/40 transition-all appearance-none cursor-pointer" id="filter-region">
+<option value="">Toute l'île</option>
+<option value="ouest">Micro-région Ouest</option>
+<option value="nord">Micro-région Nord</option>
+<option value="sud">Micro-région Sud</option>
+<option value="est">Micro-région Est</option>
+<option value="hauts">Cirques &amp; Hauts</option>
+        </select>
+<span class="material-symbols-outlined absolute right-3 pointer-events-none text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="lg:col-span-2 self-end pt-2 lg:pt-0">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-space-md rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg hover:bg-primary transition-all shadow-md group" type="submit">
+<span>Filtrer</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">tune</span>
+</button>
+</div>
+    </form>
+</div>
+<!-- Quick Metrics Counters -->
+<div class="mt-space-lg grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<div class="bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3 shadow-sm">
+<div class="w-11 h-11 shrink-0 rounded-full bg-secondary-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">domain</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-md text-headline-md font-bold text-primary-container leading-none">248</div>
+<div class="mt-1 font-label-md text-label-md text-on-surface leading-tight">structures référencées</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3 shadow-sm">
+<div class="w-11 h-11 shrink-0 rounded-full bg-secondary-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-md text-headline-md font-bold text-primary-container leading-none">4 pôles</div>
+<div class="mt-1 font-label-md text-label-md text-on-surface leading-tight">d'action majeurs</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3 shadow-sm">
+<div class="w-11 h-11 shrink-0 rounded-full bg-secondary-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">location_city</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-md text-headline-md font-bold text-primary-container leading-none">24 / 24</div>
+<div class="mt-1 font-label-md text-label-md text-on-surface leading-tight">communes couvertes</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3 shadow-sm">
+<div class="w-11 h-11 shrink-0 rounded-full bg-secondary-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-md text-headline-md font-bold text-primary-container leading-none">100%</div>
+<div class="mt-1 font-label-md text-label-md text-on-surface leading-tight">expertises certifiées ARB</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+<svg class="w-full h-12 md:h-20 text-surface-container fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+</svg>
+</div>
+</section>
+<!-- 2. CARTOGRAPHIE & EXPLORATION GÉOGRAPHIQUE -->
+<section class="bg-surface-container py-space-xl -mt-px">
+<div class="max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<!-- Section Header with Switch Buttons -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-1">RÉPARTITION GÉOGRAPHIQUE</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-primary">
+            Implantation insulaire des structures partenaires
+          </h2>
+</div>
+<!-- Toggle Switcher -->
+<div class="inline-flex p-1 rounded-full bg-surface-container-high self-start md:self-auto">
+<button type="button" class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface text-primary-container shadow-sm flex items-center gap-1.5 transition-all" id="btn-toggle-map" aria-pressed="true">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>Vue Carte Stylisée</span>
+</button>
+<button type="button" class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-secondary hover:text-primary-container flex items-center gap-1.5 transition-all" id="btn-toggle-list" aria-pressed="false">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+<span>Vue Synthèse</span>
+</button>
+</div>
+</div>
+<!-- Two-column interactive console -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch" id="annuaire-console">
+<!-- Left: real map of Réunion -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-lg p-space-md md:p-space-lg shadow-sm relative" id="map-view">
+<div class="flex flex-wrap items-center gap-2 mb-4" id="map-legend">
+<span class="font-label-sm text-label-sm text-secondary">Légende :</span>
+<button type="button" data-type="public" class="inline-flex items-center gap-1.5 text-xs text-on-surface px-2.5 py-1 rounded-full hover:bg-surface-container transition-colors">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span> Institutions
+</button>
+<button type="button" data-type="gest" class="inline-flex items-center gap-1.5 text-xs text-on-surface px-2.5 py-1 rounded-full hover:bg-surface-container transition-colors">
+<span class="w-3 h-3 rounded-full bg-[#1e6f5c]"></span> Parcs &amp; Réserves
+</button>
+<button type="button" data-type="recherche" class="inline-flex items-center gap-1.5 text-xs text-on-surface px-2.5 py-1 rounded-full hover:bg-surface-container transition-colors">
+<span class="w-3 h-3 rounded-full bg-[#2f5d8c]"></span> Recherche
+</button>
+<button type="button" data-type="bureau" class="inline-flex items-center gap-1.5 text-xs text-on-surface px-2.5 py-1 rounded-full hover:bg-surface-container transition-colors">
+<span class="w-3 h-3 rounded-full bg-[#c07d32]"></span> Bureaux &amp; Experts
+</button>
+<button type="button" data-type="asso" class="inline-flex items-center gap-1.5 text-xs text-on-surface px-2.5 py-1 rounded-full hover:bg-surface-container transition-colors">
+<span class="w-3 h-3 rounded-full bg-[#c84b31]"></span> Associations péi
+</button>
+</div>
+<div class="relative z-0 w-full h-80 md:h-[28rem] rounded-lg overflow-hidden bg-[#d7e4df]" id="reunion-map" role="region" aria-label="Carte de La Réunion"></div>
+<p class="hidden mt-3 text-sm text-secondary" id="map-empty">Aucune structure ne correspond à ces filtres sur la carte.</p>
+<p class="mt-3 text-xs text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">info</span>
+Cliquez sur un repère pour ouvrir la fiche. La légende filtre les structures.
+</p>
+</div>
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-lg p-space-md md:p-space-lg shadow-sm" id="synthese-view" hidden>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Synthèse des structures</h3>
+<p class="font-body-sm text-body-sm text-secondary mb-space-sm" id="synthese-count"></p>
+<div class="divide-y divide-surface-container" id="synthese-list"></div>
+<p class="hidden text-sm text-secondary" id="synthese-empty">Aucune structure ne correspond à ces filtres.</p>
+</div>
+<!-- Right: Territorial Breakdown Card List -->
+<div class="lg:col-span-4 flex flex-col justify-start gap-space-sm">
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm flex items-center justify-between">
+<span>Pôles Territoriaux</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded-full">5 zones</span>
+</h3>
+<p class="font-body-sm text-body-sm text-secondary mb-space-md">
+              Les structures se répartissent sur l'ensemble des bassins versants insulaires, du lagon aux plus hauts pitons.
+            </p>
+<ul class="space-y-space-sm" id="region-list">
+<li data-region="ouest" tabindex="0" role="button" aria-pressed="false" class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-secondary-container/40 transition-colors cursor-pointer group">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary-container">Micro-région Ouest</span>
+</div>
+<span class="font-label-md text-label-md bg-surface-container px-2.5 py-0.5 rounded-full text-primary-container font-semibold">78 acteurs</span>
+</li>
+<li data-region="nord" tabindex="0" role="button" aria-pressed="false" class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-secondary-container/40 transition-colors cursor-pointer group">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary-container">Micro-région Nord</span>
+</div>
+<span class="font-label-md text-label-md bg-surface-container px-2.5 py-0.5 rounded-full text-primary-container font-semibold">64 acteurs</span>
+</li>
+<li data-region="sud" tabindex="0" role="button" aria-pressed="false" class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-secondary-container/40 transition-colors cursor-pointer group">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#c07d32]"></span>
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary-container">Micro-région Sud</span>
+</div>
+<span class="font-label-md text-label-md bg-surface-container px-2.5 py-0.5 rounded-full text-primary-container font-semibold">52 acteurs</span>
+</li>
+<li data-region="est hauts" tabindex="0" role="button" aria-pressed="false" class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-secondary-container/40 transition-colors cursor-pointer group">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1e6f5c]"></span>
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary-container">Est, Cirques &amp; Hauts</span>
+</div>
+<span class="font-label-md text-label-md bg-surface-container px-2.5 py-0.5 rounded-full text-primary-container font-semibold">34 acteurs</span>
+</li>
+<li data-region="soi" tabindex="0" role="button" aria-pressed="false" class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-secondary-container/40 transition-colors cursor-pointer group">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary-container">Envergure Sud Océan Indien</span>
+</div>
+<span class="font-label-md text-label-md bg-surface-container px-2.5 py-0.5 rounded-full text-primary-container font-semibold">20 acteurs</span>
+</li>
+</ul>
+</div>
+<!-- Highlight Box -->
+<div class="bg-secondary-container/50 rounded-lg p-space-md text-primary-container">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold">Réseau Opérationnel ARB</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+                  Chaque entité répertoriée dispose d'une fiche d'agrément validée par le comité scientifique de l'Agence Régionale de la Biodiversité.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ORGANIC WAVE DIVIDER: surface-container to surface-bright -->
+<div class="w-full text-surface-bright bg-surface-container leading-none select-none pointer-events-none -mt-1">
+<svg class="w-full h-10 md:h-16" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 1440 64">
+<path d="M0,32 C260,-10 520,60 780,24 C1040,-12 1280,50 1440,20 L1440,64 L0,64 Z"></path>
+</svg>
+</div>
+<!-- 3. FILTRES AVANCÉS & FACETTES THEMATIQUES -->
+<section class="bg-surface-bright py-space-md">
+<div class="max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<!-- Facet: Types de structures -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">category</span>
+            TYPES DE STRUCTURE
+          </span>
+<span class="text-xs text-secondary font-label-sm" id="results-count">9 résultats</span>
+</div>
+<div class="flex flex-wrap gap-2" id="filter-types">
+<button type="button" data-type="" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-primary-container text-inverse-on-surface shadow-sm transition-all">
+            Tous <span class="ml-1 opacity-80" data-count>(9)</span>
+</button>
+<button type="button" data-type="public" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface hover:bg-secondary-container hover:text-primary-container transition-all">
+            Collectivités &amp; Établissements publics <span class="ml-1 text-secondary" data-count>(1)</span>
+</button>
+<button type="button" data-type="gest" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface hover:bg-secondary-container hover:text-primary-container transition-all">
+            Gestionnaires d'espaces naturels &amp; Parcs <span class="ml-1 text-secondary" data-count>(3)</span>
+</button>
+<button type="button" data-type="recherche" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface hover:bg-secondary-container hover:text-primary-container transition-all">
+            Laboratoires &amp; Recherche scientifique <span class="ml-1 text-secondary" data-count>(3)</span>
+</button>
+<button type="button" data-type="asso" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface hover:bg-secondary-container hover:text-primary-container transition-all">
+            Associations de protection de la nature <span class="ml-1 text-secondary" data-count>(2)</span>
+</button>
+<button type="button" data-type="bureau" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface hover:bg-secondary-container hover:text-primary-container transition-all">
+            Bureaux d'études &amp; Génie écologique <span class="ml-1 text-secondary" data-count>(1)</span>
+</button>
+<button type="button" data-type="pepiniere" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface hover:bg-secondary-container hover:text-primary-container transition-all">
+            Pépinières agréées Végétal Péi <span class="ml-1 text-secondary" data-count>(0)</span>
+</button>
+</div>
+</div>
+<!-- Facet: Domaines d'expertise & Tri -->
+<div class="pt-space-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-2" id="filter-expertises">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+            EXPERTISES :
+          </span>
+<button type="button" data-expertise="marin" class="px-3 py-1 rounded-full text-xs font-label-md bg-surface-container-low text-secondary hover:bg-secondary-container hover:text-primary-container transition-colors">
+            Milieu marin &amp; récifs
+          </button>
+<button type="button" data-expertise="forets" class="px-3 py-1 rounded-full text-xs font-label-md bg-surface-container-low text-secondary hover:bg-secondary-container hover:text-primary-container transition-colors">
+            Forêts indigènes &amp; semi-sèches
+          </button>
+<button type="button" data-expertise="eee" class="px-3 py-1 rounded-full text-xs font-label-md bg-surface-container-low text-secondary hover:bg-secondary-container hover:text-primary-container transition-colors">
+            Lutte contre les EEE
+          </button>
+<button type="button" data-expertise="avifaune" class="px-3 py-1 rounded-full text-xs font-label-md bg-surface-container-low text-secondary hover:bg-secondary-container hover:text-primary-container transition-colors">
+            Trame noire &amp; avifaune
+          </button>
+<button type="button" data-expertise="education" class="px-3 py-1 rounded-full text-xs font-label-md bg-surface-container-low text-secondary hover:bg-secondary-container hover:text-primary-container transition-colors">
+            Sensibilisation &amp; éducation
+          </button>
+<button type="button" data-expertise="droit" class="px-3 py-1 rounded-full text-xs font-label-md bg-surface-container-low text-secondary hover:bg-secondary-container hover:text-primary-container transition-colors">
+            Droit &amp; réglementation
+          </button>
+</div>
+<!-- Tri Sélecteur -->
+<div class="flex items-center gap-2 self-end lg:self-auto">
+<span class="font-label-sm text-label-sm text-secondary">Trier par :</span>
+<div class="relative">
+<select class="pl-3 pr-8 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer appearance-none" id="filter-sort">
+<option value="pertinence">Pertinence</option>
+<option value="alpha">Alphabétique (A-Z)</option>
+<option value="recent">Récemment mis à jour</option>
+<option value="commune">Par Commune</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-secondary text-[16px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. GRILLE DES FICHES D'ACTEURS (Cartes riches et détaillées) -->
+<section class="bg-surface-bright py-space-lg">
+<div class="max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="actor-grid">
+<!-- FICHE 1 : Parc National de La Réunion -->
+<article data-actor data-id="parc" data-types="public gest" data-regions="hauts" data-expertises="forets" data-name="Parc National de La Réunion" data-place="La Plaine-des-Palmistes" data-updated="7" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Spectacular aerial view of the lush volcanic cirques and dramatic ridges of the Piton des Neiges in La Reunion island, enveloped in misty morning subtropical light with endemic cloud forest canopies in deep green tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSwJOE9H5ddNjSMZQDvl2bq6AnXPg80VrMCxUvrj6M4dYAYeJzOOWsiUtUsUF1hJjMzIT-rpXSsCvKSfUJu5Gg5uxaTCJSl9uHDj6b6aADlu7B6ZZdp3NAHJOk1PottiOwt2IoZg2wHDo1tpdP0JowNitCw8Ewas-8o892QjUsHqemWd0yiY3yr68wSG5IFAypeU3H6-YQESnuKDfMwYLmrH2w2SOR5WNiAX1N3QhG">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-inverse-on-surface font-label-sm text-label-sm">
+                  Établissement public
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur text-primary-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-[#c07d32]">star</span> UNESCO
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>La Plaine-des-Palmistes • Hauts &amp; Cirques</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                Parc National de La Réunion
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Gestionnaire de plus de 42% du territoire insulaire classé au Patrimoine Mondial de l'UNESCO. Surveillance, préservation des reliques de forêts primaires et programmes de lutte active contre les espèces exotiques envahissantes.
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Gestionnaire d'espace
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Habitats d'altitude
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Recherche &amp; Suivi
+                </span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FICHE 2 : Conservatoire Botanique National de Mascarin (CBNM) -->
+<article data-actor data-id="cbnm" data-types="recherche" data-regions="ouest" data-expertises="forets" data-name="CBNM — Conservatoire Botanique National de Mascarin" data-place="Saint-Leu" data-updated="5" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Macro photography of an extremely rare endemic flowering plant from Reunion Island Mascarene biodiversity, lush botanical garden foliage with rich chlorophyll emerald greens and soft natural golden sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBunx9N1C1pQ6ifbIW8qxm6sCtb6rBkTZHj0llIagRglkQytiMOrHQkotoT7B4Z83TMJTU1k_gWs1H8T9KItPE_JNofrpPX3Th3JjkzLTwgfsdRhuWWmXEaZFF2mRPNsbJtY0wPZ84suHdQ__47u7VXGUVEbnFRB4kzMMTaM03biYegOgSi9Tjpsu3hzeggb3i9UJHGiHrwLncIHbk_vEL42pP4hWonUlRN_KCMPYa1">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-[#1e6f5c] text-inverse-on-surface font-label-sm text-label-sm">
+                  Pôle scientifique &amp; Conservatoire
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">eco</span> Végétal Péi
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Saint-Leu (Les Colimaçons) • Ouest</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                CBNM — Conservatoire Botanique National de Mascarin
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Autorité scientifique d'évaluation de la flore sauvage et des habitats naturels des Mascareignes. Gestion d'une banque de semences cryogéniques, appui technique aux pépiniéristes et label Végétal Péi.
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Flore indigène
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Semences Péi
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Conseil aménageurs
+                </span>
+</div>
+</div>
+</div>
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FICHE 3 : Kélonia - Observatoire des tortues marines -->
+<article data-actor data-id="kelonia" data-types="recherche" data-regions="ouest" data-expertises="marin education" data-name="Kélonia — Observatoire des Tortues Marines" data-place="Saint-Leu" data-updated="9" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Green sea turtle swimming gracefully through crystal clear turquoise ocean water over a vibrant coral reef in Saint-Leu Reunion Island, glowing tropical underwater light with soft caustic reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuu44lvj_noM4C4O8kx5tfqA99FqPiNwvYijpNwzwB3CCYLQKwEkbDgANtM3Sa2gj3lgxO7EgRj9_pX6EQCUVvlZHnTXnHk1JdjGPrdNxDfakj180aRF3gxy_HsaNRfIjCu3sjKOH79ZzXbvuqkL_SerliXAfbhEnVagzNELVcPSNXE-SmkxVuuK9mpY7XtqYH7cfECDRyB0bBXiOFWaCRMOo8zK4fwAsqUVz5seOF">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-inverse-on-surface font-label-sm text-label-sm">
+                  Centre d'étude &amp; de soins
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur text-primary-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-[#1e6f5c]">water</span> Milieu marin
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Saint-Leu (Pointe des Châteaux) • Ouest</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                Kélonia — Observatoire des Tortues Marines
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Pôle de référence pour l'étude éco-biologique des chéloniens marins de l'Océan Indien occidental. Hôpital faune sauvage marine, suivi satellitaire Argos des pontes et sensibilisation tout public.
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Soins faune marine
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Télémétrie satellitaire
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Éducation
+                </span>
+</div>
+</div>
+</div>
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FICHE 4 : SEOR (Société d'Études Ornithologiques de La Réunion) -->
+<article data-actor data-id="seor" data-types="asso" data-regions="est" data-expertises="avifaune" data-name="SEOR — Études Ornithologiques de La Réunion" data-place="Saint-André" data-updated="8" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An endemic Petrel of Barau seabird gliding over the rugged volcanic peaks of Reunion Island against a dramatic sunset sky with soft coral and indigo hues, sharp avian details and environmental realism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL6PoYxtloRYqtQiYHabox-UuAndxqFMq40LKZbMkqz-qzc_jJiPRcQNk-b4rc6SfBD_q8ykH47D4-qoDtWdSfTME3lb4wFqraRYR2_Mg4b7UhjIjdr5VA3wTxstjBW6um6xuvg5X1etA4pjnVarlKoaTj3nELj_GUG0hjq8zw10CORMtqmYGxJpnMMO8aVfx0tsYx_dAQLbBxBmZlz672dcmVGLqsrTCYLCAQGxiA">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-[#c84b31] text-inverse-on-surface font-label-sm text-label-sm">
+                  Association loi 1901
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">priority_high</span> Urgence Pétrels
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Saint-André • Est</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                SEOR — Études Ornithologiques de La Réunion
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Opérateur majeur de la sauvegarde des pétrels de Barau et de Bourbon, du Tuit-tuit et des oiseaux marins. Réseau insulaire de sauvetage en période d'échouage lumineux (« Les Nuits sans Lumière »).
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Avifaune endémique
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Trame noire
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Sauvetage faune
+                </span>
+</div>
+</div>
+</div>
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FICHE 5 : Réserve Naturelle Nationale Marine de La Réunion (RNMR) -->
+<article data-actor data-id="rnmr" data-types="gest" data-regions="ouest" data-expertises="marin" data-name="RNMR — Réserve Naturelle Marine de La Réunion" data-place="La Saline-les-Bains" data-updated="6" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Intact barrier coral reef ecosystem along the west coast lagoon of Saint-Gilles La Reunion, colorful table corals, tropical reef fish swimming, shallow aquamarine water blending with deep ocean blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHu0Pu0vCQw6o-m3sokr1t2Y1LIaaZqChYfnmvXIip6U3iyrZ3rwSuuHkTPAJtg-rMfQ3lnDUhlzJWlgqLJ_oiPF66yCFro_6Jv1MKjNdKRf9nzQnreUBRsZM6qtFXdy6GsJBeeMypwey1uu4rW-Tl7ZUbcB5nKfamiDYKPta7JK9Aybt4kpGPrSGuK4MdH9i5R7MXpbcZmsEhQ9kQSLfkaVghKJRwysDa27sBdLgg">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-inverse-on-surface font-label-sm text-label-sm">
+                  Gestionnaire espace protégé
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">waves</span> 40 km de récifs
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>La Saline-les-Bains • Ouest</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                RNMR — Réserve Naturelle Marine de La Réunion
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Protection et suivi scientifique de 40 km de récifs frangeants de Saint-Paul à l'Étang-Salé. Police de l'environnement marin, régulation des usages côtiers et régénération de la biodiversité corallienne.
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Récif corallien
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Surveillance côtière
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Suivi ichtyologique
+                </span>
+</div>
+</div>
+</div>
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FICHE 6 : Sté Réunionnaise d'Écologie Urbaine & Génie Végétal -->
+<article data-actor data-id="genie" data-types="bureau" data-regions="nord" data-expertises="" data-name="Écologie Urbaine & Génie Végétal Péi" data-place="Sainte-Marie" data-updated="4" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bio-engineering hillside soil stabilization project in Reunion Island using native endemic vetiver and local shrubs, restoring a steep eroded volcanic ravine slope with ecological bio-restoration technique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZRmGlpxNACJA_j-xGqMK-WSSn1Nek9TPNZw3swumnqkFp2xMyPQQ8csxLBV6X6bCX-xpwRHPI_xs1dXDGQBE6aB2kk4aPt0Fvw2FwCI3AVuPjywxBE8pluMVlo9cndmrf_IoRqEH0zDwbBMFTtAQHSjQTT9DSVt1dMdaq4coxgK1BnMOaw0qzW6FvMh_E02o3j21nMzhOwqowkKreu0RPQs6D1flbV0j1yndvPB99">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-[#c07d32] text-inverse-on-surface font-label-sm text-label-sm">
+                  Bureau d'études certifié
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">nature_people</span> Génie Péi
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Sainte-Marie • Nord</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                Écologie Urbaine &amp; Génie Végétal Péi
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Opérateur privé expert en revégétalisation de talus et ravines dégradées par génie végétal exclusif Mascareignes. Conception de trames vertes urbaines et audits pour les collectivités réunionnaises.
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Génie végétal
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Trames vertes
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Restauration ravines
+                </span>
+</div>
+</div>
+</div>
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FICHE 7 : Réserve Naturelle Nationale de l'Étang de Saint-Paul -->
+<article data-actor data-id="etang" data-types="gest" data-regions="ouest" data-expertises="education" data-name="RNN de l'Étang de Saint-Paul" data-place="Saint-Paul" data-updated="3" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Peaceful freshwater coastal wetland at Etang de Saint-Paul Reunion Island, calm water mirrors native papyrus, lush riparian forest trees and mountain reflections under tropical soft warm daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUd7TBiqW4X-VaBdl7_ZNuiI5GKC8O7n8L11IaI-umV1TRec3RXHqyk57-ZpbX0bgwXEyxcaK2iu0WI5uRIPH3l8e9ZBGcuPw2kLGqr5oWqg5OJmp90KsP-n6E3toXjGP_3FdREyYQVuzhIw8nLvms9J_FuajQIwqfIFdEMiLRU7XBP0nVghBaBYPPmZEsmDUOkiHhbesykfT5UXr8AtPkfufK8cvHlbxC4CPG3g8l">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-inverse-on-surface font-label-sm text-label-sm">
+                  Site RAMSAR protégé
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">water_drop</span> Zone humide
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Saint-Paul • Ouest</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                RNN de l'Étang de Saint-Paul (Régie RNNESP)
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Plus grande zone humide littorale protégée des Mascareignes labellisée RAMSAR. Restauration des ripisylves, valorisation de la faune dulçaquicole et sentier subaquatique d'eau douce.
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Zone RAMSAR
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Faune aquatique
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Sentiers pédagogiques
+                </span>
+</div>
+</div>
+</div>
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FICHE 8 : GCEIP (Groupe Espèces Invasives de La Réunion) -->
+<article data-actor data-id="gceip" data-types="recherche" data-regions="nord" data-expertises="eee" data-name="GCEIP — Lutte contre les Espèces Invasives" data-place="Saint-Denis" data-updated="2" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Conservation biologists conducting fieldwork in a tropical forest in Reunion Island, inspecting and managing invasive species to protect native endemic ecosystem, authentic scientific field action." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk-xwtZUHd2bMn595Rd3g1is8SdOV6Co_AYucm_fc3TuJC6ypQtLZGKptD-L-RP8seDBDDuc9gD6EIMQ_-86rvbPzxcBhtmANZu4SaV8WS0r7K80gkxkXFMh91N2DpVrCbSXuo9RwAvbGq6pfk1gpavrOV13RHGjf6oSoNymMzAkR8Bfol0My567pAGQOveXexKMTq1u4WJhKG55Kq6ln739aECFTszWGBOPaGS6zU">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-inverse-on-surface font-label-sm text-label-sm">
+                  Groupement d'expertise
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">bug_report</span> Biosécurité
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Saint-Denis / Toute l'île</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                GCEIP — Lutte contre les Espèces Invasives
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Coordination technique et opérationnelle de la lutte contre les plantes et animaux exotiques envahissants menaçant l'équilibre biologique des forêts et cours d'eau réunionnais.
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Biosécurité insulaire
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Alerte précoce
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Régulation EEE
+                </span>
+</div>
+</div>
+</div>
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FICHE 9 : Association Ti Tuit & Sentinelles du Relictuel -->
+<article data-actor data-id="sentinelles" data-types="asso" data-regions="hauts" data-expertises="education forets" data-name="Sentinelles des Hauts & Forêts Relictuelles" data-place="Cilaos" data-updated="1" class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Volunteers and local eco-guards planting endemic mountain shrubs on high plateau ridge in Reunion Island with sweeping vistas over Cirque de Cilaos, morning clean atmosphere and community spirit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7IwRuRTDbcdW_S1RCO_BsTAiWTf98yeHkFOZPfA8x0gijoSqqPeWSpPTMc5PE9idhN7h1BMB1rbN6uppTMscZDo4Tgl-_Ti5BtgN2z1D9Sx7ep4xbZW0OIj1ypmyuZTk-UBb_XwycIk7b3f78cefyanR7A3hUtkqBAQ3TLgyE_s_A3ujYvBzUGJyCBqHwAsZl-cJb7JRnMJCSAcLSSyuVWPcaWndD3ler0ZupLr8o">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2.5 py-1 rounded-full bg-[#c84b31] text-inverse-on-surface font-label-sm text-label-sm">
+                  Collectif citoyen péi
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">groups</span> Sciences participatives
+                </span>
+</div>
+</div>
+<div class="p-space-md">
+<div class="flex items-center gap-1 text-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Cilaos • Cirques</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors mb-2">
+                Sentinelles des Hauts &amp; Forêts Relictuelles
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-3 mb-space-sm leading-relaxed">
+                Mobilisation citoyenne pour la restauration participative des couloirs écologiques d'altitude, chantiers bénévoles d'arrachage des invasives et inventaires participatifs de la flore d'éboulis.
+              </p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap gap-1.5 mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-primary-container font-label-sm text-label-sm">
+                  Chantiers nature
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Jeunesse péi
+                </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+                  Restauration
+                </span>
+</div>
+</div>
+</div>
+<div class="px-space-md pb-space-md pt-2 flex items-center justify-between border-t border-surface-container/60">
+<span class="text-xs font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span> Fiche vérifiée ARB
+            </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary font-semibold group/btn" href="#">
+<span>Détails</span>
+<span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+<p class="hidden mt-space-lg text-center font-body-md text-body-md text-secondary" id="actor-empty">Aucune structure ne correspond à ces filtres.</p>
+<!-- Modern Pagination Element -->
+<div class="mt-space-xl flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="font-body-sm text-body-sm text-secondary" id="actor-range">
+          Affichage de <span class="font-bold text-on-surface">1 à 9</span> sur <span class="font-bold text-on-surface">248</span> structures actives
+        </div>
+<nav class="flex items-center gap-1.5" id="actor-pager" aria-label="Pagination des structures"></nav>
+</div>
+</div>
+</section>
+<!-- ORGANIC WAVE DIVIDER: surface-bright to surface-container-high -->
+<div class="w-full text-surface-container-high bg-surface-bright leading-none select-none pointer-events-none -mt-1">
+<svg class="w-full h-10 md:h-16" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 1440 64">
+<path d="M0,20 C340,70 680,-10 1020,44 C1220,74 1360,18 1440,30 L1440,64 L0,64 Z"></path>
+</svg>
+</div>
+<!-- 5. ESPACE « REJOINDRE L'ANNUAIRE » / RÉFÉRENCEMENT -->
+<section class="bg-surface-container-high py-space-xl relative overflow-hidden">
+<!-- Soft Decorative Blobs -->
+<div class="absolute -right-24 top-0 w-96 h-96 rounded-full bg-secondary-container/30 blur-3xl pointer-events-none"></div>
+<div class="max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+<div class="bg-gradient-to-br from-primary-container to-primary rounded-xl p-space-lg md:p-space-xl text-inverse-on-surface shadow-xl relative overflow-hidden">
+<!-- Botanical Vector Accent in Corner -->
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+<svg fill="currentColor" height="340" viewBox="0 0 200 200" width="340">
+<path d="M100 0 C120 40 160 80 200 100 C160 120 120 160 100 200 C80 160 40 120 0 100 C40 80 80 40 100 0 Z"></path>
+</svg>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-8">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">app_registration</span>
+              PORTAIL OFFICIEL D'ENREGISTREMENT
+            </span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-inverse-on-surface mb-space-sm">
+              Vous agissez pour la biodiversité à La Réunion ? Référencez votre structure !
+            </h2>
+<p class="font-body-md text-body-md text-on-primary-container max-w-2xl leading-relaxed mb-space-md">
+              L'annuaire officiel de l'ARB Réunion est l'outil institutionnel consulté en priorité par les collectivités locales, les maîtres d'ouvrages publics et privés et la communauté scientifique pour constituer des consortiums, lancer des appels à projets et solliciter des expertises de terrain.
+            </p>
+<!-- Critères Clés -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm mb-space-md">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[20px] shrink-0">check_circle</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface">Siège ou antenne établie à La Réunion</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[20px] shrink-0">check_circle</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface">Adhésion à la charte de l'ARB</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[20px] shrink-0">check_circle</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface">Compétences validées par nos comités</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-md">
+<a class="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-full bg-secondary-container text-primary-container font-label-lg text-label-lg hover:bg-surface-bright transition-all shadow-md font-bold" href="#">
+<span>Proposer ma structure (Gratuit)</span>
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-space-md py-3 rounded-full bg-transparent hover:bg-primary/50 text-inverse-on-surface font-label-lg text-label-lg transition-all underline underline-offset-4" href="#">
+<span>Mettre à jour une fiche existante</span>
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</a>
+</div>
+</div>
+<!-- Right Callout Badge Box -->
+<div class="lg:col-span-4 bg-primary/40 backdrop-blur rounded-lg p-space-md border border-primary/20 flex flex-col gap-space-sm text-on-primary-container">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[26px]">handshake</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-inverse-on-surface leading-tight">Synergie &amp; Réseau</div>
+<div class="font-label-sm text-label-sm text-secondary-container">Fédérer la communauté péi</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm leading-relaxed text-inverse-on-surface/90">
+              « L'annuaire a permis à notre commune de trouver en moins de 48h un écologue spécialisé dans la ripisylve pour sécuriser notre aménagement de ravine. »
+            </p>
+<div class="font-label-sm text-label-sm text-secondary-container">
+              — Direction de l'Aménagement, Territoire de l'Ouest
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ORGANIC WAVE DIVIDER: surface-container-high to surface -->
+<div class="w-full text-surface bg-surface-container-high leading-none select-none pointer-events-none -mt-1">
+<svg class="w-full h-10 md:h-16" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 1440 64">
+<path d="M0,40 C300,10 600,60 900,20 C1140,-10 1340,48 1440,30 L1440,64 L0,64 Z"></path>
+</svg>
+</div>
+<!-- 6. MODULE FOIRE AUX QUESTIONS & MISE EN RELATION -->
+<section class="bg-surface py-space-xl">
+<div class="max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left: Context & Contact Direct -->
+<div class="lg:col-span-5 flex flex-col justify-start">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-2">ASSISTANCE &amp; PROCÉDURES</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-primary mb-space-sm">
+              Questions fréquentes sur le répertoire des acteurs
+            </h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-space-md">
+              Vous avez un projet de restauration écologique, un besoin d'expertise réglementaire ou souhaitez figurer dans le registre officiel de l'île ?
+            </p>
+</div>
+<!-- Contact box -->
+<div class="bg-surface-container-low rounded-lg p-space-md">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">support_agent</span>
+              Besoin d'un accompagnement sur mesure ?
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-space-sm">
+              L'équipe d'animation territoriale de l'ARB Réunion vous oriente vers les experts habilités à votre cahier des charges.
+            </p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary-container hover:underline font-bold" href="#">
+<span>Écrire au pôle Partenariats &amp; Réseau</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right: Styled FAQ Accordion -->
+<div class="lg:col-span-7 flex flex-col gap-space-sm" id="faq-accordion">
+<!-- FAQ Item 1 -->
+<details class="group bg-surface-container-lowest rounded-lg p-space-md shadow-sm transition-all cursor-pointer">
+<summary class="flex items-center justify-between font-headline-sm text-headline-sm text-primary list-none gap-space-sm select-none">
+<span>Qui peut figurer dans l'annuaire des acteurs de l'ARB ?</span>
+<span class="material-symbols-outlined text-secondary group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="mt-space-sm font-body-sm text-body-sm text-secondary leading-relaxed pt-2 border-t border-surface-container/60">
+              L'annuaire est ouvert à toute entité morale basée à La Réunion justifiant d'une activité vérifiable en faveur de la biodiversité : services de l'État, établissements publics, collectivités, associations agréées, laboratoires universitaires, bureaux d'études environnementaux spécialisés et pépiniéristes labellisés « Végétal Péi ». L'inscription est totalement libre et gratuite.
+            </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group bg-surface-container-lowest rounded-lg p-space-md shadow-sm transition-all cursor-pointer">
+<summary class="flex items-center justify-between font-headline-sm text-headline-sm text-primary list-none gap-space-sm select-none">
+<span>Comment sont vérifiées les compétences et les agréments péi ?</span>
+<span class="material-symbols-outlined text-secondary group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="mt-space-sm font-body-sm text-body-sm text-secondary leading-relaxed pt-2 border-t border-surface-container/60">
+              Chaque demande fait l'objet d'un contrôle de conformité par le comité technique de l'ARB : vérification des certifications professionnelles (ex. habilitation génie écologique en milieu tropical), affiliations scientifiques, références de chantiers récents à La Réunion et respect du cadre réglementaire du Code de l'Environnement d'outre-mer.
+            </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group bg-surface-container-lowest rounded-lg p-space-md shadow-sm transition-all cursor-pointer">
+<summary class="flex items-center justify-between font-headline-sm text-headline-sm text-primary list-none gap-space-sm select-none">
+<span>Comment contacter directement une structure pour une expertise ?</span>
+<span class="material-symbols-outlined text-secondary group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="mt-space-sm font-body-sm text-body-sm text-secondary leading-relaxed pt-2 border-t border-surface-container/60">
+              En cliquant sur le bouton « Détails » de n'importe quelle fiche, vous accédez à la page complète de l'organisme incluant ses coordonnées directes (téléphone, courriel du référent biodiversité, adresse physique du siège) ainsi que la liste exhaustive de ses domaines d'intervention et publications scientifiques.
+            </div>
+</details>
+<!-- FAQ Item 4 -->
+<details class="group bg-surface-container-lowest rounded-lg p-space-md shadow-sm transition-all cursor-pointer">
+<summary class="flex items-center justify-between font-headline-sm text-headline-sm text-primary list-none gap-space-sm select-none">
+<span>Qu'est-ce que le label « Végétal Péi » affiché sur certaines fiches ?</span>
+<span class="material-symbols-outlined text-secondary group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="mt-space-sm font-body-sm text-body-sm text-secondary leading-relaxed pt-2 border-t border-surface-container/60">
+              Le label « Végétal Péi » atteste que les plants produits par la pépinière proviennent de graines récoltées dans le milieu naturel réunionnais sans modification génétique ni hybridation, garantissant la conservation du patrimoine génétique local et l'adaptation optimale aux conditions climatiques de nos micro-régions.
+            </div>
+</details>
+</div>
+    </div>
+  </div>
+</section>
+<!-- Interactive script for filter chips and toggles -->
+
+</div></main>
+  <Footer />
+</Base>
+
+<script>
+  import '../../scripts/annuaire.js';
+</script>

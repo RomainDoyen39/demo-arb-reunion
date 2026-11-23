@@ -1,0 +1,44 @@
+---
+interface Props {
+  current?: 'biodiversite' | 'l-arb' | 'annuaire' | 'agenda' | 'ressources' | 'contact';
+}
+
+const { current } = Astro.props;
+
+const links = [
+  { id: 'biodiversite', href: '/biodiversite', label: 'La biodiversité' },
+  { id: 'l-arb', href: '/l-arb', label: "L'ARB" },
+  { id: 'annuaire', href: '/annuaire', label: 'Annuaire' },
+  { id: 'agenda', href: '/agenda', label: 'Agenda' },
+  { id: 'ressources', href: '/ressources', label: 'Ressources' },
+  { id: 'contact', href: '/contact', label: 'Contact' },
+];
+
+const idle = 'font-label-lg text-label-lg text-secondary-container hover:text-surface transition-colors py-2';
+const active = 'font-label-lg text-label-lg text-surface font-bold border-b-2 border-surface py-2';
+---
+
+<header class="fixed top-0 w-full z-50 bg-primary-container text-inverse-on-surface">
+  <div class="h-20 w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin flex items-center justify-between gap-space-md">
+    <a class="flex items-center shrink-0" href="/">
+      <img src="/logo_simple_fond_transparent-1.png" alt="ARB Réunion" width="250" height="220" class="h-14 w-auto" />
+    </a>
+    <nav class="hidden xl:flex items-center gap-space-lg" aria-label="Navigation principale">
+      {
+        links.map((link) => (
+          <a class={link.id === current ? active : idle} href={link.href} aria-current={link.id === current ? 'page' : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex items-center gap-space-md">
+      <a class="inline-flex items-center justify-center min-h-[44px] px-space-lg py-space-xs rounded-full bg-surface text-primary-container hover:bg-secondary-container font-label-lg text-label-lg transition-all" href="/annuaire">
+        Trouver un acteur
+      </a>
+      <div class="w-8 h-8 rounded-full bg-surface/15 flex items-center justify-center">
+        <span class="material-symbols-outlined text-surface text-[18px]">person</span>
+      </div>
+    </div>
+  </div>
+</header>

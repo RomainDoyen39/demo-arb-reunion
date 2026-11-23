@@ -1,0 +1,688 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Base title="Contact et antennes — ARB Réunion">
+  <Header current="contact" />
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- SECTION HERO & FIL D'ARIANE -->
+<section class="page-hero relative w-full overflow-hidden pt-8 pb-28 md:pb-36">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+<!-- Breadcrumb -->
+<nav aria-label="Fil d'Ariane" class="flex items-center gap-space-xs text-secondary mb-6 font-label-md text-label-md">
+<a class="hover:text-primary-container transition-colors flex items-center gap-1" data-path="accueil" href="/">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Accueil</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="text-primary-container font-semibold">Contact &amp; Antennes territoriales</span>
+</nav>
+<!-- Pill Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-secondary-container text-primary-container font-label-md text-label-md mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Proximité insulaire &amp; Accompagnement de terrain</span>
+</div>
+<!-- Main Heading & Intro -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end mb-12">
+<div class="lg:col-span-8 flex flex-col gap-4">
+<h1 class="font-display-lg text-display-lg text-primary-container tracking-tight leading-none">
+            Contact &amp; Antennes territoriales
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+            Échangez directement avec nos équipes d'écologues, botanistes, géomaticiens et chargés de mission. Que vous représentiez une collectivité, un bureau d'études, une association ou le monde citoyen, nos 4 pôles répartis sur les micro-régions de La Réunion vous garantissent un conseil indépendant et ancré dans vos bassins versants.
+          </p>
+</div>
+<div class="lg:col-span-4 flex justify-start lg:justify-end">
+<a class="inline-flex items-center justify-center gap-2 px-space-lg py-3.5 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-lg text-label-lg transition-all shadow-[0_8px_20px_rgba(17,78,74,0.18)]" href="#formulaire-contact">
+<span>Écrire à un référent</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+</div>
+</div>
+<!-- 4 Quick Key Indicators -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="p-space-md rounded-2xl bg-white shadow-sm flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container/60 text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">map</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[16px] text-primary-container font-semibold leading-tight">4 Antennes de proximité</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nord, Ouest, Sud, Est &amp; Cirques</span>
+</div>
+</div>
+<div class="p-space-md rounded-2xl bg-white shadow-sm flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container/60 text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[16px] text-primary-container font-semibold leading-tight">Réponse sous 48h ouvrées</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Prise en charge par un référent</span>
+</div>
+</div>
+<div class="p-space-md rounded-2xl bg-white shadow-sm flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container/60 text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[16px] text-primary-container font-semibold leading-tight">Permanences techniques</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mardis &amp; Jeudis sur rdv</span>
+</div>
+</div>
+<div class="p-space-md rounded-2xl bg-white shadow-sm flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed/70 text-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[16px] text-primary-container font-semibold leading-tight">100% Service public</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Accompagnement neutre &amp; gratuit</span>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+</svg>
+</div>
+</section>
+<!-- SECTION 2 : CARTE & LES 4 ANTENNES TERRITORIALES -->
+<section class="relative -mt-px w-full bg-surface py-12 md:py-16">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-12">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 text-tertiary-container font-label-md text-label-md mb-2 uppercase tracking-widest">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span>Maillage Insulaire</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary-container tracking-tight">
+            Nos 4 antennes de proximité
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+            Un déploiement géographique pensé pour répondre aux spécificités des écosystèmes insulaires : récifs de la côte sous le vent, massifs forestiers hygrophiles de l'Est, téléfériques des Hauts et corridors du Sud sauvage.
+          </p>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/60 text-primary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            Guichets ouverts aujourd'hui
+          </span>
+</div>
+</div>
+<!-- 4 Poles Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Antenne 1: Nord (Siège) -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">corporate_fare</span>
+                Nord &amp; Siège Régional
+              </span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2.5 py-1 rounded-full">
+                Sainte-Marie (La Mare)
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary-container mb-1">
+              Siège &amp; Observatoire (ORB)
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary-container font-medium mb-4">
+              Administration générale, Plateforme Borbonica &amp; Synthèse scientifique
+            </p>
+<div class="space-y-2.5 mb-6 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">location_on</span>
+<span>10 rue Pierre Marinier, Bâtiment Cyathea, 97438 Sainte-Marie</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">call</span>
+<span class="font-semibold text-on-surface">0262 90 20 20</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">schedule</span>
+<span>Lundi au Vendredi : 08h00 - 17h00 (sans interruption)</span>
+</div>
+<div class="flex items-start gap-2.5 pt-1">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">groups</span>
+<span class="text-body-sm">Direction générale, Observatoire Régional de la Biodiversité (ORB), pôle SIG Borbonica, équipe réglementation &amp; subventions.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-container-high">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors" href="https://maps.google.com/?q=Sainte-Marie+La+Reunion" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span>
+<span>Itinéraire</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors ml-auto" href="#formulaire-contact">
+<span>Contacter l'antenne</span>
+<span class="material-symbols-outlined text-[16px]">mail</span>
+</a>
+</div>
+</article>
+<!-- Antenne 2: Ouest -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">waves</span>
+                Pôle Ouest
+              </span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2.5 py-1 rounded-full">
+                Saint-Paul (Cambaie)
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary-container mb-1">
+              Milieux Littoraux &amp; Récifs
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary-container font-medium mb-4">
+              Écologie marine, lagon corallien &amp; Zones humides littorales
+            </p>
+<div class="space-y-2.5 mb-6 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">location_on</span>
+<span>24 Rue de la Pépinière, Zone Cambaie, 97460 Saint-Paul</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">call</span>
+<span class="font-semibold text-on-surface">0262 90 20 22</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">schedule</span>
+<span>Lundi au Vendredi : 08h00 - 16h30</span>
+</div>
+<div class="flex items-start gap-2.5 pt-1">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">groups</span>
+<span class="text-body-sm">Écologues marins, spécialistes forêts sèches (Étang de Saint-Paul, Savane), référents continuités récifales &amp; canopée urbaine.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-container-high">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors" href="https://maps.google.com/?q=Saint-Paul+La+Reunion" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span>
+<span>Itinéraire</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors ml-auto" href="/contact/antenne-ouest">
+<span>Contacter l'antenne</span>
+<span class="material-symbols-outlined text-[16px]">mail</span>
+</a>
+</div>
+</article>
+<!-- Antenne 3: Sud -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">terrain</span>
+                Pôle Sud
+              </span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2.5 py-1 rounded-full">
+                Saint-Pierre (Bassin Plat)
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary-container mb-1">
+              Forêts d'altitude &amp; Trames Noires
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary-container font-medium mb-4">
+              Avifaune marine pélagique, corridors volcaniques &amp; écologie nocturne
+            </p>
+<div class="space-y-2.5 mb-6 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">location_on</span>
+<span>8 Chemin des Découvertes, Bassin Plat, 97410 Saint-Pierre</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">call</span>
+<span class="font-semibold text-on-surface">0262 90 20 24</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">schedule</span>
+<span>Lundi au Vendredi : 08h00 - 16h30</span>
+</div>
+<div class="flex items-start gap-2.5 pt-1">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">groups</span>
+<span class="text-body-sm">Ingénieurs trame nocturne (protection Pétrel de Barau / Pétrel noir), écologues du massif du Piton de la Fournaise et des Makes.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-container-high">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors" href="https://maps.google.com/?q=Saint-Pierre+La+Reunion" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span>
+<span>Itinéraire</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors ml-auto" href="#formulaire-contact">
+<span>Contacter l'antenne</span>
+<span class="material-symbols-outlined text-[16px]">mail</span>
+</a>
+</div>
+</article>
+<!-- Antenne 4: Est & Cirques -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">forest</span>
+                Pôle Est &amp; Cirques
+              </span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2.5 py-1 rounded-full">
+                Saint-Benoît &amp; Relais Hauts
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary-container mb-1">
+              Forêts humides, Ravines &amp; Invasives
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary-container font-medium mb-4">
+              Restauration de ripisylves, lutte contre les EEE &amp; suivis forêts primaires
+            </p>
+<div class="space-y-2.5 mb-6 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">location_on</span>
+<span>15 Allée des Palmiers, 97470 Saint-Benoît (Permanence Salazie &amp; Cilaos)</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">call</span>
+<span class="font-semibold text-on-surface">0262 90 20 26</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">schedule</span>
+<span>Lundi au Vendredi : 08h00 - 16h30</span>
+</div>
+<div class="flex items-start gap-2.5 pt-1">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">groups</span>
+<span class="text-body-sm">Botanistes forêts de bébour-bélouve, coordinateurs de lutte contre les pestes végétales (EEE), spécialistes continuités hydrobiologiques.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-container-high">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors" href="https://maps.google.com/?q=Saint-Benoit+La+Reunion" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span>
+<span>Itinéraire</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-md text-label-md transition-colors ml-auto" href="#formulaire-contact">
+<span>Contacter l'antenne</span>
+<span class="material-symbols-outlined text-[16px]">mail</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- WAVE TRANSITION 2 -->
+<div aria-hidden="true" class="w-full overflow-hidden leading-none -mt-1 bg-surface text-surface-container-low">
+<svg class="w-full h-12 md:h-20 fill-surface-container-low" preserveAspectRatio="none" viewBox="0 0 1440 80">
+<path d="M0,45 C280,10 500,75 820,30 C1100,-10 1280,60 1440,25 L1440,80 L0,80 Z"></path>
+</svg>
+</div>
+<!-- SECTION 3 : FORMULAIRE DE CONTACT & ORIENTATION D'URGENCE -->
+<section class="w-full bg-surface-container-low py-12 md:py-20" id="formulaire-contact">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Colonne Gauche : Réassurance & Interlocuteurs d'urgence -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<div>
+<div class="inline-flex items-center gap-2 text-tertiary-container font-label-md text-label-md mb-2 uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span>Orientation directe</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary-container tracking-tight mb-4">
+              Vous orienter vers le bon interlocuteur
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+              L'ARB Réunion est l'établissement public de coordination et d'appui aux décisions. Pour des situations d'urgence immédiate sur le terrain insulaire, veuillez contacter prioritairement les réseaux de veille dédiés :
+            </p>
+<!-- Cards Réseau d'Urgence Faune / Flore -->
+<div class="space-y-3.5">
+<!-- Urgence 1 : Pétrel / Avifaune -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">cruelty_free</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[15px] text-primary-container font-semibold">Échouage d'oiseau marin (Pétrel, Puffin)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Mettre l'oiseau dans un carton aéré, sans eau ni nourriture, puis appeler immédiatement :</p>
+<a class="text-tertiary-container font-bold font-label-md text-label-md hover:underline inline-flex items-center gap-1" href="tel:0262204665">
+<span class="material-symbols-outlined text-[16px]">call</span> SEOR : 0262 20 46 65 (7j/7)
+                  </a>
+</div>
+</div>
+<!-- Urgence 2 : Tortue marine -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">phishing</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[15px] text-primary-container font-semibold">Tortue marine en détresse ou ponte</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Ne pas manipuler l'animal, garder une distance de 10 mètres :</p>
+<a class="text-primary-container font-bold font-label-md text-label-md hover:underline inline-flex items-center gap-1" href="tel:0262348110">
+<span class="material-symbols-outlined text-[16px]">call</span> Centre de soins Kélonia : 0262 34 81 10
+                  </a>
+</div>
+</div>
+<!-- Urgence 3 : Espèces Invasives -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">pest_control</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[15px] text-primary-container font-semibold">Signalement d'espèce exotique envahissante</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Transmission instantanée aux équipes d'arrachage précoce :</p>
+<span class="text-on-surface-variant font-label-md text-label-md font-semibold">Portail GCEIP / Application Borbonica</span>
+</div>
+</div>
+<!-- Contact Presse -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">newspaper</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[15px] text-primary-container font-semibold">Relations Presse &amp; Médias</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Demandes d'interview scientifique ou reportages :</p>
+<a class="text-primary-container font-semibold font-label-md text-label-md hover:underline" href="mailto:communication@arb-reunion.fr">
+                    communication@arb-reunion.fr
+                  </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Encadré RSE & Charte -->
+<div class="p-space-md rounded-2xl bg-secondary-container/50 text-on-secondary-fixed">
+<div class="flex items-center gap-2 font-label-md text-label-md font-bold mb-1">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Confidentialité &amp; Déontologie</span>
+</div>
+<p class="font-body-sm text-body-sm">
+              Vos données et projets soumis sont traités conformément aux normes françaises du secret opérationnel et ne font l'objet d'aucune exploitation commerciale.
+            </p>
+</div>
+</div>
+<!-- Colonne Droite : Formulaire complet -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest rounded-3xl p-6 md:p-10 shadow-[0_16px_36px_-12px_rgba(17,78,74,0.08)]">
+<h3 class="font-headline-md text-headline-md text-primary-container mb-2">
+              Formulaire de mise en relation
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-8">
+              Remplissez ce formulaire pour planifier un échange technique, solliciter un avis ou accéder à nos répertoires naturalistes.
+            </p>
+<form class="space-y-6" id="arbContactForm">
+<!-- 1. Profil Utilisateur (Boutons Pilules Cliquables) -->
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2.5">
+                  1. Vous êtes : <span class="text-tertiary-container">*</span>
+</label>
+<div class="flex flex-wrap gap-2.5" id="profileSelector">
+<button class="profile-btn active px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-primary-container text-inverse-on-surface shadow-sm" data-profile="collectivite" type="button">
+                    Collectivité locale
+                  </button>
+<button class="profile-btn px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container hover:bg-surface-variant text-on-surface" data-profile="entreprise" type="button">
+                    Entreprise / Bureau d'études
+                  </button>
+<button class="profile-btn px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container hover:bg-surface-variant text-on-surface" data-profile="association" type="button">
+                    Association
+                  </button>
+<button class="profile-btn px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container hover:bg-surface-variant text-on-surface" data-profile="chercheur" type="button">
+                    Chercheur / Enseignant
+                  </button>
+<button class="profile-btn px-4 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container hover:bg-surface-variant text-on-surface" data-profile="particulier" type="button">
+                    Particulier
+                  </button>
+</div>
+<input id="userProfileInput" name="user_profile" type="hidden" value="collectivite">
+</div>
+<!-- 2. Antenne de rattachement & Objet -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="antennePreferee">
+                    Antenne de rattachement <span class="text-tertiary-container">*</span>
+</label>
+<select class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="antennePreferee" name="antenne" required="">
+<option value="indifferent">Indifférent / Siège Régional</option>
+<option value="nord">Antenne Nord (Sainte-Marie)</option>
+<option value="ouest">Antenne Ouest (Saint-Paul)</option>
+<option value="sud">Antenne Sud (Saint-Pierre)</option>
+<option value="est">Antenne Est &amp; Cirques (Saint-Benoît)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="objetDemande">
+                    Objet de la demande <span class="text-tertiary-container">*</span>
+</label>
+<select class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="objetDemande" name="objet" required="">
+<option value="accompagnement">Accompagnement de projet / Subvention</option>
+<option value="donnees">Données naturalistes &amp; Accès Borbonica</option>
+<option value="intervention">Intervention pédagogique / Conférence</option>
+<option value="partenariat">Partenariat ou labellisation (ex: Végétal Péi)</option>
+<option value="autre">Demande générale / Information</option>
+</select>
+</div>
+</div>
+<!-- 3. Coordonnées -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="nomDemandeur">
+                    Nom <span class="text-tertiary-container">*</span>
+</label>
+<input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="nomDemandeur" name="nom" placeholder="ex. Hoarau" required="" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="prenomDemandeur">
+                    Prénom <span class="text-tertiary-container">*</span>
+</label>
+<input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="prenomDemandeur" name="prenom" placeholder="ex. Valérie" required="" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="organismeDemandeur">
+                    Organisme / Collectivité
+                  </label>
+<input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="organismeDemandeur" name="organisme" placeholder="ex. Commune du Port / BE Run-Eco" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="telephoneDemandeur">
+                    Téléphone de contact <span class="text-tertiary-container">*</span>
+</label>
+<input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="telephoneDemandeur" name="telephone" placeholder="0262 .. .. .." required="" type="tel">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="emailDemandeur">
+                  Adresse e-mail professionnelle / personnelle <span class="text-tertiary-container">*</span>
+</label>
+<input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="emailDemandeur" name="email" placeholder="nom@exemple.re" required="" type="email">
+</div>
+<!-- 4. Message & Pièces Jointes -->
+<div>
+<label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="messageDemandeur">
+                  Description détaillée de votre demande <span class="text-tertiary-container">*</span>
+</label>
+<textarea class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-inner resize-y" id="messageDemandeur" name="message" placeholder="Précisez le contexte, la localisation géographique précise (commune, lieu-dit), les échéances envisagées..." required="" rows="5"></textarea>
+</div>
+<!-- Upload Drag Zone Faux -->
+<div class="p-4 rounded-xl bg-surface flex flex-col sm:flex-row items-center justify-between gap-3 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[24px] text-secondary">attach_file</span>
+<div>
+<span class="font-semibold text-on-surface block">Pièce jointe éventuelle</span>
+<span class="text-label-sm">Plans de masse, inventaires, notes de cadrage (PDF, PNG - Max 15 Mo)</span>
+</div>
+</div>
+<label class="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-variant text-on-surface font-label-sm text-label-sm transition-colors shrink-0">
+<span>Parcourir</span>
+<input class="hidden" type="file">
+</label>
+</div>
+<!-- 5. RGPD & Soumission -->
+<div class="flex items-start gap-3 pt-2">
+<input class="mt-1 w-4 h-4 rounded text-primary-container focus:ring-primary" id="rgpdConsent" required="" type="checkbox">
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="rgpdConsent">
+                  En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées par l'Agence Régionale de la Biodiversité de La Réunion pour répondre à ma sollicitation technique. <a class="text-primary-container underline hover:text-primary" data-path="politique-de-confidentialite" href="/mentions/confidentialite">Politique de confidentialité</a>.
+                </label>
+</div>
+<div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Délai moyen de prise en charge : 48 heures</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-space-xl py-3.5 rounded-full bg-primary-container text-inverse-on-surface hover:bg-primary font-label-lg text-label-lg transition-all shadow-[0_4px_16px_rgba(17,78,74,0.2)]" type="submit">
+<span>Transmettre ma demande</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<!-- Notification Toast placeholder -->
+<div class="hidden p-4 rounded-xl bg-secondary-container text-primary-container font-label-md text-label-md flex items-center gap-2" id="formSuccessToast">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Merci. Votre demande a bien été attribuée à l'antenne compétente. Un accusé de réception vous a été envoyé.</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WAVE TRANSITION 3 -->
+<div aria-hidden="true" class="w-full overflow-hidden leading-none -mt-1 bg-surface-container-low text-surface">
+<svg class="w-full h-12 md:h-20 fill-surface" preserveAspectRatio="none" viewBox="0 0 1440 80">
+<path d="M0,20 C360,75 720,10 1080,65 C1240,85 1360,40 1440,30 L1440,80 L0,80 Z"></path>
+</svg>
+</div>
+<!-- SECTION 4 : MODULE "RÉSERVER UN RENDEZ-VOUS AVEC UN EXPERT" -->
+<section class="w-full bg-surface py-12 md:py-16">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<div class="relative rounded-3xl bg-gradient-to-br from-primary-container to-[#092b29] text-inverse-on-surface p-8 md:p-14 overflow-hidden shadow-xl">
+<!-- Decorative Ambient Element -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary-container/10 blur-2xl pointer-events-none"></div>
+<div class="absolute top-0 right-1/4 w-40 h-40 rounded-full bg-tertiary-container/20 blur-xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
+<div class="lg:col-span-7 flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface/10 text-secondary-container font-label-sm text-label-sm w-fit backdrop-blur-md">
+<span class="material-symbols-outlined text-[16px]">support</span>
+<span>Permanence Conseil Gratuite</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-inverse-on-surface tracking-tight leading-tight">
+              Besoin d'un diagnostic d'étape ? Réservez une permanence conseil de 45 minutes
+            </h2>
+<p class="font-body-md text-body-md text-on-primary-container leading-relaxed">
+              Chaque semaine, nos chargés de mission vous reçoivent sur rendez-vous individuel (en visioconférence ou directement en antenne territoriale) pour auditer la conformité écologique d'un aménagement, orienter un projet d'éco-restauration ou guider l'accès aux données borboniennes.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">calendar_today</span>
+</span>
+<span class="font-label-md text-label-md text-inverse-on-surface">Mardis &amp; Jeudis (09h00 - 12h00)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">videocam</span>
+</span>
+<span class="font-label-md text-label-md text-inverse-on-surface">Format Visio sécurisée ou Présentiel</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm text-inverse-on-surface font-semibold">Prochains créneaux ouverts</span>
+<div class="space-y-2">
+<button class="w-full p-3 rounded-xl bg-surface/10 hover:bg-surface/20 transition-all flex items-center justify-between text-left text-inverse-on-surface">
+<div>
+<div class="font-label-md text-label-md font-semibold">Mardi 15 Avril • 09h30</div>
+<div class="text-[12px] text-secondary-container">Pôle Ouest • Écologie marine &amp; littorale</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-secondary-container">arrow_forward</span>
+</button>
+<button class="w-full p-3 rounded-xl bg-surface/10 hover:bg-surface/20 transition-all flex items-center justify-between text-left text-inverse-on-surface">
+<div>
+<div class="font-label-md text-label-md font-semibold">Jeudi 17 Avril • 10h15</div>
+<div class="text-[12px] text-secondary-container">Siège Nord • Données SIG Borbonica</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-secondary-container">arrow_forward</span>
+</button>
+<button class="w-full p-3 rounded-xl bg-surface/10 hover:bg-surface/20 transition-all flex items-center justify-between text-left text-inverse-on-surface">
+<div>
+<div class="font-label-md text-label-md font-semibold">Mardi 22 Avril • 14h00</div>
+<div class="text-[12px] text-secondary-container">Pôle Sud • Trame Noire &amp; Éclairage public</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-secondary-container">arrow_forward</span>
+</button>
+</div>
+<a class="mt-2 text-center py-3 rounded-full bg-secondary-container text-primary-container hover:bg-white transition-all font-label-md text-label-md font-bold" href="#formulaire-contact">
+              Réserver un entretien dédié
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5 : FAQ CONTACT & DÉMARCHES -->
+<section class="w-full bg-surface py-12 md:py-20">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<div class="inline-flex items-center gap-2 text-tertiary-container font-label-md text-label-md mb-2 uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">help</span>
+<span>Questions fréquentes</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary-container tracking-tight">
+          Foire aux questions &amp; visites
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Tout ce qu'il faut savoir avant de solliciter nos pôles d'expertise territoriale.
+        </p>
+</div>
+<div class="max-w-4xl mx-auto space-y-4" id="faqAccordion">
+<!-- Accordion 1 -->
+<div class="faq-item rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden transition-all">
+<button class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4 font-headline-sm text-[18px] text-primary-container hover:text-primary" type="button">
+<span>Comment savoir quelle antenne contacter pour mon projet d'aménagement ?</span>
+<span class="faq-icon material-symbols-outlined text-[24px] text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Par principe de subsidiarité, nous vous recommandons de solliciter l'antenne géographiquement rattachée à l'emprise du projet (Nord, Ouest, Sud ou Est/Cirques). Cependant, si votre projet porte sur une problématique très spécifique (ex: inventaire forêt de nuages ou trames nocturnes), l'antenne saisie transférera immédiatement le dossier au référent régional thématique compétent.
+          </div>
+</div>
+<!-- Accordion 2 -->
+<div class="faq-item rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden transition-all">
+<button class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4 font-headline-sm text-[18px] text-primary-container hover:text-primary" type="button">
+<span>Les antennes territoriales accueillent-elles le grand public sans rendez-vous ?</span>
+<span class="faq-icon material-symbols-outlined text-[24px] text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Pour garantir la présence des spécialistes référents souvent en mission de terrain ou de suivi écologique extérieur, l'accueil physique se fait <strong>exclusivement sur rendez-vous préalable</strong> ou lors des créneaux de permanence hebdomadaires dédiés (Mardis et Jeudis). Seul le siège régional de Sainte-Marie maintient un accueil administratif continu aux heures ouvrées.
+          </div>
+</div>
+<!-- Accordion 3 -->
+<div class="faq-item rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden transition-all">
+<button class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4 font-headline-sm text-[18px] text-primary-container hover:text-primary" type="button">
+<span>Comment signaler une urgence immédiate faune sauvage ou dégradation ?</span>
+<span class="faq-icon material-symbols-outlined text-[24px] text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            L'ARB Réunion n'opère pas de brigade d'intervention d'urgence 24h/24. Pour les oiseaux échoués, joignez la <strong>SEOR au 0262 20 46 65</strong>. Pour les tortues ou mammifères marins en détresse, joignez <strong>Kélonia au 0262 34 81 10</strong>. En cas d'infraction environnementale flagrante (défrichement illégal, braconnage), composez le 17 ou signalez-le aux inspecteurs de l'OFB (Office Français de la Biodiversité).
+          </div>
+</div>
+<!-- Accordion 4 -->
+<div class="faq-item rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden transition-all">
+<button class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4 font-headline-sm text-[18px] text-primary-container hover:text-primary" type="button">
+<span>Les consultations d'expertise de l'ARB sont-elles payantes ?</span>
+<span class="faq-icon material-symbols-outlined text-[24px] text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Non. En tant qu'établissement public régional, nos missions de premier niveau de cadrage méthodologique, d'orientation des collectivités, d'accès aux données ouvertes Borbonica et d'appui aux associations sont <strong>entièrement gratuites</strong>. Nos équipes n'effectuent pas en revanche d'études d'impact réglementaires complètes, qui restent du ressort exclusif des bureaux d'études indépendants référencés dans notre annuaire.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Micro-interactions Script -->
+
+</div></main>
+  <Footer />
+</Base>
+
+<script>
+  import '../../scripts/contact.js';
+</script>

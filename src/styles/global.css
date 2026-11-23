@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  [hidden] {
+    display: none !important;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.rounded-DEFAULT {
+  border-radius: 1rem;
+}
+
+/* Bandeau d'ouverture : le même vert que l'observatoire, sous le header.
+   Les cartes claires (formulaires, pastilles, tuiles) gardent leur texte sombre. */
+.page-hero {
+  background-color: #114e4a !important;
+  background-image: none !important;
+  color: #d7efe9;
+}
+
+.page-hero :is(
+  .text-primary,
+  .text-primary-container,
+  .text-secondary,
+  .text-on-surface,
+  .text-on-surface-variant,
+  .text-outline-variant,
+  strong
+):not(h1):not(h1 *):not(
+  :is(
+    .bg-surface-container-lowest,
+    .bg-surface-container-lowest\/80,
+    .bg-surface-container-low,
+    .bg-surface-container,
+    .bg-surface-container-high,
+    .bg-surface-container-highest,
+    .bg-surface-variant,
+    .bg-secondary-container,
+    .bg-secondary-container\/60,
+    .bg-secondary-container\/80,
+    .bg-white
+  ),
+  :is(
+    .bg-surface-container-lowest,
+    .bg-surface-container-lowest\/80,
+    .bg-surface-container-low,
+    .bg-surface-container,
+    .bg-surface-container-high,
+    .bg-surface-container-highest,
+    .bg-surface-variant,
+    .bg-secondary-container,
+    .bg-secondary-container\/60,
+    .bg-secondary-container\/80,
+    .bg-white
+  ) *
+) {
+  color: #d7efe9 !important;
+}
+
+.page-hero h1,
+.page-hero h1 span {
+  color: #fdf9ef !important;
+}
+
+.page-hero h1 .italic {
+  color: #b7ddd6 !important;
+}
+
+.page-hero :is(a, button).bg-primary-container:not(
+  :is(
+    .bg-surface-container-lowest,
+    .bg-surface-container-lowest\/80,
+    .bg-surface-container-low,
+    .bg-surface-container,
+    .bg-surface-container-high,
+    .bg-surface-variant,
+    .bg-white
+  ) :is(a, button)
+) {
+  background-color: #fdf9ef !important;
+  color: #114e4a !important;
+}
+
+.page-hero :is(a, button).bg-primary-container:not(
+  :is(
+    .bg-surface-container-lowest,
+    .bg-surface-container-lowest\/80,
+    .bg-surface-container-low,
+    .bg-surface-container,
+    .bg-surface-container-high,
+    .bg-surface-variant,
+    .bg-white
+  ) :is(a, button)
+) .material-symbols-outlined {
+  color: #114e4a !important;
+}

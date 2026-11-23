@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Base title="L’ARB — Agence régionale de la biodiversité">
+  <Header current="l-arb" />
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+<section class="page-hero relative w-full overflow-hidden pt-8 pb-20 md:pb-28">
+<div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+<nav aria-label="Fil d'Ariane" class="flex items-center gap-space-xs text-secondary mb-6 font-label-md text-label-md">
+<a class="hover:text-primary-container transition-colors flex items-center gap-1" href="/"><span class="material-symbols-outlined text-[16px]">home</span><span>Accueil</span></a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="text-primary-container font-semibold">L’ARB</span>
+</nav>
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-primary-container font-label-md text-label-md mb-6">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>Institution</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-8">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container tracking-tight leading-[1.05]">L’agence</h1>
+<p class="mt-6 max-w-3xl font-body-lg text-body-lg text-on-surface-variant">L’ARB Réunion est un établissement public de coopération environnementale créé en 2023, à l’initiative de la Région, du Département, de l’État et de l’Office français de la biodiversité.</p>
+</div>
+<div class="lg:col-span-4">
+<a class="inline-flex items-center justify-center min-h-[48px] px-6 rounded-full bg-primary-container text-inverse-on-surface font-label-lg hover:bg-primary" href="/contact">Écrire à l’agence</a>
+</div>
+</div>
+<ul class="mt-8 flex flex-wrap gap-3 p-0 list-none">
+<li class="px-4 py-2 rounded-full bg-surface-container-lowest border border-[rgba(231,215,182,0.85)] text-primary-container font-label-md">Région Réunion</li>
+<li class="px-4 py-2 rounded-full bg-surface-container-lowest border border-[rgba(231,215,182,0.85)] text-primary-container font-label-md">Département</li>
+<li class="px-4 py-2 rounded-full bg-surface-container-lowest border border-[rgba(231,215,182,0.85)] text-primary-container font-label-md">État</li>
+<li class="px-4 py-2 rounded-full bg-surface-container-lowest border border-[rgba(231,215,182,0.85)] text-primary-container font-label-md">Office français de la biodiversité</li>
+</ul>
+</div>
+<div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+<svg class="w-full h-12 md:h-20 text-surface fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+</svg>
+</div>
+</section>
+<section class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin pt-12 md:pt-16 pb-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+<span class="inline-flex w-12 h-12 items-center justify-center rounded-full bg-secondary-container text-primary-container mb-5"><span class="material-symbols-outlined">hub</span></span>
+<h2 class="font-headline-md text-headline-md text-primary-container mb-3">Missions</h2>
+<p class="text-on-surface-variant leading-relaxed">Mettre les acteurs en réseau, accompagner les projets, mobiliser les habitants, ouvrir l’accès aux financements et partager des ressources fiables.</p>
+</article>
+<article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+<span class="inline-flex w-12 h-12 items-center justify-center rounded-full bg-secondary-container text-primary-container mb-5"><span class="material-symbols-outlined">account_balance</span></span>
+<h2 class="font-headline-md text-headline-md text-primary-container mb-3">Gouvernance</h2>
+<p class="text-on-surface-variant leading-relaxed">Les membres fondateurs fixent les orientations. Les noms, les mandats et l’organigramme seront ceux transmis par l’ARB, pas ceux de ce prototype.</p>
+</article>
+<article class="rounded-[28px] bg-surface-container-lowest border border-[rgba(231,215,182,0.7)] p-8">
+<span class="inline-flex w-12 h-12 items-center justify-center rounded-full bg-secondary-container text-primary-container mb-5"><span class="material-symbols-outlined">groups</span></span>
+<h2 class="font-headline-md text-headline-md text-primary-container mb-3">Équipe</h2>
+<p class="text-on-surface-variant leading-relaxed">Les agents habilités publient les contenus. Le prototype ne nomme personne : les fiches d’équipe attendront les éléments officiels.</p>
+</article>
+</div>
+<aside class="mt-8 rounded-[32px] bg-secondary-container/70 p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+<div class="md:col-span-8">
+<h2 class="font-headline-lg text-headline-lg text-primary-container mb-3">Ce que le site ne fait pas</h2>
+<p class="text-on-surface-variant leading-relaxed max-w-3xl">Pas de comptes partenaires, pas de plateforme de gestion de projets, pas d’espace privé pour les structures labellisées. Ces sujets restent des pistes ultérieures, hors de la première version.</p>
+</div>
+<div class="md:col-span-4 md:text-right">
+<a class="inline-flex items-center justify-center min-h-[48px] px-6 rounded-full bg-primary-container text-inverse-on-surface font-label-lg hover:bg-primary" href="/contact">Écrire à l’agence</a>
+</div>
+</aside>
+</section>
+</main>
+  <Footer />
+</Base>

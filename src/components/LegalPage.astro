@@ -1,0 +1,64 @@
+---
+interface Props {
+  crumb: string;
+  kicker: string;
+  heading: string;
+  lede: string;
+  current: 'mentions' | 'confidentialite' | 'accessibilite';
+}
+
+const { crumb, kicker, heading, lede, current } = Astro.props;
+
+const pages = [
+  { id: 'mentions', href: '/mentions', label: 'Mentions légales' },
+  { id: 'confidentialite', href: '/mentions/confidentialite', label: 'Politique de confidentialité' },
+  { id: 'accessibilite', href: '/mentions/accessibilite', label: 'Accessibilité' },
+];
+---
+
+<section class="page-hero relative w-full overflow-hidden pt-8 pb-28 md:pb-36">
+  <div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+    <nav aria-label="Fil d'Ariane" class="flex items-center gap-space-xs text-secondary mb-6 font-label-md text-label-md">
+      <a class="hover:text-primary-container transition-colors flex items-center gap-1" href="/">
+        <span class="material-symbols-outlined text-[16px]">home</span>
+        <span>Accueil</span>
+      </a>
+      <span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+      <span class="text-primary-container font-semibold">{crumb}</span>
+    </nav>
+    <p class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-primary-container font-label-md text-label-md mb-6">{kicker}</p>
+    <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container tracking-tight leading-[1.05] max-w-4xl">{heading}</h1>
+    <p class="mt-6 max-w-3xl font-body-lg text-body-lg text-on-surface-variant">{lede}</p>
+  </div>
+  <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+    <svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+      <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+    </svg>
+  </div>
+</section>
+<section class="relative -mt-px w-full bg-surface pb-20 md:pb-28">
+  <div class="w-full max-w-[820px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
+    <nav aria-label="Pages juridiques" class="flex flex-wrap gap-2 mb-10">
+      {
+        pages.map((page) => (
+          <a
+            class:list={[
+              'inline-flex items-center min-h-[40px] px-4 rounded-full font-label-md text-label-md transition-colors',
+              page.id === current
+                ? 'bg-primary-container text-inverse-on-surface'
+                : 'bg-surface-container-lowest text-primary-container border border-[rgba(231,215,182,0.7)] hover:bg-secondary-container',
+            ]}
+            href={page.href}
+            aria-current={page.id === current ? 'page' : undefined}
+          >
+            {page.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex flex-col gap-6">
+      <slot />
+    </div>
+    <p class="mt-8 font-label-sm text-label-sm text-secondary">Dernière mise à jour : 18 novembre 2024</p>
+  </div>
+</section>
