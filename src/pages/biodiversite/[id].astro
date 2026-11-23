@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { milieux } from '../../data/milieux';
+
+export function getStaticPaths() {
+  return milieux.map((milieu) => ({
+    params: { id: milieu.id },
+    props: { milieu },
+  }));
+}
+
+const { milieu } = Astro.props;
+const autres = milieux.filter((item) => item.id !== milieu.id);
+---
+
+<Base title={`${milieu.title} — Biodiversité ARB Réunion`}>
+  <Header current="biodiversite" />
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+    <section class="page-hero hero-photo relative overflow-hidden pt-8 pb-24 lg:pb-32" style={`--hero-image: url('${milieu.image}')`}>
+      <div class="max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+        <nav aria-label="Fil d'Ariane" class="flex flex-wrap items-center gap-1 mb-6 font-label-md text-label-md text-secondary">
+          <a class="hover:text-surface transition-colors inline-flex items-center gap-1" href="/">
+            <span class="material-symbols-outlined text-[16px]">home</span>
+            <span>Accueil</span>
+          </a>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <a class="hover:text-surface transition-colors" href="/biodiversite">La biodiversité</a>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="font-semibold">{milieu.title}</span>
+        </nav>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-lowest text-primary-container font-label-sm text-label-sm">{milieu.category}</span>
+        <h1 class="max-w-4xl mt-5 font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight">{milieu.title}</h1>
+        <p class="mt-4 max-w-3xl font-body-lg text-body-lg text-secondary">{milieu.kicker}</p>
+        <p class="mt-3 inline-flex items-center gap-1 font-label-md text-label-md text-secondary">
+          <span class="material-symbols-outlined text-[18px]">location_on</span>
+          <span>{milieu.place}</span>
+        </p>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+        <svg class="w-full h-12 md:h-20 text-surface fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
+          <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin pt-4 pb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-8">
+          <p class="font-body-lg text-body-lg text-on-surface leading-relaxed">{milieu.excerpt}</p>
+          {milieu.paragraphs.map((paragraph) => (
+            <p class="mt-4 font-body-md text-body-md text-secondary leading-relaxed">{paragraph}</p>
+          ))}
+          <h2 class="mt-10 font-headline-md text-headline-md text-primary">Indicateurs</h2>
+          <ul class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 p-0 list-none">
+            {milieu.stats.map((stat) => (
+              <li class="rounded-lg bg-surface-container-lowest p-4">
+                <p class="font-label-sm text-label-sm text-secondary">{stat.label}</p>
+                <p class="mt-1 font-headline-sm text-headline-sm text-primary-container">{stat.value}</p>
+                <p class="mt-1 font-label-sm text-label-sm text-secondary">{stat.note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <aside class="lg:col-span-4 lg:sticky lg:top-24 rounded-lg bg-surface-container-lowest p-6 shadow-sm">
+          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">{milieu.program}</p>
+          <h2 class="mt-3 font-headline-sm text-headline-sm text-primary">Le dossier</h2>
+          <p class="mt-3 font-body-sm text-body-sm text-secondary leading-relaxed">{milieu.place}</p>
+          <div class="mt-6 flex flex-col gap-2">
+            {milieu.actorId && (
+              <a class="inline-flex items-center justify-center gap-2 min-h-[44px] px-4 rounded-full bg-primary-container text-inverse-on-surface font-label-md text-label-md hover:bg-primary" href={`/annuaire/${milieu.actorId}`}>
+                {milieu.actorLabel}
+              </a>
+            )}
+            <a class="inline-flex items-center justify-center gap-1 min-h-[44px] px-4 font-label-md text-label-md text-secondary hover:text-primary" href="/biodiversite">
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+              Retour aux milieux
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <h2 class="mt-14 font-headline-md text-headline-md text-primary">Les autres milieux</h2>
+      <ul class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 p-0 list-none">
+        {autres.map((autre) => (
+          <li>
+            <a class="flex flex-col h-full rounded-lg bg-surface-container-lowest p-5 hover:shadow-md transition-shadow" href={`/biodiversite/${autre.id}`}>
+              <span class="font-label-sm text-label-sm text-secondary">{autre.category}</span>
+              <span class="mt-2 font-headline-sm text-headline-sm text-primary">{autre.title}</span>
+              <span class="mt-2 font-body-sm text-body-sm text-secondary">{autre.kicker}</span>
+              <span class="mt-4 inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-primary-container">
+                Dossier complet
+                <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Base>

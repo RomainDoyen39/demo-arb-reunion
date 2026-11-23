@@ -131,7 +131,7 @@ onReady(() => {
       `<div style="min-width:190px;font-family:inherit">
         <p style="margin:0;font-weight:700;color:#114e4a">${actor.name}</p>
         <p style="margin:4px 0 8px;color:#4d635e">${actor.place}</p>
-        <button type="button" data-goto="${actor.id}" style="border:0;background:#114e4a;color:#fdf9ef;border-radius:9999px;padding:6px 12px;cursor:pointer">Voir la fiche</button>
+        <a href="/annuaire/${actor.id}" style="display:inline-block;background:#114e4a;color:#fdf9ef;border-radius:9999px;padding:6px 12px;text-decoration:none">Voir la fiche</a>
       </div>`
     );
     marker.addTo(map);

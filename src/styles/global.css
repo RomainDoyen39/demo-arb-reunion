@@ -17,6 +17,11 @@
     overscroll-behavior: none;
   }
 
+  img,
+  video {
+    max-width: 100%;
+  }
+
   main > :first-child {
     margin-top: 0 !important;
   }
@@ -34,12 +39,37 @@
   border-radius: 1rem;
 }
 
-/* Bandeau d'ouverture : le même vert que l'observatoire, sous le header.
-   Les cartes claires (formulaires, pastilles, tuiles) gardent leur texte sombre. */
+/* Le header est transparent : le bandeau remonte derrière lui. */
+#site-header.is-scrolled {
+  background-color: rgba(0, 40, 38, 0.72);
+  backdrop-filter: blur(16px);
+}
+
+#site-header.is-menu-open {
+  background-color: rgba(0, 40, 38, 0.94);
+  backdrop-filter: blur(16px);
+}
+
+main > .page-hero,
 .page-hero {
+  margin-top: -5rem !important;
   background-color: #114e4a !important;
   background-image: none !important;
   color: #d7efe9;
+}
+
+.page-hero::before {
+  content: "";
+  display: block;
+  height: 5rem;
+}
+
+.page-hero.hero-photo {
+  background-image:
+    linear-gradient(105deg, rgba(17, 78, 74, 0.9) 0%, rgba(17, 78, 74, 0.58) 46%, rgba(17, 78, 74, 0.86) 100%),
+    var(--hero-image) !important;
+  background-size: cover !important;
+  background-position: center 40% !important;
 }
 
 .page-hero :is(
@@ -117,4 +147,245 @@
   ) :is(a, button)
 ) .material-symbols-outlined {
   color: #114e4a !important;
+}
+
+select.arb-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: none;
+  padding-right: 2.75rem;
+}
+
+.arb-select-wrap {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.arb-select-wrap.is-block {
+  display: block;
+  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.arb-select-chevron {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  color: #4d635e;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease;
+}
+
+select.is-open + .arb-select-chevron {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.arb-select-menu {
+  position: fixed;
+  z-index: 80;
+  max-height: min(20rem, 52vh);
+  overflow: auto;
+  padding: 0;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  color: #1c1c16;
+  scrollbar-width: thin;
+  scrollbar-color: #bfc8c6 transparent;
+  box-shadow:
+    0 18px 40px rgba(0, 54, 51, 0.16),
+    0 0 0 1px rgba(17, 78, 74, 0.08);
+}
+
+.arb-select-menu::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+.arb-select-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.arb-select-menu::-webkit-scrollbar-thumb {
+  background: #bfc8c6;
+  border-radius: 999px;
+  border: 0;
+}
+
+.arb-select-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #1c1c16;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+}
+
+.arb-select-option:hover,
+.arb-select-option:focus-visible {
+  background: #f2eee4;
+  outline: none;
+}
+
+.arb-select-option.is-selected {
+  background: #d0e8e2;
+  color: #114e4a;
+}
+
+.arb-select-option[data-placeholder]:not(.is-selected) {
+  color: #4d635e;
+  font-weight: 500;
+}
+
+.arb-select-option:disabled {
+  color: #707977;
+  cursor: default;
+}
+
+.arb-select-check {
+  flex: none;
+  width: 1.15rem;
+  font-size: 18px;
+  line-height: 1;
+  color: #114e4a;
+  opacity: 0;
+}
+
+.arb-select-option.is-selected .arb-select-check {
+  opacity: 1;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1.5px solid #bfc8c6;
+  border-radius: 0.4rem;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.85rem;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+input[type="checkbox"]:hover {
+  border-color: #114e4a;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid #114e4a;
+  outline-offset: 2px;
+}
+
+input[type="checkbox"]:checked {
+  border-color: #114e4a;
+  background-color: #114e4a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fdf9ef' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M3.2 8.3 6.4 11.3 12.8 4.6'/%3E%3C/svg%3E");
+}
+
+input[type="checkbox"]:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+:is(a, button):is(.inline-flex, .flex):is(.underline, .hover\:underline, .group-hover\:underline),
+.group:hover :is(a, button):is(.inline-flex, .flex).group-hover\:underline {
+  text-decoration-line: none;
+}
+
+:is(a, button):is(.inline-flex, .flex).underline > :not(.material-symbols-outlined),
+:is(a, button):is(.inline-flex, .flex).hover\:underline:hover > :not(.material-symbols-outlined),
+.group:hover :is(a, button):is(.inline-flex, .flex).group-hover\:underline > :not(.material-symbols-outlined) {
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+}
+
+/* Échelle plus courte sur téléphone. Tablette et desktop gardent les tailles du thème. */
+@media (max-width: 767px) {
+  .text-display-lg,
+  .text-display-lg-mobile {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .text-headline-lg {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .text-headline-md {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .py-space-xl {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .py-space-lg {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .p-space-lg,
+  .p-space-xl {
+    padding: 1.15rem;
+  }
+
+  .gap-space-lg {
+    gap: 1.15rem;
+  }
+
+  .gap-space-xl {
+    gap: 1.5rem;
+  }
+
+  .mb-space-lg {
+    margin-bottom: 1rem;
+  }
+
+  .mt-space-lg {
+    margin-top: 1rem;
+  }
+
+  .min-h-\[320px\],
+  .min-h-\[260px\] {
+    min-height: 0;
+  }
+
+  .h-\[280px\] {
+    height: 11rem;
+  }
+}
+
+/* Chiffre et précision des milieux l'un sous l'autre. */
+.habitat-stats > div > span {
+  display: block;
+}
+
+/* Les vagues occupent toute la largeur, sans déborder ni tracer de filet. */
+svg[preserveAspectRatio="none"] {
+  display: block;
+  width: 100%;
+  max-width: none;
 }

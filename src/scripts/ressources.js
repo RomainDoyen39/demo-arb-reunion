@@ -10,9 +10,9 @@ const norm = (value) =>
     .toLowerCase();
 
 const activeTab =
-  'px-5 py-2.5 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg whitespace-nowrap shadow-sm transition-all';
+  'px-4 py-2.5 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg whitespace-nowrap shadow-sm transition-all';
 const idleTab =
-  'px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap';
+  'px-4 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap';
 const pageOn =
   'w-9 h-9 rounded-full bg-primary-container text-inverse-on-surface font-label-sm text-label-sm flex items-center justify-center font-bold';
 const pageOff =

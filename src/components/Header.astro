@@ -16,10 +16,12 @@ const links = [
 
 const idle = 'font-label-lg text-label-lg text-secondary-container hover:text-surface transition-colors py-2';
 const active = 'font-label-lg text-label-lg text-surface font-bold border-b-2 border-surface py-2';
+const menuIdle = 'block py-3 font-label-lg text-label-lg text-secondary-container hover:text-surface transition-colors border-b border-white/10';
+const menuActive = 'block py-3 font-label-lg text-label-lg text-surface font-bold border-b border-white/10';
 ---
 
-<header class="fixed top-0 w-full z-50 bg-primary-container text-inverse-on-surface">
-  <div class="h-20 w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin flex items-center justify-between gap-space-md">
+<header id="site-header" class="fixed top-0 w-full z-50 bg-transparent text-inverse-on-surface transition-colors duration-300">
+  <div class="h-20 w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin flex items-center justify-between gap-3">
     <a class="flex items-center shrink-0" href="/">
       <img src="/logo_simple_fond_transparent-1.png" alt="ARB Réunion" width="250" height="220" class="h-14 w-auto" />
     </a>
@@ -32,13 +34,64 @@ const active = 'font-label-lg text-label-lg text-surface font-bold border-b-2 bo
         ))
       }
     </nav>
-    <div class="flex items-center gap-space-md">
-      <a class="inline-flex items-center justify-center min-h-[44px] px-space-lg py-space-xs rounded-full bg-surface text-primary-container hover:bg-secondary-container font-label-lg text-label-lg transition-all" href="/annuaire">
+    <div class="flex items-center gap-2 sm:gap-space-md min-w-0">
+      <a class="hidden sm:inline-flex items-center justify-center min-h-[44px] px-4 lg:px-space-lg py-space-xs rounded-full bg-surface text-primary-container hover:bg-secondary-container font-label-lg text-label-lg transition-all whitespace-nowrap" href="/annuaire">
         Trouver un acteur
       </a>
-      <div class="w-8 h-8 rounded-full bg-surface/15 flex items-center justify-center">
+      <div class="hidden xl:flex w-8 h-8 rounded-full bg-surface/15 items-center justify-center">
         <span class="material-symbols-outlined text-surface text-[18px]">person</span>
       </div>
+      <button id="site-menu-button" class="xl:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-surface/15 text-surface shrink-0" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">
+        <span id="site-menu-icon" class="material-symbols-outlined text-[24px]">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="site-menu" hidden class="xl:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto">
+    <div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin pb-5">
+      <nav aria-label="Navigation principale">
+        {
+          links.map((link) => (
+            <a class={link.id === current ? menuActive : menuIdle} href={link.href} aria-current={link.id === current ? 'page' : undefined}>
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+      <a class="sm:hidden mt-4 inline-flex w-full items-center justify-center min-h-[44px] px-space-lg rounded-full bg-surface text-primary-container font-label-lg text-label-lg" href="/annuaire">
+        Trouver un acteur
+      </a>
     </div>
   </div>
 </header>
+<script>
+  const header = document.getElementById('site-header');
+  const menu = document.getElementById('site-menu');
+  const button = document.getElementById('site-menu-button');
+  const icon = document.getElementById('site-menu-icon');
+
+  const setMenu = (open: boolean) => {
+    if (!header || !menu || !button || !icon) return;
+    menu.hidden = !open;
+    header.classList.toggle('is-menu-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    icon.textContent = open ? 'close' : 'menu';
+  };
+
+  if (header) {
+    const paint = () => header.classList.toggle('is-scrolled', window.scrollY > 12);
+    paint();
+    window.addEventListener('scroll', paint, { passive: true });
+  }
+
+  button?.addEventListener('click', () => setMenu(menu?.hidden !== false));
+  menu?.addEventListener('click', (event) => {
+    if ((event.target as HTMLElement).closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenu(false);
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1280) setMenu(false);
+  });
+</script>

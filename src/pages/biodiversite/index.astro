@@ -8,7 +8,7 @@ import Footer from '../../components/Footer.astro';
   <Header current="biodiversite" />
   <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
 <!-- SECTION 1: HERO IMMERSIF OBSERVATOIRE -->
-<section class="page-hero relative w-full text-inverse-on-surface overflow-hidden pt-8 md:pt-16 pb-20 md:pb-28">
+<section class="page-hero hero-photo relative w-full text-inverse-on-surface overflow-hidden pt-8 md:pt-16 pb-20 md:pb-28" style="--hero-image: url('/images/bandeaux/bebour.webp')">
 <div class="absolute inset-0 opacity-15 pointer-events-none mix-blend-soft-light" style="background-image: radial-gradient(#99d1cb 1px, transparent 1px); background-size: 24px 24px;"></div>
 <div class="relative w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin flex flex-col items-center text-center">
 <!-- Meta Badge Editorial -->
@@ -35,7 +35,7 @@ import Footer from '../../components/Footer.astro';
 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </button>
 </form>
-<div class="flex items-center justify-center gap-2 mt-3 text-secondary-container font-label-sm text-label-sm">
+<div class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 mt-3 px-1 text-secondary-container font-label-sm text-label-sm">
 <span class="opacity-75">Recherches fréquentes :</span>
 <button class="underline decoration-secondary-container/50 hover:text-surface" data-query="Pétrel de Barau" type="button">Pétrel de Barau</button> •
           <button class="underline decoration-secondary-container/50 hover:text-surface" data-query="Mare-Longue" type="button">Forêt de Mare-Longue</button> •
@@ -80,7 +80,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Organic wave transition down to Milieux -->
 <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
-<svg class="w-full h-12 md:h-20 text-surface fill-current" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="w-full h-12 md:h-20 text-surface fill-current" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -106,7 +106,8 @@ import Footer from '../../components/Footer.astro';
 <!-- Grid 4 Milieux -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10" id="habitat-grid">
 <!-- Carte 1: Récifs et Lagon -->
-<article data-habitat data-keywords="recif lagon corail marin saint-gilles" class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<article data-habitat data-keywords="recif lagon corail marin saint-gilles" class="relative bg-surface-container-low rounded-xl overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<a class="absolute inset-0 z-10" href="/biodiversite/recifs" aria-label="Récifs coralliens & Lagon"></a>
 <div class="relative h-64 md:h-72 w-full overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Photographie sous-marine vibrante d'un récif corallien tropical à La Réunion, lagon turquoise peu profond, coraux branchus Acropora en santé et poissons demoiselles colorés nageant sous une lumière solaire éclatante aux reflets émeraude et vert d'eau." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7irH_aAPoj8pkEAcwkNhPuUg_7lKLayyoqI1CTMeAOVbL0w878V5wdXJkdzjIETJLk6JLf-cm-qfoGxEnMFxX3d1KWHTRjz2_upV0Jqx1F-1RsEZNU7FRj_ouiGqt4cakWypfo0s0K_MT6Cb3_0MXExug3QCqCb34rpmrM4YFzt3OXOGM53A5cw3ktHeBHFtQmUZhUvPqC-EZkwPatNcURF4R9vBc2n40roixRIjg">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/20"></div>
@@ -122,7 +123,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div class="p-6 md:p-8 flex flex-col justify-between flex-1">
-<div class="grid grid-cols-3 gap-3 mb-6 pb-6 bg-surface-container-high/40 rounded-lg p-3">
+<div class="habitat-stats grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 pb-6 bg-surface-container-high/40 rounded-lg p-3">
 <div>
 <span class="block font-label-sm text-label-sm text-on-surface-variant">Recouvrement</span>
 <span class="font-headline-sm text-headline-sm text-primary-container font-bold">42,8%</span>
@@ -142,16 +143,17 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">
               Suivi scientifique continu des platiers de Saint-Gilles, Saint-Leu et l'Étang-Salé. Analyse de la calcification, du taux d'algues macrophytes et de la recolonisation par les poissons herbivores sentinelles.
             </p>
-<div class="flex items-center justify-between pt-4 border-t-0">
+<div class="flex flex-wrap items-center justify-between gap-2 pt-4">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Programme Réserve Marine (RNMR)</span>
-<a class="inline-flex items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:underline" href="#">
-                Dossier complet <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="inline-flex shrink-0 items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:underline" href="/biodiversite/recifs">
+                <span>Dossier complet</span><span class="material-symbols-outlined text-[16px]">chevron_right</span>
 </a>
 </div>
 </div>
 </article>
 <!-- Carte 2: Forêts d'altitude -->
-<article data-habitat data-keywords="foret mare-longue tamarin altitude parc petrel de barau" class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<article data-habitat data-keywords="foret mare-longue tamarin altitude parc petrel de barau" class="relative bg-surface-container-low rounded-xl overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<a class="absolute inset-0 z-10" href="/biodiversite/forets" aria-label="Forêts d'altitude & Pitons"></a>
 <div class="relative h-64 md:h-72 w-full overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Forêt pluviale néphéléphile de montagne à La Réunion, arbres de Tamarins des Hauts couverts d'épiphytes et de mousses humides, nappe de brouillard mystique flottant sur les remparts volcaniques escarpés, tons vert mousse, émeraude sombre et roche basaltique noire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ22k61dYcfZMGanVjIREAlLq2E_763WA7Jzk6TJNohrj9KgqNFkIAflRobCzqEsWxg6TJeLMCh8rXN6tgE-Xgw62Vfkmn4MveobNMIDTjEUcuvf-ojX8u3Wyc3E20-UooTDhLNdT6SFMuuYBl46Wfsrht3u_sWcbh02vv9UT2PFCoVv_2kU7N7c7K1xODga3KgSABOrYJ9oC5i8gg-2e0_yrJYxyQjtFIbLPlTzN0">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/20"></div>
@@ -167,7 +169,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div class="p-6 md:p-8 flex flex-col justify-between flex-1">
-<div class="grid grid-cols-3 gap-3 mb-6 pb-6 bg-surface-container-high/40 rounded-lg p-3">
+<div class="habitat-stats grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 pb-6 bg-surface-container-high/40 rounded-lg p-3">
 <div>
 <span class="block font-label-sm text-label-sm text-on-surface-variant">Surface Relique</span>
 <span class="font-headline-sm text-headline-sm text-primary-container font-bold">100k ha</span>
@@ -187,16 +189,17 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">
               Les forêts de nuages et maquis d'altitude abritent la plus forte concentration de micro-endémismes du sud-ouest de l'Océan Indien. Contrôle drastique des plantes invasives dans les ravines inaccessibles.
             </p>
-<div class="flex items-center justify-between pt-4 border-t-0">
+<div class="flex flex-wrap items-center justify-between gap-2 pt-4">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Suivi ONF &amp; Parc National</span>
-<a class="inline-flex items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:underline" href="#">
-                Dossier complet <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="inline-flex shrink-0 items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:underline" href="/biodiversite/forets">
+                <span>Dossier complet</span><span class="material-symbols-outlined text-[16px]">chevron_right</span>
 </a>
 </div>
 </div>
 </article>
 <!-- Carte 3: Zones Humides et Littoraux -->
-<article data-habitat data-keywords="etang littoral zone humide gecko vert de manapany saint-paul" class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<article data-habitat data-keywords="etang littoral zone humide gecko vert de manapany saint-paul" class="relative bg-surface-container-low rounded-xl overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<a class="absolute inset-0 z-10" href="/biodiversite/zones-humides" aria-label="Zones humides & Littoraux"></a>
 <div class="relative h-64 md:h-72 w-full overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Étang d'eau douce tropical côtier à Saint-Paul La Réunion, miroirs d'eau calmes bordés de roseaux et de papyrus indigènes, oiseaux hérons striés au repos dans une atmosphère vespérale chaude, reflets de sable doré et d'eau sombre." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQe5fg384r867U41p1UMbKta0go2ZcL33Zt6dpbAlFq5H3HHlJ26sDrsgR7wr-tONKht9W9sQAD5UVuoTp4LvhJxBr1tuGJNA8ot17VS9R4Zg3vgSJ6wbcJ-euSQ6ShBdUmcLHpeqReBkhUrfpU5Q4FHM9QRyc9PMs4qx4dCwHTS2_nqvOf9Aj8mEmas7e4BiN7U7CFEgaPK-SfeusZtv8FF498BID-ynJ58Hphk7i">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/20"></div>
@@ -212,7 +215,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div class="p-6 md:p-8 flex flex-col justify-between flex-1">
-<div class="grid grid-cols-3 gap-3 mb-6 pb-6 bg-surface-container-high/40 rounded-lg p-3">
+<div class="habitat-stats grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 pb-6 bg-surface-container-high/40 rounded-lg p-3">
 <div>
 <span class="block font-label-sm text-label-sm text-on-surface-variant">Surface totale</span>
 <span class="font-headline-sm text-headline-sm text-primary-container font-bold">1 200 ha</span>
@@ -232,16 +235,17 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">
               Réservoirs d'eau douce indispensables à la reproduction des poissons amphihalins (cabots bouche-ronde) et haltes migratoires pour les limicoles. Gestion active des niveaux d'eau et lutte contre la jussie rampante.
             </p>
-<div class="flex items-center justify-between pt-4 border-t-0">
+<div class="flex flex-wrap items-center justify-between gap-2 pt-4">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">RNN Étang de Saint-Paul</span>
-<a class="inline-flex items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:underline" href="#">
-                Dossier complet <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="inline-flex shrink-0 items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:underline" href="/biodiversite/zones-humides">
+                <span>Dossier complet</span><span class="material-symbols-outlined text-[16px]">chevron_right</span>
 </a>
 </div>
 </div>
 </article>
 <!-- Carte 4: Espaces Agricoles & Mi-pentes -->
-<article data-habitat data-keywords="agricole ravine trame canne" class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<article data-habitat data-keywords="agricole ravine trame canne" class="relative bg-surface-container-low rounded-xl overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<a class="absolute inset-0 z-10" href="/biodiversite/mi-pentes" aria-label="Espaces agricoles & Mi-pentes"></a>
 <div class="relative h-64 md:h-72 w-full overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Paysage vallonné de mi-pentes agricoles à La Réunion, alternance de canne à sucre durable, vergers d'agrumes et haies bocagères indigènes servant de corridors faune, vue plongeante vers l'océan Indien sous un ciel doux d'après-midi, nuances ocre et vert tendre." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuyQGAP2m0GXlFMgobrVr4RKEuNThoKS2Rxou3i1Lm6_Mtap2_vyMIPirGfgVqCKTpiDw90kQe9XuuuJByVZgV9lFYUhKqw0hx1J131ywkUugqClhjsxmmW2099nIil2Pcz13hV6YLz55-qVxjM2oIc4UvST0LZxlPNxNY0a_DDOzFnx9uUiSYIJ7Kvkn6PdCDN7G45SC5zjg7uqAM-NU1rNY8_0yehvmCSURPztK6">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/20"></div>
@@ -257,7 +261,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div class="p-6 md:p-8 flex flex-col justify-between flex-1">
-<div class="grid grid-cols-3 gap-3 mb-6 pb-6 bg-surface-container-high/40 rounded-lg p-3">
+<div class="habitat-stats grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 pb-6 bg-surface-container-high/40 rounded-lg p-3">
 <div>
 <span class="block font-label-sm text-label-sm text-on-surface-variant">Ravines connectées</span>
 <span class="font-headline-sm text-headline-sm text-primary-container font-bold">310</span>
@@ -277,10 +281,10 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">
               Zone tampon stratégique entre les agglomérations littorales et le cœur sauvage de l'île. Mise en place de ripisylves renforcées pour protéger les sols de l'érosion cyclonique et offrir des refuges aux pollinisateurs.
             </p>
-<div class="flex items-center justify-between pt-4 border-t-0">
+<div class="flex flex-wrap items-center justify-between gap-2 pt-4">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Programme Ravines Vivantes</span>
-<a class="inline-flex items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:underline" href="#">
-                Dossier complet <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="inline-flex shrink-0 items-center gap-1 text-primary-container font-label-lg text-label-lg font-bold group-hover:underline" href="/biodiversite/mi-pentes">
+                <span>Dossier complet</span><span class="material-symbols-outlined text-[16px]">chevron_right</span>
 </a>
 </div>
 </div>
@@ -289,7 +293,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Organic Wave Asymmetric Transition to Carte -->
 <div class="w-full mt-16 md:mt-20 overflow-hidden leading-none text-surface-container-high -mb-px">
-<svg class="w-full h-14 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="w-full h-14 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,64 C320,16 640,96 1020,32 C1240,8 1380,48 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -475,7 +479,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Organic Wave Transition to Publications -->
 <div class="w-full mt-16 md:mt-20 overflow-hidden leading-none text-surface -mb-px">
-<svg class="w-full h-14 md:h-20 fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="w-full h-14 md:h-20 fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,48 C360,88 720,8 1080,64 C1260,88 1380,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -624,12 +628,12 @@ import Footer from '../../components/Footer.astro';
 </div>
 <div class="flex-1 min-w-0">
 <span class="font-label-sm text-label-sm text-tertiary-container font-bold">ÉDITION 2024</span>
-<h4 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Bilan de l'état de la Biodiversité péi</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Synthèse générale des pressions insulaires</p>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Bilan de l'état de la Biodiversité péi</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Synthèse générale des pressions insulaires</p>
 <div class="flex items-center gap-3 mt-2 text-on-surface-variant font-label-sm text-label-sm">
 <span>PDF (14,2 Mo)</span> •
                 <a class="js-download text-primary font-bold hover:underline flex items-center gap-0.5" href="#report-grid">
-                  Télécharger <span class="material-symbols-outlined text-[14px]">download</span>
+                  <span>Télécharger</span><span class="material-symbols-outlined text-[14px]">download</span>
 </a>
 </div>
 </div>
@@ -641,12 +645,12 @@ import Footer from '../../components/Footer.astro';
 </div>
 <div class="flex-1 min-w-0">
 <span class="font-label-sm text-label-sm text-secondary font-bold">RAPPORT TECHNIQUE</span>
-<h4 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Suivi corallien RNMR / GCRMN 2023</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Évolution des substrats benthiques lagonaires</p>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Suivi corallien RNMR / GCRMN 2023</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Évolution des substrats benthiques lagonaires</p>
 <div class="flex items-center gap-3 mt-2 text-on-surface-variant font-label-sm text-label-sm">
 <span>PDF (8,7 Mo)</span> •
                 <a class="js-download text-primary font-bold hover:underline flex items-center gap-0.5" href="#report-grid">
-                  Télécharger <span class="material-symbols-outlined text-[14px]">download</span>
+                  <span>Télécharger</span><span class="material-symbols-outlined text-[14px]">download</span>
 </a>
 </div>
 </div>
@@ -658,12 +662,12 @@ import Footer from '../../components/Footer.astro';
 </div>
 <div class="flex-1 min-w-0">
 <span class="font-label-sm text-label-sm text-tertiary font-bold">GUIDE STRATÉGIQUE</span>
-<h4 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Plan de lutte intégrée contre les EEE</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Protocoles d'intervention en forêt de nuages</p>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Plan de lutte intégrée contre les EEE</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Protocoles d'intervention en forêt de nuages</p>
 <div class="flex items-center gap-3 mt-2 text-on-surface-variant font-label-sm text-label-sm">
 <span>PDF (5,1 Mo)</span> •
                 <a class="js-download text-primary font-bold hover:underline flex items-center gap-0.5" href="#report-grid">
-                  Télécharger <span class="material-symbols-outlined text-[14px]">download</span>
+                  <span>Télécharger</span><span class="material-symbols-outlined text-[14px]">download</span>
 </a>
 </div>
 </div>
@@ -723,11 +727,11 @@ import Footer from '../../components/Footer.astro';
             Une photo avec votre smartphone suffit pour initier une validation par les botanistes et zoologistes du réseau régional.
           </p>
 <div class="flex flex-col gap-3 pt-2">
-<a class="w-full py-3.5 px-6 rounded-full bg-primary-container text-surface hover:bg-primary font-label-lg text-label-lg font-bold text-center transition-all shadow-md flex items-center justify-center gap-2" href="#">
+<a class="w-full py-3.5 px-6 rounded-full bg-primary-container text-surface hover:bg-primary font-label-lg text-label-lg font-bold text-center transition-all shadow-md flex items-center justify-center gap-2" href="/biodiversite/observation">
 <span class="material-symbols-outlined text-[20px]">upload_file</span>
               Transmettre une observation
             </a>
-<a class="w-full py-3 px-6 rounded-full bg-surface-container-high text-primary-container hover:bg-secondary-container font-label-lg text-label-lg font-bold text-center transition-colors" href="#">
+<a class="w-full py-3 px-6 rounded-full bg-surface-container-high text-primary-container hover:bg-secondary-container font-label-lg text-label-lg font-bold text-center transition-colors" href="/biodiversite/protocoles">
               Découvrir les protocoles simples
             </a>
 </div>

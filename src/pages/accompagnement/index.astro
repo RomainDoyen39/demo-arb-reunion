@@ -8,7 +8,7 @@ import Footer from '../../components/Footer.astro';
   <Header />
   <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
 <!-- SECTION 1: HERO D'ORIENTATION & PRÉSENTATION -->
-<section class="page-hero relative w-full pt-space-lg lg:pt-space-xl overflow-hidden">
+<section class="page-hero hero-photo relative w-full pt-space-lg lg:pt-space-xl overflow-hidden" style="--hero-image: url('/images/bandeaux/saint-leu.webp')">
 <div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin">
 <!-- Trait d'en-tête & Fil d'ariane contextuel -->
 <div class="flex items-center gap-space-xs text-secondary mb-space-sm">
@@ -61,9 +61,9 @@ import Footer from '../../components/Footer.astro';
 <!-- Filtres d'orientation usagers interactifs -->
 <div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm -mb-6 relative z-20">
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
-<span class="font-headline-sm text-headline-sm text-primary">Trouvez l'appui adapté à votre profil</span>
+<div class="flex items-start gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0">tune</span>
+<span class="min-w-0 font-headline-sm text-headline-sm text-primary">Trouvez l'appui adapté à votre profil</span>
 </div>
 <span class="font-label-sm text-label-sm text-secondary">Sélectionnez votre statut pour filtrer les dispositifs</span>
 </div>
@@ -74,7 +74,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 <div class="flex flex-col min-w-0">
 <span class="font-label-lg text-label-lg font-bold text-on-secondary-fixed">Je suis une Collectivité / Mairie</span>
-<span class="font-body-sm text-body-sm text-on-secondary-container truncate">TEN, Trame Verte et Bleue, PLU durable</span>
+<span class="font-body-sm text-body-sm text-on-secondary-container">TEN, Trame Verte et Bleue, PLU durable</span>
 </div>
 </button>
 <button class="group flex items-start gap-space-sm p-space-md rounded-DEFAULT bg-surface-container-high hover:bg-surface-variant text-on-surface transition-all text-left" id="filter-entreprise" onclick="selectUserFilter('entreprise')" type="button">
@@ -83,7 +83,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 <div class="flex flex-col min-w-0">
 <span class="font-label-lg text-label-lg font-bold text-on-surface">Je suis une Entreprise / Aménageur</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Génie écologique, compensation, friches</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Génie écologique, compensation, friches</span>
 </div>
 </button>
 <button class="group flex items-start gap-space-sm p-space-md rounded-DEFAULT bg-surface-container-high hover:bg-surface-variant text-on-surface transition-all text-left" id="filter-association" onclick="selectUserFilter('association')" type="button">
@@ -92,7 +92,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 <div class="flex flex-col min-w-0">
 <span class="font-label-lg text-label-lg font-bold text-on-surface">Je suis une Association / Chercheur</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Subventions FEDER, sciences citoyennes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Subventions FEDER, sciences citoyennes</span>
 </div>
 </button>
 </div>
@@ -100,8 +100,8 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Transition Vague SVG 1 -->
 <div aria-hidden="true" class="w-full text-surface leading-none relative z-10 pt-16">
-<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
-<path d="M0,32 C280,90 440,8 720,54 C1000,98 1240,24 1440,68 L1440,96 L0,96 Z"></path>
+<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
+<path d="M0,32 C280,90 440,8 720,54 C1000,96 1240,24 1440,68 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
 </section>
@@ -149,7 +149,7 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
               Cofinancement à hauteur de 80% des études préalables, chantiers de lutte contre les invasives et création de corridors écologiques. Enveloppe globale dédiée de 2,1 M€ pour la cohésion insulaire.
             </p>
-<div class="grid grid-cols-2 gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-lowest mb-space-md">
+<div class="grid grid-cols-1 min-[480px]:grid-cols-2 gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-lowest mb-space-md">
 <div>
 <div class="font-label-sm text-label-sm text-secondary">Montant financé</div>
 <div class="font-headline-sm text-headline-sm text-primary">Jusqu'à 150 000 €</div>
@@ -160,7 +160,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 </div>
-<div class="flex items-center justify-between pt-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-2 pt-space-sm">
 <span class="font-label-sm text-label-sm text-on-surface-variant">Public : Collectivités, Associations, GIE</span>
 <a class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary hover:text-surface-tint group/link" href="#candidature">
 <span>Cahier des charges</span>
@@ -192,7 +192,7 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
               Un programme national adapté aux réalités réunionnaises permettant d'élaborer un plan d'actions pluriannuel concret : renaturation des centres-villes, zéro phytosanitaire dans les parcs et sensibilisation scolaire.
             </p>
-<div class="grid grid-cols-2 gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-lowest mb-space-md">
+<div class="grid grid-cols-1 min-[480px]:grid-cols-2 gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-lowest mb-space-md">
 <div>
 <div class="font-label-sm text-label-sm text-secondary">Communes lauréates</div>
 <div class="font-headline-sm text-headline-sm text-primary">14 / 24 labellisées</div>
@@ -203,7 +203,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 </div>
-<div class="flex items-center justify-between pt-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-2 pt-space-sm">
 <span class="font-label-sm text-label-sm text-on-surface-variant">Public : Mairies, Communautés d'Agglo</span>
 <a class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary hover:text-surface-tint group/link" href="#contact-rdv">
 <span>Engager ma commune</span>
@@ -235,7 +235,7 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
               Diagnostic territorial haute résolution pour reconnecter les réservoirs de biodiversité. Accompagnement spécialisé sur la Trame Noire pour éteindre ou orienter l'éclairage public au profit de l'envol des pétrels de Barau.
             </p>
-<div class="grid grid-cols-2 gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-lowest mb-space-md">
+<div class="grid grid-cols-1 min-[480px]:grid-cols-2 gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-lowest mb-space-md">
 <div>
 <div class="font-label-sm text-label-sm text-secondary">Ravines cartographiées</div>
 <div class="font-headline-sm text-headline-sm text-primary">312 corridors</div>
@@ -246,7 +246,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 </div>
-<div class="flex items-center justify-between pt-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-2 pt-space-sm">
 <span class="font-label-sm text-label-sm text-on-surface-variant">Public : Aménageurs, Services Techniques</span>
 <a class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary hover:text-surface-tint group/link" href="#outils">
 <span>Voir le guide Trame</span>
@@ -278,7 +278,7 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
               Assistance aux maîtres d'ouvrage pour bannir les exotiques envahissantes et privilégier les essences indigènes et endémiques (Bois d'Arnette, Mahot, Benjoin). Suivi des pépinières partenaires labellisées.
             </p>
-<div class="grid grid-cols-2 gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-lowest mb-space-md">
+<div class="grid grid-cols-1 min-[480px]:grid-cols-2 gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-lowest mb-space-md">
 <div>
 <div class="font-label-sm text-label-sm text-secondary">Référentiel espèces</div>
 <div class="font-headline-sm text-headline-sm text-primary">180 taxons</div>
@@ -289,7 +289,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 </div>
-<div class="flex items-center justify-between pt-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-2 pt-space-sm">
 <span class="font-label-sm text-label-sm text-on-surface-variant">Public : Paysagistes, Promoteurs, BTP</span>
 <a class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary hover:text-surface-tint group/link" href="#outils">
 <span>Consulter la palette végétale</span>
@@ -301,7 +301,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Transition Vague SVG 2 (asymétrique inversée) -->
 <div aria-hidden="true" class="w-full text-surface-container-high leading-none relative z-10 pt-16">
-<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,64 C360,12 600,92 960,36 C1200,-4 1360,54 1440,78 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -499,8 +499,8 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Transition Vague SVG 3 -->
 <div aria-hidden="true" class="w-full text-surface-container-low leading-none relative z-10 pt-16">
-<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
-<path d="M0,48 C240,96 520,12 800,58 C1080,104 1320,38 1440,82 L1440,96 L0,96 Z"></path>
+<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
+<path d="M0,48 C240,96 520,12 800,58 C1080,96 1320,38 1440,82 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
 </section>
@@ -619,8 +619,8 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Transition Vague SVG 4 -->
 <div aria-hidden="true" class="w-full text-surface-container leading-none relative z-10 pt-16">
-<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
-<path d="M0,28 C320,84 560,4 840,66 C1120,108 1300,32 1440,60 L1440,96 L0,96 Z"></path>
+<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
+<path d="M0,28 C320,84 560,4 840,66 C1120,96 1300,32 1440,60 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
 </section>
@@ -728,8 +728,8 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Vague SVG douce de jonction parfaite avec le Footer de l'App Shell -->
 <div aria-hidden="true" class="w-full text-surface leading-none relative z-10 pt-16">
-<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 0 1440 96">
-<path d="M0,32 C260,88 540,6 820,52 C1100,98 1280,26 1440,62 L1440,96 L0,96 Z"></path>
+<svg class="w-full h-16 md:h-24 fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
+<path d="M0,32 C260,88 540,6 820,52 C1100,96 1280,26 1440,62 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
 </section>

@@ -8,7 +8,7 @@ import Footer from '../../components/Footer.astro';
   <Header current="agenda" />
   <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
 <!-- 1. HERO & À LA UNE SECTION -->
-<section class="page-hero relative w-full pt-space-lg pb-28 md:pb-36 overflow-hidden">
+<section class="page-hero hero-photo relative w-full pt-space-lg pb-28 md:pb-36 overflow-hidden" style="--hero-image: url('/images/bandeaux/ravine.webp')">
 <div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
 <!-- Eyebrow & Page Intro -->
 <div class="flex flex-col max-w-3xl mb-space-lg">
@@ -79,7 +79,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- CTAs -->
 <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
-<a class="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg hover:bg-primary transition-all shadow-md hover:shadow-lg" href="#">
+<a class="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg hover:bg-primary transition-all shadow-md hover:shadow-lg" href="/agenda/nuits-sans-lumiere">
 <span>Découvrir le programme &amp; agir</span>
 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </a>
@@ -93,7 +93,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -120,7 +120,7 @@ import Footer from '../../components/Footer.astro';
 <div class="md:col-span-5 lg:col-span-4 relative">
 <div class="relative flex items-center">
 <span class="material-symbols-outlined absolute left-4 text-secondary text-[20px]">event</span>
-<select class="w-full appearance-none pl-11 pr-10 py-3.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-inner" id="agenda-period">
+<select class="w-full appearance-none pl-11 pr-10 py-3.5 rounded-full bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer shadow-inner" id="agenda-period">
 <option value="all">Toutes les périodes (2024 - 2025)</option>
 <option value="now">Ce mois-ci (Novembre 2024)</option>
 <option value="dec24">Décembre 2024</option>
@@ -186,7 +186,7 @@ import Footer from '../../components/Footer.astro';
           </h2>
 </div>
 <div class="flex items-center gap-2">
-<span class="font-label-md text-label-md text-secondary">Trier par :</span>
+<span class="shrink-0 whitespace-nowrap font-label-md text-label-md text-secondary">Trier par&nbsp;:</span>
 <button type="button" id="sort-recent" class="font-label-md text-label-md text-primary font-bold underline underline-offset-4">Plus récentes</button>
 <span class="text-secondary">•</span>
 <button type="button" id="sort-views" class="font-label-md text-label-md text-secondary hover:text-on-surface">Les plus consultées</button>
@@ -195,7 +195,8 @@ import Footer from '../../components/Footer.astro';
 <!-- Articles Grid (4 required featured items + editorial richness) -->
 <div class="grid gap-space-md mb-space-lg [grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))]" id="news-grid">
 <!-- Article 1: Orchidée Sainte-Rose -->
-<article data-item data-kind="actualites" data-period="now" data-themes="forets menaces" data-date="2024-11-06" data-views="640" class="flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<article data-item data-kind="actualites" data-period="now" data-themes="forets menaces" data-date="2024-11-06" data-views="640" class="relative flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<a class="absolute inset-0 z-10" href="/agenda/orchidee-sainte-rose" aria-label="Découverte d'une nouvelle station d'orchidée endémique dans les hauts de Sainte-Rose"></a>
 <div class="relative h-52 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Macro botanical photography of a rare endemic wild orchid clinging to mossy basalt tree bark in the mist of Sainte-Rose rain forest La Réunion, delicate pale petals and deep emerald moss in soft natural diffuse light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHenKIchPkvn8p8vhjW9diVsONxhDkrIa1_EK47b5OLnR0DILqhHvDN4-USWEbSsrze6AYRhyNbvZ3YCg6bGsdcKIkND0KIyXG5uDocyEOp6qzDpM-wfrIVcmjOJuNpUUXExMKXjfcnKK9g1fKjFkPmuxtWpCisWsI2U32ukiuGrGYA5vfjwV6AX_vuVu-qXTFPZo2K9ENOTl8oblU8gpwwUq3mzHZvrZElnYo3tsh')"></div>
 <div class="absolute top-3 left-3">
@@ -226,14 +227,15 @@ import Footer from '../../components/Footer.astro';
 <span class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Lire l'article <span class="material-symbols-outlined text-[16px]">east</span>
 </span>
-<button class="text-secondary hover:text-primary" title="Partager">
+<button class="relative z-20 text-secondary hover:text-primary" title="Partager">
 <span class="material-symbols-outlined text-[18px]">share</span>
 </button>
 </div>
 </div>
 </article>
 <!-- Article 2: Tortues vertes Ouest -->
-<article data-item data-kind="actualites" data-period="now" data-themes="marin" data-date="2024-11-02" data-views="910" class="flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<article data-item data-kind="actualites" data-period="now" data-themes="marin" data-date="2024-11-02" data-views="910" class="relative flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<a class="absolute inset-0 z-10" href="/agenda/tortues-ouest" aria-label="Bilan de la saison de ponte des tortues vertes sur le littoral ouest"></a>
 <div class="relative h-52 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Aerial ocean and golden sand shoreline shot at Saint-Leu La Réunion showing turquoise lagoon coral barrier and green sea turtle Chelonia mydas tracks emerging onto warm volcanic sand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAteWeme2_bBKhkYRMDFCO4TnksJuP9n2aWzMHvPFX9ANBNVbYJrVsTQcdCIIumY6x6QYsDn4QacgOD50ho8F7tVW2URbujINZAPV6eOaR-3vZR17-DhHyLdY4cOLJZwnyubgVFwgEDlD3tq8xtLRYVqh7_Q4wrvqSEgsv4r2OVbUXQGjJ10jsZRp2Gn68CydMOlOTSHG4jXOYxnxB52MtB81fH7aZ_kg_NdWz7b9Tb')"></div>
 <div class="absolute top-3 left-3">
@@ -264,14 +266,15 @@ import Footer from '../../components/Footer.astro';
 <span class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Lire l'article <span class="material-symbols-outlined text-[16px]">east</span>
 </span>
-<button class="text-secondary hover:text-primary" title="Partager">
+<button class="relative z-20 text-secondary hover:text-primary" title="Partager">
 <span class="material-symbols-outlined text-[18px]">share</span>
 </button>
 </div>
 </div>
 </article>
 <!-- Article 3: Atlas papillons Réunion -->
-<article data-item data-kind="actualites" data-period="" data-themes="menaces" data-date="2024-10-28" data-views="1200" class="flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<article data-item data-kind="actualites" data-period="" data-themes="menaces" data-date="2024-10-28" data-views="1200" class="relative flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<a class="absolute inset-0 z-10" href="/agenda/atlas-papillons" aria-label="Publication du nouvel atlas des papillons de La Réunion"></a>
 <div class="relative h-52 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Scientific editorial illustration and high-definition photography of an endemic butterfly of Réunion island Salamis augustina resting on indigenous lush foliage, scientific entomology style with warm paper background tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDReu8unUmh4wINtSY1W35luwk8nbrMksXZrgE0ivb0XPqYh8pAhwKxVBVQOXyPpTe2_kcAgS4_vxBLDq1VLKKaoF-Of_JiCwfxyIT6pFoOtfdKcrERVv6cY8bWocQHOSIFZxSZolyKgteMIpAhRTb_PZnjr-ey9AutXqGV76K5OntLo3ikIeONoIk6bhdwAjOkhEWJkn8uOh4ou5O_s62_Y2fbIooikQ4V8jnMAz26')"></div>
 <div class="absolute top-3 left-3">
@@ -302,14 +305,15 @@ import Footer from '../../components/Footer.astro';
 <span class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Lire l'article <span class="material-symbols-outlined text-[16px]">east</span>
 </span>
-<button class="text-secondary hover:text-primary" title="Partager">
+<button class="relative z-20 text-secondary hover:text-primary" title="Partager">
 <span class="material-symbols-outlined text-[18px]">share</span>
 </button>
 </div>
 </div>
             </article>
 <!-- Article 4: Formation Ripisylves -->
-<article data-item data-kind="formations" data-period="now" data-themes="forets amenagement" data-date="2024-11-18" data-views="300" class="flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<article data-item data-kind="formations" data-period="now" data-themes="forets amenagement" data-date="2024-11-18" data-views="300" class="relative flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<a class="absolute inset-0 z-10" href="/agenda/formation-ripisylves" aria-label="Formation pro : Restaurer les ripisylves réunionnaises"></a>
 <div class="relative h-52 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Field workshop along a tropical freshwater river ravine in Réunion island, environmental engineers and field agents assessing indigenous riverside vegetation ripisylve, clear mountain water and endemic tree ferns." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzYjccOyYhsS-uX3Cn0jaccw9ymzpz0eeHpCUtdmRPi0oUnlOuF2Sy6uofIqpEmlf0bOpe_ajVUVvaZyQ0WKAyWzvrvoTn-mzrqoYaXWUVXmrqQGnL8-EJV0USK8_T-ojWc68E_JdHGLpkOZqqbD4mvo0txlq6sYdzhc9avNkuci2-8QE7-DlLzVXd_BooyQvj3Q0L2rMYOYqAXTA7svoKcWE0D2rMRCrKK-Y8aM7J')"></div>
 <div class="absolute top-3 left-3">
@@ -340,14 +344,15 @@ import Footer from '../../components/Footer.astro';
 <span class="font-label-sm text-label-sm text-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 S'inscrire <span class="material-symbols-outlined text-[16px]">east</span>
 </span>
-<button class="text-secondary hover:text-primary" title="Partager">
+<button class="relative z-20 text-secondary hover:text-primary" title="Partager">
 <span class="material-symbols-outlined text-[18px]">share</span>
 </button>
 </div>
       </div>
               </article>
 <!-- Article 5: Appel à projets Trame noire -->
-<article data-item data-kind="appels" data-period="dec24" data-themes="amenagement menaces" data-date="2024-12-03" data-views="540" class="flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<article data-item data-kind="appels" data-period="dec24" data-themes="amenagement menaces" data-date="2024-12-03" data-views="540" class="relative flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<a class="absolute inset-0 z-10" href="/agenda/trame-noire" aria-label="Appel à projets Trame noire : éteindre les couloirs de vol des pétrels"></a>
 <div class="relative h-52 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Pétrel de Barau en vol au-dessus des pitons de La Réunion, ciel de fin de jour." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBL6PoYxtloRYqtQiYHabox-UuAndxqFMq40LKZbMkqz-qzc_jJiPRcQNk-b4rc6SfBD_q8ykH47D4-qoDtWdSfTME3lb4wFqraRYR2_Mg4b7UhjIjdr5VA3wTxstjBW6um6xuvg5X1etA4pjnVarlKoaTj3nELj_GUG0hjq8zw10CORMtqmYGxJpnMMO8aVfx0tsYx_dAQLbBxBmZlz672dcmVGLqsrTCYLCAQGxiA')"></div>
 <div class="absolute top-3 left-3">
@@ -378,14 +383,15 @@ import Footer from '../../components/Footer.astro';
 <span class="font-label-sm text-label-sm text-tertiary-container font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Déposer un dossier <span class="material-symbols-outlined text-[16px]">east</span>
 </span>
-<button class="text-secondary hover:text-primary" title="Partager">
+<button class="relative z-20 text-secondary hover:text-primary" title="Partager">
 <span class="material-symbols-outlined text-[18px]">share</span>
 </button>
 </div>
 </div>
 </article>
 <!-- Article 6: Sentinelles du lagon -->
-<article data-item data-kind="actualites" data-period="now" data-themes="marin" data-date="2024-11-09" data-views="780" class="flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<article data-item data-kind="actualites" data-period="now" data-themes="marin" data-date="2024-11-09" data-views="780" class="relative flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<a class="absolute inset-0 z-10" href="/agenda/sentinelles-lagon" aria-label="Les sentinelles du lagon publient l'état des récifs de Saint-Leu"></a>
 <div class="relative h-52 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Récif corallien du lagon de La Réunion, coraux branchus et poissons demoiselles." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7irH_aAPoj8pkEAcwkNhPuUg_7lKLayyoqI1CTMeAOVbL0w878V5wdXJkdzjIETJLk6JLf-cm-qfoGxEnMFxX3d1KWHTRjz2_upV0Jqx1F-1RsEZNU7FRj_ouiGqt4cakWypfo0s0K_MT6Cb3_0MXExug3QCqCb34rpmrM4YFzt3OXOGM53A5cw3ktHeBHFtQmUZhUvPqC-EZkwPatNcURF4R9vBc2n40roixRIjg')"></div>
 <div class="absolute top-3 left-3">
@@ -416,14 +422,15 @@ import Footer from '../../components/Footer.astro';
 <span class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Lire l'article <span class="material-symbols-outlined text-[16px]">east</span>
 </span>
-<button class="text-secondary hover:text-primary" title="Partager">
+<button class="relative z-20 text-secondary hover:text-primary" title="Partager">
 <span class="material-symbols-outlined text-[18px]">share</span>
 </button>
 </div>
 </div>
 </article>
 <!-- Article 7: Avis éclairage -->
-<article data-item data-kind="actualites" data-period="" data-themes="reglementation amenagement" data-date="2024-10-16" data-views="430" class="flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<article data-item data-kind="actualites" data-period="" data-themes="reglementation amenagement" data-date="2024-10-16" data-views="430" class="relative flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<a class="absolute inset-0 z-10" href="/agenda/avis-eclairage" aria-label="Le CSRPN publie son avis sur l'éclairage des aménagements littoraux"></a>
 <div class="relative h-52 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Couverture du bilan décennal de la biodiversité réunionnaise, fougères et cirques." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs_EnMxwj9PzJfmSwXSdBW_zq2nhOuNjl672QXhX15uTu5jvUnd8Gy1BloegWS8yXEsxv54gpfoPuYUleUcGJWEXo-zHa_mGRpYYW0eM6esvRsyMeR5D6Mt1PlT-FB0d-GFrGQbx3CNtuDMaNgSyF0hMpidjOW6sWz6nydfiDvMtf3WZ60l9fmMDA86MmEMRRLw-nlUUu1SLvYS2Y056QuAGuP5pmXLaONu_CueZPZ')"></div>
 <div class="absolute top-3 left-3">
@@ -454,14 +461,15 @@ import Footer from '../../components/Footer.astro';
 <span class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Lire l'avis <span class="material-symbols-outlined text-[16px]">east</span>
 </span>
-<button class="text-secondary hover:text-primary" title="Partager">
+<button class="relative z-20 text-secondary hover:text-primary" title="Partager">
 <span class="material-symbols-outlined text-[18px]">share</span>
 </button>
 </div>
 </div>
 </article>
 <!-- Article 8: Forêts semi-sèches -->
-<article data-item data-kind="actualites" data-period="jan25" data-themes="forets" data-date="2025-01-14" data-views="260" class="flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<article data-item data-kind="actualites" data-period="jan25" data-themes="forets" data-date="2025-01-14" data-views="260" class="relative flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+<a class="absolute inset-0 z-10" href="/agenda/forets-chaloupe" aria-label="12 000 plants de forêt semi-sèche mis en terre à la Grande Chaloupe"></a>
 <div class="relative h-52 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Forêt de tamarins des Hauts sous la brume, mousses et remparts volcaniques." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZ22k61dYcfZMGanVjIREAlLq2E_763WA7Jzk6TJNohrj9KgqNFkIAflRobCzqEsWxg6TJeLMCh8rXN6tgE-Xgw62Vfkmn4MveobNMIDTjEUcuvf-ojX8u3Wyc3E20-UooTDhLNdT6SFMuuYBl46Wfsrht3u_sWcbh02vv9UT2PFCoVv_2kU7N7c7K1xODga3KgSABOrYJ9oC5i8gg-2e0_yrJYxyQjtFIbLPlTzN0')"></div>
 <div class="absolute top-3 left-3">
@@ -492,7 +500,7 @@ import Footer from '../../components/Footer.astro';
 <span class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Lire l'article <span class="material-symbols-outlined text-[16px]">east</span>
 </span>
-<button class="text-secondary hover:text-primary" title="Partager">
+<button class="relative z-20 text-secondary hover:text-primary" title="Partager">
 <span class="material-symbols-outlined text-[18px]">share</span>
 </button>
 </div>
@@ -514,7 +522,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-<svg class="block h-14 w-full fill-current text-surface-container-low md:h-24" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="block h-14 w-full fill-current text-surface-container-low md:h-24" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,48 C360,88 720,8 1080,64 C1260,88 1380,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -538,10 +546,6 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Agenda Quick Action Utilities -->
 <div class="flex flex-wrap items-center gap-space-xs">
-<button class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-full bg-surface-container-lowest text-primary-container font-label-md text-label-md shadow-sm hover:shadow transition-all">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span>Vue chronologique</span>
-</button>
 <a class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary-container transition-all" href="#">
 <span class="material-symbols-outlined text-[18px]">sync</span>
 <span>Abonner mon calendrier (.ics)</span>
@@ -551,7 +555,8 @@ import Footer from '../../components/Footer.astro';
 <!-- Chronological Event Cards List -->
 <div class="flex flex-col gap-space-md mb-space-lg" id="events-list">
 <!-- Event 1: 14 Nov - Webinaire Trames Noires -->
-<div data-item data-kind="evenements" data-period="now" data-themes="amenagement menaces" data-date="2024-11-14" data-views="210" class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md group">
+<div data-item data-kind="evenements" data-period="now" data-themes="amenagement menaces" data-date="2024-11-14" data-views="210" class="relative w-full bg-surface-container-lowest rounded-lg p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md group">
+<a class="absolute inset-0 z-10" href="/agenda/webinaire-plu" aria-label="Intégrer les Trames Noires dans les Plans Locaux d'Urbanisme (PLU)"></a>
 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
 <!-- Distinct Date Badge Block -->
 <div class="flex flex-col items-center justify-center w-20 h-24 sm:w-24 sm:h-24 rounded-lg bg-surface-container-high text-primary-container shrink-0 text-center shadow-inner">
@@ -583,19 +588,20 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <!-- CTAs Column -->
-<div class="flex flex-row lg:flex-col items-center lg:items-end justify-between sm:justify-start gap-2 shrink-0 pt-space-xs lg:pt-0 border-t lg:border-t-0 border-surface-variant/40">
+<div class="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end justify-between sm:justify-start gap-2 shrink-0 pt-space-xs lg:pt-0 border-t lg:border-t-0 border-surface-variant/40">
 <button class="inline-flex items-center justify-center gap-1.5 px-space-lg py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary shadow-sm hover:shadow transition-all w-full sm:w-auto">
 <span>S'inscrire (Gratuit)</span>
 <span class="material-symbols-outlined text-[16px]">how_to_reg</span>
 </button>
-<a class="inline-flex items-center gap-1 text-secondary hover:text-on-surface font-label-sm text-label-sm py-1" href="#">
+<a class="relative z-20 inline-flex items-center gap-1 text-secondary hover:text-on-surface font-label-sm text-label-sm py-1" href="#">
 <span class="material-symbols-outlined text-[16px]">event</span>
 <span>Ajouter à mon agenda (.ics)</span>
 </a>
 </div>
 </div>
 <!-- Event 2: 22 Nov - Sortie terrain Mare Longue -->
-<div data-item data-kind="evenements" data-period="now" data-themes="forets menaces" data-date="2024-11-22" data-views="450" class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md group">
+<div data-item data-kind="evenements" data-period="now" data-themes="forets menaces" data-date="2024-11-22" data-views="450" class="relative w-full bg-surface-container-lowest rounded-lg p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md group">
+<a class="absolute inset-0 z-10" href="/agenda/mare-longue" aria-label="Reconnaissance et sauvegarde des bois de couleur de Mare Longue"></a>
 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
 <!-- Distinct Date Badge Block -->
 <div class="flex flex-col items-center justify-center w-20 h-24 sm:w-24 sm:h-24 rounded-lg bg-surface-container-high text-primary-container shrink-0 text-center shadow-inner">
@@ -627,7 +633,7 @@ import Footer from '../../components/Footer.astro';
         </div>
     </div>
 <!-- CTAs Column -->
-<div class="flex flex-row lg:flex-col items-center lg:items-end justify-between sm:justify-start gap-2 shrink-0 pt-space-xs lg:pt-0 border-t lg:border-t-0 border-surface-variant/40">
+<div class="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end justify-between sm:justify-start gap-2 shrink-0 pt-space-xs lg:pt-0 border-t lg:border-t-0 border-surface-variant/40">
 <span class="text-tertiary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
 <span class="w-2 h-2 rounded-full bg-tertiary"></span>
               Plus que 4 places disponibles
@@ -636,14 +642,15 @@ import Footer from '../../components/Footer.astro';
 <span>S'inscrire à la sortie</span>
 <span class="material-symbols-outlined text-[16px]">how_to_reg</span>
 </button>
-<a class="inline-flex items-center gap-1 text-secondary hover:text-on-surface font-label-sm text-label-sm py-1" href="#">
+<a class="relative z-20 inline-flex items-center gap-1 text-secondary hover:text-on-surface font-label-sm text-label-sm py-1" href="#">
 <span class="material-symbols-outlined text-[16px]">event</span>
 <span>Ajouter à mon agenda (.ics)</span>
 </a>
 </div>
 </div>
 <!-- Event 3: 05 Déc - Journée technique EEE -->
-<div data-item data-kind="formations" data-period="dec24" data-themes="menaces" data-date="2024-12-05" data-views="180" class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md group">
+<div data-item data-kind="formations" data-period="dec24" data-themes="menaces" data-date="2024-12-05" data-views="180" class="relative w-full bg-surface-container-lowest rounded-lg p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md group">
+<a class="absolute inset-0 z-10" href="/agenda/journee-eee" aria-label="Gestion durable des espèces exotiques envahissantes (EEE) végétales et animales"></a>
 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
 <!-- Distinct Date Badge Block -->
 <div class="flex flex-col items-center justify-center w-20 h-24 sm:w-24 sm:h-24 rounded-lg bg-surface-container-high text-primary-container shrink-0 text-center shadow-inner">
@@ -675,13 +682,13 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <!-- CTAs Column -->
-<div class="flex flex-row lg:flex-col items-center lg:items-end justify-between sm:justify-start gap-2 shrink-0 pt-space-xs lg:pt-0 border-t lg:border-t-0 border-surface-variant/40">
+<div class="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end justify-between sm:justify-start gap-2 shrink-0 pt-space-xs lg:pt-0 border-t lg:border-t-0 border-surface-variant/40">
 <span class="text-secondary font-label-sm text-label-sm">Entrée libre sur badge pro</span>
 <button class="inline-flex items-center justify-center gap-1.5 px-space-lg py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary shadow-sm hover:shadow transition-all w-full sm:w-auto">
 <span>Réserver mon accès</span>
 <span class="material-symbols-outlined text-[16px]">how_to_reg</span>
 </button>
-<a class="inline-flex items-center gap-1 text-secondary hover:text-on-surface font-label-sm text-label-sm py-1" href="#">
+<a class="relative z-20 inline-flex items-center gap-1 text-secondary hover:text-on-surface font-label-sm text-label-sm py-1" href="#">
 <span class="material-symbols-outlined text-[16px]">event</span>
 <span>Ajouter à mon agenda (.ics)</span>
 </a>
@@ -706,7 +713,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>

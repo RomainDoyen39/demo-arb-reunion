@@ -28,5 +28,9 @@ const { title } = Astro.props;
   </head>
   <body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
     <slot />
+    <script>
+      import '../scripts/selects.js';
+      import '../scripts/waves.js';
+    </script>
   </body>
 </html>

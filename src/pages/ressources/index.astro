@@ -10,7 +10,7 @@ import Footer from '../../components/Footer.astro';
 <!-- =========================================================================
        1. HERO & MOTEUR DOCUMENTAIRE
        ========================================================================= -->
-<section class="page-hero relative w-full pt-6 pb-28 md:pb-36 overflow-hidden">
+<section class="page-hero hero-photo relative w-full pt-6 pb-28 md:pb-36 overflow-hidden" style="--hero-image: url('/images/bandeaux/littoral.webp')">
 <div class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
 <!-- Fil d'Ariane -->
 <nav aria-label="Fil d'Ariane" class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md mb-8">
@@ -34,8 +34,8 @@ import Footer from '../../components/Footer.astro';
         </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed mb-10">
           Explorez, consultez et téléchargez plus de <strong>1 200 rapports scientifiques</strong>, guides techniques, synthèses d'observation, atlas naturalistes et jeux de données validés par le <strong class="text-on-surface">Conseil Scientifique Régional du Patrimoine Naturel (CSRPN)</strong> et le réseau d'experts de l'île de La Réunion.
-        </p>
-</div>
+    </p>
+  </div>
 <!-- Moteur de Recherche Avancé -->
 <div class="w-full bg-surface-container-lowest rounded-xl shadow-[0_20px_50px_rgba(17,78,74,0.06)] p-6 md:p-8 mb-12">
 <form class="flex flex-col gap-6" id="ressources-search">
@@ -80,13 +80,13 @@ import Footer from '../../components/Footer.astro';
 <option value="invasives">Espèces Exotiques Envahissantes (EEE)</option>
 <option value="trames">Trames Verte, Bleue, Noire &amp; Aménagement</option>
 <option value="especes-menacees">Faune endémique &amp; plans de sauvegarde</option>
-</select>
+        </select>
 <span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary text-[20px] pointer-events-none">expand_more</span>
 </div>
 </div>
 <!-- Bouton d'action -->
-<div class="md:col-span-3 flex flex-col justify-end pt-5 md:pt-0">
-<button class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg hover:bg-primary shadow-[0_4px_16px_rgba(17,78,74,0.18)] hover:shadow-lg transition-all active:scale-[0.99]" type="submit">
+<div class="md:col-span-3 self-end">
+<button class="box-border h-[44px] w-full inline-flex items-center justify-center gap-2 px-6 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg hover:bg-primary shadow-[0_4px_16px_rgba(17,78,74,0.18)] hover:shadow-lg transition-all active:scale-[0.99]" type="submit">
 <span class="material-symbols-outlined text-[20px]">filter_list</span>
 <span>Filtrer les ressources</span>
 </button>
@@ -137,7 +137,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-<svg class="block h-12 w-full fill-current text-surface-container md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="block h-12 w-full fill-current text-surface-container md:h-20" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -311,7 +311,7 @@ import Footer from '../../components/Footer.astro';
 <p class="font-body-md text-body-md text-secondary text-center py-6" id="featured-empty" hidden>Aucune publication majeure ne correspond à ces critères.</p>
 </div>
 <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -332,36 +332,36 @@ import Footer from '../../components/Footer.astro';
 </div>
 <!-- Trier par -->
 <div class="flex items-center gap-3">
-<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Trier par :</span>
+<span class="shrink-0 whitespace-nowrap font-label-sm text-label-sm text-on-surface-variant">Trier par&nbsp;:</span>
 <div class="relative">
 <select class="px-4 py-2 pr-9 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-container" id="doc-sort">
 <option value="recent">Date d'ajout (plus récents)</option>
 <option value="downloads">Plus téléchargés</option>
 <option value="alpha">Titre alphabétique (A-Z)</option>
 <option value="org">Organisme émetteur</option>
-</select>
+        </select>
 <span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary text-[18px] pointer-events-none">expand_more</span>
 </div>
 </div>
 </div>
 <!-- Onglets thématiques interactifs -->
-<div class="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar" id="doc-collections">
-<button class="px-5 py-2.5 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg whitespace-nowrap shadow-sm hover:opacity-95 transition-all" data-collection="" type="button">
+<div class="flex flex-wrap items-center gap-2 mb-10" id="doc-collections">
+<button class="px-4 py-2.5 rounded-full bg-primary-container text-inverse-on-surface font-label-lg text-label-lg whitespace-nowrap shadow-sm hover:opacity-95 transition-all" data-collection="" type="button">
           Tous les documents <span data-count>(12)</span>
         </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="faune" type="button">
+<button class="px-4 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="faune" type="button">
           Faune &amp; Flore péi <span data-count>(5)</span>
         </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="recifs" type="button">
+<button class="px-4 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="recifs" type="button">
           Récifs &amp; Milieux marins <span data-count>(3)</span>
         </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="trames" type="button">
+<button class="px-4 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="trames" type="button">
           Trame Verte, Bleue &amp; Noire <span data-count>(3)</span>
         </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="droit" type="button">
+<button class="px-4 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="droit" type="button">
           Réglementation &amp; CSRPN <span data-count>(2)</span>
         </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="sciences" type="button">
+<button class="px-4 py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-secondary-container transition-colors font-label-lg text-label-lg whitespace-nowrap" data-collection="sciences" type="button">
           Sciences participatives <span data-count>(2)</span>
         </button>
 </div>
@@ -713,23 +713,23 @@ import Footer from '../../components/Footer.astro';
 </div>
 <p class="mb-12 text-center font-body-md text-body-md text-secondary" id="doc-empty" hidden>Aucun document ne correspond à ces critères.</p>
 <!-- Pagination & Sélecteur de volume -->
-<div class="mx-auto flex w-fit max-w-full flex-col items-center justify-center gap-4 rounded-full bg-surface-container-low px-6 py-3 sm:flex-row sm:gap-8">
+<div class="mx-auto flex w-full max-w-full flex-col items-center justify-center gap-3 rounded-2xl bg-surface-container-low px-4 py-3 sm:w-fit sm:flex-row sm:gap-8 sm:rounded-full sm:px-6">
 <div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
 <span id="doc-range">Affichage de <strong>1 à 6</strong> sur <strong>12</strong> documents</span>
 </div>
 <nav class="flex items-center gap-1.5" id="doc-pager" aria-label="Pagination des documents"></nav>
 <div class="flex items-center gap-2">
 <label class="font-label-sm text-label-sm text-secondary" for="per-page">Par page :</label>
-<select class="px-3 py-1 rounded bg-surface text-on-surface font-label-sm text-label-sm focus:outline-none" id="per-page">
+<select class="min-h-9 px-3 py-1 rounded bg-surface text-on-surface font-label-sm text-label-sm focus:outline-none" id="per-page">
 <option>6</option>
 <option>12</option>
 <option>24</option>
 <option>48</option>
-</select>
+        </select>
 </div>
 </div>
 <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-<svg class="block h-12 w-full fill-current text-surface-container-high md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="block h-12 w-full fill-current text-surface-container-high md:h-20" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -853,7 +853,7 @@ import Footer from '../../components/Footer.astro';
 </div>
 </div>
 <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-<svg class="block h-12 w-full fill-current text-primary md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="block h-12 w-full fill-current text-primary md:h-20" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -887,7 +887,7 @@ import Footer from '../../components/Footer.astro';
 <span>Consulter la charte de dépôt CSRPN</span>
 </a>
 </div>
-</div>
+    </div>
 <!-- Encadré procédure d'évaluation -->
 <div class="lg:col-span-4 bg-primary-container/70 rounded-xl p-8 backdrop-blur-sm">
 <span class="font-label-lg text-label-lg text-secondary-container uppercase tracking-wider font-bold block mb-4">
@@ -906,12 +906,12 @@ import Footer from '../../components/Footer.astro';
 <div class="w-6 h-6 rounded-full bg-primary text-secondary-container flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</div>
 <div><strong>Indexation et DOI :</strong> Intégration dans le catalogue ARB et moissonnage SINP / Borbonica sous 15 jours.</div>
 </li>
-</ul>
+            </ul>
 </div>
 </div>
 </div>
 <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
-<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 0 1440 96">
+<svg class="block h-12 w-full fill-current text-surface md:h-20" preserveAspectRatio="none" viewBox="0 -16 1440 112">
 <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
 </svg>
 </div>
@@ -927,7 +927,7 @@ import Footer from '../../components/Footer.astro';
         </span>
 <h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight mb-4">
           Foire aux questions scientifiques
-        </h2>
+            </h2>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
           Tout savoir sur l'utilisation, la réutilisation légale et la citation des documents répertoriés par l'Agence.
         </p>
@@ -985,14 +985,14 @@ import Footer from '../../components/Footer.astro';
 <span>Contacter les documentalistes scientifiques de l'ARB</span>
 </a>
 </div>
-</div>
+    </div>
 </section>
 <!-- =========================================================================
        7. RACCORD VISUEL FINAL AVEC LA VAGUE DU FOOTER SHELL
        ========================================================================= -->
 <!-- Note : Le footer du shell possède déjà son SVG d'entrée avec fill-surface, 
        donc la section précédente se terminant sur bg-surface s'emboîte au pixel près sans rupture. -->
-</div>
+  </div>
 </main>
   <Footer />
 </Base>

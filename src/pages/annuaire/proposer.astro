@@ -1,0 +1,163 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const types = [
+  'Établissement public',
+  'Collectivité',
+  'Association',
+  'Bureau d\'études',
+  'Laboratoire',
+  'Pépiniériste',
+  'Autre',
+];
+---
+
+<Base title="Proposer une structure — Annuaire ARB Réunion">
+  <Header current="annuaire" />
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+    <section class="page-hero hero-photo relative overflow-hidden pt-8 pb-24 lg:pb-32" style="--hero-image: url('/images/bandeaux/mafate.webp')">
+      <div class="max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin relative z-10">
+        <nav aria-label="Fil d'Ariane" class="flex flex-wrap items-center gap-1 mb-6 font-label-md text-label-md text-secondary">
+          <a class="hover:text-surface transition-colors inline-flex items-center gap-1" href="/">
+            <span class="material-symbols-outlined text-[16px]">home</span>
+            <span>Accueil</span>
+          </a>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <a class="hover:text-surface transition-colors" href="/annuaire">Annuaire</a>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="font-semibold">Proposer une structure</span>
+        </nav>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-lowest text-primary-container font-label-sm text-label-sm">Inscription gratuite</span>
+        <h1 class="max-w-4xl mt-5 font-display-lg text-headline-lg md:text-display-lg text-primary leading-tight">Proposer une structure</h1>
+        <p class="mt-4 max-w-3xl font-body-lg text-body-lg text-secondary">Le pôle Partenariats relit chaque proposition avant de publier la fiche dans l'annuaire.</p>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+        <svg class="w-full h-12 md:h-20 text-surface fill-current block" preserveAspectRatio="none" viewBox="0 -16 1440 112">
+          <path d="M0,32 C280,96 520,0 840,48 C1160,96 1360,16 1440,32 L1440,96 L0,96 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="w-full max-w-[1380px] mx-auto px-gutter-mobile md:px-gutter lg:px-margin pt-4 pb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <form class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-sm flex flex-col gap-5" id="proposer-form">
+          <div hidden class="p-4 rounded-xl bg-secondary-container text-primary-container font-label-md text-label-md flex items-start gap-2" id="proposer-success" role="status">
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            <span id="proposer-success-text"></span>
+          </div>
+
+          <div>
+            <label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="nom">
+              Nom de la structure <span class="text-tertiary">*</span>
+            </label>
+            <input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary" id="nom" name="nom" placeholder="ex. Association Ravine Vivante" required type="text">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="type">
+                Type <span class="text-tertiary">*</span>
+              </label>
+              <select class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" id="type" name="type" required>
+                {types.map((type) => <option value={type}>{type}</option>)}
+              </select>
+            </div>
+            <div>
+              <label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="commune">
+                Commune du siège <span class="text-tertiary">*</span>
+              </label>
+              <input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary" id="commune" name="commune" placeholder="ex. Saint-Paul" required type="text">
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="domaines">
+              Domaines d'intervention <span class="text-tertiary">*</span>
+            </label>
+            <textarea class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary resize-y" id="domaines" name="domaines" placeholder="Restauration de ravines, suivis naturalistes, plantes indigènes…" required rows="4"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="email">
+                E-mail <span class="text-tertiary">*</span>
+              </label>
+              <input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary" id="email" name="email" placeholder="contact@exemple.re" required type="email">
+            </div>
+            <div>
+              <label class="block font-label-md text-label-md text-primary-container font-bold mb-2" for="telephone">
+                Téléphone
+              </label>
+              <input class="w-full px-4 py-3 rounded-xl bg-surface font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary" id="telephone" name="telephone" placeholder="0262 .. .. .." type="tel">
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <input class="mt-1 w-4 h-4 rounded text-primary-container focus:ring-primary" id="siege" name="siege" required type="checkbox">
+            <label class="font-body-sm text-body-sm text-on-surface-variant" for="siege">
+              La structure a son siège ou une antenne à La Réunion.
+            </label>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <input class="mt-1 w-4 h-4 rounded text-primary-container focus:ring-primary" id="consent" name="consent" required type="checkbox">
+            <label class="font-body-sm text-body-sm text-on-surface-variant" for="consent">
+              J'accepte que ces informations soient utilisées pour instruire l'inscription. <a class="text-primary-container underline hover:text-primary" href="/mentions/confidentialite">Politique de confidentialité</a>.
+            </label>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <p class="font-label-sm text-label-sm text-secondary">Relecture avant publication dans l'annuaire.</p>
+            <button class="inline-flex items-center justify-center gap-2 min-h-[44px] px-6 rounded-full bg-primary-container text-surface hover:bg-primary font-label-lg text-label-lg" type="submit">
+              Proposer la structure
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </button>
+          </div>
+        </form>
+
+        <aside class="lg:col-span-5 lg:sticky lg:top-24 rounded-xl bg-surface-container-low p-6">
+          <h2 class="font-headline-sm text-headline-sm text-primary">Pour figurer dans l'annuaire</h2>
+          <ul class="mt-4 flex flex-col gap-3 p-0 list-none">
+            <li class="flex items-start gap-3 font-body-sm text-body-sm text-secondary">
+              <span class="material-symbols-outlined text-[20px] text-primary-container">check_circle</span>
+              <span>Siège ou antenne établie à La Réunion.</span>
+            </li>
+            <li class="flex items-start gap-3 font-body-sm text-body-sm text-secondary">
+              <span class="material-symbols-outlined text-[20px] text-primary-container">check_circle</span>
+              <span>Adhésion à la charte de l'ARB.</span>
+            </li>
+            <li class="flex items-start gap-3 font-body-sm text-body-sm text-secondary">
+              <span class="material-symbols-outlined text-[20px] text-primary-container">check_circle</span>
+              <span>Compétences relues par les comités.</span>
+            </li>
+          </ul>
+          <a class="mt-6 inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-primary-container" href="/annuaire/mise-a-jour">
+            <span>Mettre à jour une fiche existante</span>
+            <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>
+
+<script>
+  const form = document.getElementById('proposer-form');
+  const success = document.getElementById('proposer-success');
+  const successText = document.getElementById('proposer-success-text');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement)) return;
+    const nom = new FormData(form).get('nom');
+    if (successText) {
+      successText.textContent = `Merci. La proposition « ${nom} » est transmise au pôle Partenariats. La fiche sera relue avant publication dans l'annuaire.`;
+    }
+    if (success) success.hidden = false;
+    form.reset();
+    success?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+</script>
